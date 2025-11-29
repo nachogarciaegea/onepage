@@ -4,412 +4,1173 @@
   <meta charset="UTF-8" />
   <title>Nacho García Egea | Global CISO | Startup Advisor | Mentor de nuevos talentos | Hacker</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"
-    content="Nacho García Egea - Global CISO, Startup Advisor, Mentor de nuevos talentos y Hacker con más de 20 años de experiencia." />
-
+  <meta
+    name="description"
+    content="Nacho García Egea - Global CISO, Startup Advisor, Mentor de nuevos talentos y Hacker con más de 20 años de experiencia."
+  />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
     rel="stylesheet"
   />
-
   <style>
     :root {
       --primary: #00f0ff;
-      --bg: #050810;
-      --bg-alt: #070b14;
-      --text: #e5f3ff;
-      --muted: #7f8ca3;
-      --border: #151b29;
-      --shadow-soft: 0 18px 45px rgba(0, 240, 255, 0.15);
-      --shadow-subtle: 0 10px 30px rgba(0, 0, 0, 0.35);
+      --bg: #05060a;
+      --bg-soft: #070913;
+      --bg-alt: #0b0f1d;
+      --text: #f4f7ff;
+      --muted: #8f9bb3;
+      --border: #191f2f;
+      --shadow-soft: 0 20px 50px rgba(0, 0, 0, 0.65);
+      --transition: 0.25s ease-out;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: "Space Grotesk", sans-serif;
-      background: radial-gradient(circle at top, #0c162c 0, var(--bg) 55%);
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #151b35 0, var(--bg) 55%);
       color: var(--text);
+      min-height: 100vh;
       overflow-x: hidden;
-      line-height: 1.6;
-    }
-    a { color: inherit; text-decoration: none; }
-
-    /* GENERAL RESET – RECTANGLES EVERYWHERE */
-    [class*="card"], 
-    [class*="badge"],
-    [class*="pill"],
-    [class*="btn"],
-    .logo,
-    header .header-inner,
-    nav,
-    .hero-photo,
-    .service-card,
-    .appearance-card,
-    .section-border-card,
-    .contact-card {
-      border-radius: 0 !important;
     }
 
-    /* Floating neon dots */
-    .floating-dots { position: fixed; inset: 0; pointer-events:none; z-index:-1; }
-    .dot {
-      position:absolute; width:10px; height:10px; background:var(--primary);
-      opacity:.5; filter:blur(2px);
-      animation:floatDot 18s linear infinite;
-    }
-    @keyframes floatDot {
-      0%{ transform:translateY(0); opacity:.2;}
-      50%{ transform:translateY(-40px); opacity:.7;}
-      100%{ transform:translateY(0); opacity:.2;}
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    /* Header */
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* Layout base */
+
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px 60px;
+      position: relative;
+    }
+
+    section {
+      padding: 80px 0;
+      position: relative;
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: 60px 0;
+      }
+    }
+
+    /* Fondo con "glow" tipo MegaOne */
+
+    .bg-orbit {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(0, 240, 255, 0.18), transparent 55%),
+        radial-gradient(circle at 80% 0%, rgba(0, 240, 255, 0.18), transparent 50%),
+        radial-gradient(circle at 50% 80%, rgba(0, 240, 255, 0.15), transparent 55%),
+        linear-gradient(180deg, #02030a 0, #05060a 45%, #02030a 100%);
+    }
+
+    .glow-pulse {
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0, 240, 255, 0.7), transparent 60%);
+      filter: blur(12px);
+      opacity: 0.4;
+      animation: pulse 12s ease-in-out infinite alternate;
+    }
+
+    .glow-pulse.g1 {
+      top: -80px;
+      left: -40px;
+    }
+
+    .glow-pulse.g2 {
+      bottom: 40px;
+      right: 0;
+      animation-delay: -5s;
+    }
+
+    @keyframes pulse {
+      from {
+        transform: scale(0.8) translate3d(0, 0, 0);
+        opacity: 0.25;
+      }
+      to {
+        transform: scale(1.2) translate3d(0, -20px, 0);
+        opacity: 0.6;
+      }
+    }
+
+    /* Header estilo MegaOne */
+
     header {
-      position: sticky; top: 0; z-index: 50;
-      backdrop-filter: blur(20px);
-      margin-bottom: 24px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
     }
 
     .header-inner {
-      border: 1px solid rgba(0,240,255,.18);
-      background: rgba(5,8,16,.85);
-      box-shadow: var(--shadow-subtle);
-      padding: 10px 14px;
-      display:flex; justify-content:space-between; align-items:center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px 16px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
-    /* Hamburger */
     .nav-toggle {
-      background:none; border:none; width:34px; height:34px;
-      color:var(--primary); cursor:pointer; position:relative;
+      width: 38px;
+      height: 38px;
+      background: transparent;
+      border: 1px solid rgba(0, 240, 255, 0.5);
+      color: var(--primary);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      position: relative;
+      transition: background var(--transition), border-color var(--transition);
     }
+
+    .nav-toggle:hover {
+      background: rgba(0, 240, 255, 0.1);
+      border-color: var(--primary);
+    }
+
     .nav-toggle span,
     .nav-toggle span::before,
     .nav-toggle span::after {
-      content:""; background:var(--primary);
-      width:22px; height:2px; position:absolute; left:6px;
-      transition:.25s;
+      position: absolute;
+      width: 18px;
+      height: 2px;
+      background: var(--primary);
+      content: "";
+      transition: transform 0.25s ease-out, top 0.25s ease-out,
+        opacity 0.25s ease-out;
     }
-    .nav-toggle span { top:16px; }
-    .nav-toggle span::before { top:-6px; }
-    .nav-toggle span::after { top:6px; }
 
-    body.nav-open .nav-toggle span { transform:rotate(45deg); }
-    body.nav-open .nav-toggle span::before { top:0; transform:rotate(90deg); }
-    body.nav-open .nav-toggle span::after { opacity:0; }
+    .nav-toggle span {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .nav-toggle span::before {
+      top: -6px;
+    }
+
+    .nav-toggle span::after {
+      top: 6px;
+    }
+
+    body.nav-open .nav-toggle span {
+      transform: translateY(-50%) rotate(45deg);
+    }
+
+    body.nav-open .nav-toggle span::before {
+      top: 0;
+      transform: rotate(-90deg);
+    }
+
+    body.nav-open .nav-toggle span::after {
+      opacity: 0;
+    }
+
+    /* Logo NGE arriba derecha */
+
+    .logo {
+      padding: 6px 18px;
+      border: 1px solid rgba(0, 240, 255, 0.7);
+      background: rgba(2, 5, 12, 0.9);
+      letter-spacing: 0.3em;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--primary);
+      box-shadow: 0 12px 30px rgba(0, 240, 255, 0.35);
+    }
+
+    /* Nav overlay (tipo MegaOne) */
 
     nav {
-      position: fixed; inset:0;
-      background:rgba(5,8,16,.96);
-      transform:translateX(-100%);
-      transition:.3s ease-out;
-      padding:90px 24px;
-    }
-    body.nav-open nav { transform:translateX(0); }
-
-    nav ul {
-      list-style:none;
-      display:flex; flex-direction:column; gap:18px;
-      font-size:20px;
-    }
-
-    /* Desktop nav */
-    @media (min-width:880px) {
-      nav { all:unset; }
-      nav ul { flex-direction:row; gap:20px; font-size:14px; }
-      .nav-toggle { display:none; }
+      position: fixed;
+      inset: 0;
+      background: rgba(2, 4, 10, 0.97);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      transform: translateX(-100%);
+      transition: transform 0.35s ease-out;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 40;
     }
 
-    /* Hero */
+    body.nav-open nav {
+      transform: translateX(0);
+    }
+
+    .nav-list {
+      list-style: none;
+      text-align: left;
+    }
+
+    .nav-list li + li {
+      margin-top: 18px;
+    }
+
+    .nav-list a {
+      font-size: 26px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text);
+      position: relative;
+      padding-left: 32px;
+    }
+
+    .nav-list a::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 18px;
+      height: 2px;
+      background: var(--primary);
+      transform: translateY(-50%);
+      opacity: 0.4;
+      transition: width var(--transition), opacity var(--transition);
+    }
+
+    .nav-list a:hover::before {
+      width: 26px;
+      opacity: 1;
+    }
+
+    @media (min-width: 900px) {
+      nav {
+        position: static;
+        inset: auto;
+        background: transparent;
+        backdrop-filter: none;
+        transform: none;
+        display: block;
+      }
+      .nav-list {
+        display: flex;
+        gap: 24px;
+      }
+      .nav-list li + li {
+        margin-top: 0;
+      }
+      .nav-list a {
+        font-size: 12px;
+        letter-spacing: 0.18em;
+        padding-left: 0;
+      }
+      .nav-list a::before {
+        display: none;
+      }
+      .nav-toggle {
+        display: none;
+      }
+      .header-inner {
+        background: linear-gradient(
+          to bottom,
+          rgba(5, 7, 15, 0.9),
+          rgba(5, 7, 15, 0)
+        );
+      }
+    }
+
+    /* HERO – estilo sección principal MegaOne */
+
     #inicio {
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:24px;
-      align-items:center;
+      min-height: 100vh;
+      padding-top: 110px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      gap: 40px;
+      align-items: center;
     }
 
-    .hero-card {
-      border:1px solid rgba(0,240,255,.2);
-      background:rgba(5,8,16,.95);
-      padding:0;
-    }
-    .hero-photo img { width:100%; height:auto; display:block; }
-
-    .hero-badge {
-      position:absolute;
-      background:rgba(5,8,16,.8);
-      border:1px solid var(--primary);
-      color:var(--primary);
-      padding:6px 12px;
-      text-transform:uppercase;
-      font-size:11px;
+    .hero-left {
+      position: relative;
+      display: flex;
+      justify-content: center;
     }
 
-    .hero-content .hero-title {
-      font-size:clamp(28px,4vw,42px);
-      margin-bottom:10px;
+    .hero-photo-frame {
+      border: 1px solid rgba(0, 240, 255, 0.6);
+      background: linear-gradient(145deg, #05060c, #070b16);
+      box-shadow: var(--shadow-soft);
+      padding: 10px;
+      width: 100%;
+      max-width: 430px;
     }
-    .hero-title span { color:var(--primary); }
 
-    .hero-tags span {
-      font-size:10px; padding:6px 8px;
-      border:1px solid rgba(0,240,255,.3);
-      margin-right:6px;
-      text-transform:uppercase;
-      color:var(--muted);
+    .hero-photo-inner {
+      border: 1px solid rgba(0, 240, 255, 0.35);
+      overflow: hidden;
+      background: #05060a;
+    }
+
+    .hero-photo-inner img {
+      width: 100%;
+      height: auto;
+      transform: scale(1.02);
+      transition: transform 0.6s ease-out;
+    }
+
+    .hero-photo-frame:hover img {
+      transform: scale(1.05) translateY(-4px);
+    }
+
+    .hero-right {
+      padding-right: 8px;
+    }
+
+    .hero-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.32em;
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .hero-title {
+      font-size: clamp(32px, 4vw, 44px);
+      font-weight: 600;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    .hero-title span {
+      color: var(--primary);
+      text-shadow: 0 0 18px rgba(0, 240, 255, 0.7);
+    }
+
+    .hero-subtitle {
+      font-size: 14px;
+      color: var(--muted);
+      max-width: 480px;
+      margin-bottom: 18px;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 22px;
+    }
+
+    .hero-tag {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      padding: 6px 10px;
+      border: 1px solid rgba(0, 240, 255, 0.3);
+      background: rgba(5, 7, 15, 0.9);
+      color: var(--muted);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
     }
 
     .btn {
-      padding:10px 16px;
-      border:1px solid var(--primary);
-      cursor:pointer;
-      font-size:13px;
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
+      border: 1px solid transparent;
+      padding: 10px 18px;
+      font-size: 13px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      transition: background var(--transition), color var(--transition),
+        border-color var(--transition), transform 0.16s ease-out,
+        box-shadow 0.16s ease-out;
+      white-space: nowrap;
     }
+
     .btn-primary {
-      background:var(--primary);
-      color:#000;
+      background: var(--primary);
+      color: #020308;
+      border-color: var(--primary);
+      box-shadow: 0 18px 40px rgba(0, 240, 255, 0.45);
     }
 
-    /* Sections */
-    .section-border-card {
-      padding:18px;
-      border:1px solid rgba(0,240,255,.18);
-      background:rgba(5,8,16,.9);
-      margin-bottom:60px;
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 26px 60px rgba(0, 240, 255, 0.6);
     }
 
-    .services-grid {
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:16px;
+    .btn-outline {
+      border-color: rgba(0, 240, 255, 0.6);
+      color: var(--primary);
+      background: rgba(5, 7, 15, 0.85);
+    }
+
+    .btn-outline:hover {
+      background: rgba(0, 240, 255, 0.1);
+      color: var(--text);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .hero-meta-item span:first-child {
+      display: block;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: rgba(143, 155, 179, 0.9);
+    }
+
+    .hero-meta-item span:last-child {
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .hero-meta a {
+      color: var(--primary);
+    }
+
+    @media (max-width: 900px) {
+      #inicio {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero-left {
+        order: -1;
+      }
+      .hero-right {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    /* Títulos de sección tipo MegaOne */
+
+    .section-header {
+      text-align: left;
+      margin-bottom: 30px;
+    }
+
+    .section-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .section-title {
+      font-size: 24px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .section-sub {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 4px;
+      max-width: 420px;
+    }
+
+    /* Bloques tipo panel recto */
+
+    .panel {
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+      padding: 24px 20px;
+    }
+
+    /* Servicios – grid como “features” MegaOne */
+
+    #servicios .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
     }
 
     .service-card {
-      border:1px solid rgba(0,240,255,.18);
-      padding:16px;
-      background:#050812;
+      background: var(--bg-alt);
+      border: 1px solid rgba(0, 240, 255, 0.25);
+      padding: 18px 14px;
+      transition: border-color var(--transition), transform var(--transition),
+        box-shadow var(--transition), background var(--transition);
     }
 
-    .timeline { display:flex; flex-direction:column; gap:18px; }
-
-    .appearance-grid {
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:12px;
+    .service-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-4px);
+      box-shadow: 0 22px 50px rgba(0, 240, 255, 0.3);
+      background: #0d1224;
     }
 
-    .appearance-card {
-      border:1px solid rgba(0,240,255,.4);
-      padding:12px;
+    .service-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: rgba(143, 155, 179, 0.9);
+      margin-bottom: 8px;
     }
 
-    .contact-layout {
-      display:grid;
-      grid-template-columns:1.5fr 1fr;
-      gap:20px;
+    .service-title {
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 6px;
     }
 
-    .contact-card {
-      border:1px solid rgba(0,240,255,.22);
-      background:rgba(5,8,16,.95);
-      padding:16px;
+    .service-text {
+      font-size: 12px;
+      color: var(--muted);
     }
+
+    @media (max-width: 980px) {
+      #servicios .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      #servicios .services-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    /* Carrera – timeline simple, estilo MegaOne timeline “cards” */
+
+    #mi-carrera .career-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr);
+      gap: 26px;
+      align-items: start;
+    }
+
+    .career-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .career-item {
+      padding: 14px 12px;
+      border: 1px solid rgba(0, 240, 255, 0.25);
+      background: var(--bg-alt);
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+      gap: 10px;
+      font-size: 13px;
+    }
+
+    .career-role {
+      font-weight: 500;
+      margin-bottom: 2px;
+    }
+
+    .career-company {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .career-meta {
+      text-align: right;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .career-tag {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--primary);
+    }
+
+    .career-stats {
+      padding: 16px 14px;
+      border: 1px solid rgba(0, 240, 255, 0.35);
+      background: linear-gradient(
+        160deg,
+        rgba(0, 240, 255, 0.22),
+        rgba(5, 7, 15, 0.95)
+      );
+      font-size: 13px;
+    }
+
+    .career-stats h3 {
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      margin-bottom: 8px;
+    }
+
+    .career-stat-highlight {
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--primary);
+      margin: 8px 0;
+    }
+
+    @media (max-width: 900px) {
+      #mi-carrera .career-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .career-item {
+        grid-template-columns: minmax(0, 1fr);
+        text-align: left;
+      }
+      .career-meta {
+        text-align: left;
+      }
+    }
+
+    /* Apariciones – 3 columnas como “portfolio summary” */
+
+    #apariciones .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .app-card {
+      border: 1px solid rgba(0, 240, 255, 0.25);
+      background: var(--bg-alt);
+      padding: 16px 12px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .app-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+
+    .app-title {
+      font-size: 13px;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    @media (max-width: 900px) {
+      #apariciones .apps-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+      #apariciones .apps-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    /* Contacto – estilo “Contact Me” MegaOne */
+
+    #contacto .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr);
+      gap: 26px;
+      align-items: start;
+    }
+
+    .contact-main p {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .contact-main .email {
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+
+    .contact-main .email a {
+      color: var(--primary);
+      font-weight: 500;
+    }
+
+    .contact-flags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .contact-flag {
+      padding: 6px 10px;
+      border: 1px solid rgba(0, 240, 255, 0.3);
+      background: rgba(5, 7, 15, 0.95);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .contact-side {
+      border: 1px solid rgba(0, 240, 255, 0.28);
+      background: linear-gradient(
+        150deg,
+        rgba(0, 240, 255, 0.16),
+        rgba(4, 6, 16, 0.98)
+      );
+      padding: 18px 16px;
+      font-size: 12px;
+    }
+
+    .contact-side h3 {
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-bottom: 8px;
+    }
+
+    .contact-side small {
+      color: var(--muted);
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .contact-side ul {
+      list-style: none;
+    }
+
+    .contact-side li + li {
+      margin-top: 6px;
+    }
+
+    @media (max-width: 900px) {
+      #contacto .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    /* Footer */
 
     footer {
-      margin-top:40px;
-      padding-top:12px;
-      border-top:1px solid var(--border);
-      color:var(--muted);
-      font-size:11px;
-      display:flex; justify-content:space-between;
+      border-top: 1px solid var(--border);
+      margin-top: 40px;
+      padding-top: 16px;
+      font-size: 11px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
-    /* Responsive */
-    @media(max-width:880px){
-      #inicio { grid-template-columns:1fr; }
-      .services-grid { grid-template-columns:1fr; }
-      .appearance-grid { grid-template-columns:1fr 1fr; }
-      .contact-layout { grid-template-columns:1fr; }
-    }
-    @media(max-width:620px){
-      .appearance-grid { grid-template-columns:1fr; }
+    .footer-tag {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--primary);
     }
   </style>
 </head>
-
 <body>
-  <!-- Floating dots -->
-  <div class="floating-dots">
-    <div class="dot" style="top:10%;left:8%;"></div>
-    <div class="dot" style="top:60%;left:15%;"></div>
-    <div class="dot" style="top:30%;right:10%;"></div>
-    <div class="dot" style="top:80%;right:20%;"></div>
-  </div>
+  <div class="bg-orbit"></div>
+  <div class="glow-pulse g1"></div>
+  <div class="glow-pulse g2"></div>
 
-  <div class="page-wrapper" style="max-width:1200px;margin:auto;padding:16px;">
+  <!-- Header -->
+  <header>
+    <div class="header-inner">
+      <!-- Hamburger left -->
+      <button
+        class="nav-toggle"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+      >
+        <span></span>
+      </button>
 
-    <header>
-      <div class="header-inner">
+      <!-- Nav (overlay / desktop inline) -->
+      <nav aria-label="Navegación principal">
+        <ul class="nav-list">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#mi-carrera">Mi Carrera</a></li>
+          <li><a href="#apariciones">Apariciones</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
 
-        <button class="nav-toggle" aria-expanded="false">
-          <span></span>
-        </button>
+      <!-- Logo NGE right -->
+      <div class="logo">NGE</div>
+    </div>
+  </header>
 
-        <nav>
-          <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#mi-carrera">Mi Carrera</a></li>
-            <li><a href="#apariciones">Apariciones</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-          </ul>
-        </nav>
-
-        <div class="logo" style="
-          padding:8px 14px;
-          border:1px solid rgba(0,240,255,.4);
-          font-weight:700;
-          letter-spacing:2px;
-        ">
-          NGE
-        </div>
-      </div>
-    </header>
-
-    <main>
-
-      <!-- HERO -->
-      <section id="inicio">
-        <div class="hero-card" style="position:relative;">
-          <div class="hero-badge">Global CISO · +20 años</div>
-          <div class="hero-photo">
-            <img src="https://via.placeholder.com/500x600" alt="">
+  <main class="page">
+    <!-- HERO -->
+    <section id="inicio">
+      <div class="hero-left">
+        <div class="hero-photo-frame">
+          <div class="hero-photo-inner">
+            <img
+              src="https://via.placeholder.com/500x600"
+              alt="Retrato de Nacho García Egea"
+            />
           </div>
         </div>
+      </div>
 
-        <div class="hero-content">
-          <h1 class="hero-title">
-            Nacho García Egea<br>
-            <span>Global CISO | Startup Advisor | Mentor de nuevos talentos | Hacker</span>
-          </h1>
+      <div class="hero-right">
+        <div class="hero-kicker">Seguridad · Estrategia · Velocidad</div>
+        <h1 class="hero-title">
+          Nacho García Egea<br />
+          <span>
+            Global CISO | Startup Advisor | Mentor de nuevos talentos | Hacker
+          </span>
+        </h1>
+        <p class="hero-subtitle">
+          Diseño funciones de ciberseguridad que entienden el P&amp;L, acompañan
+          al producto y preparan a tu organización para conversaciones serias
+          con clientes, inversores y comités.
+        </p>
 
-          <p style="color:var(--muted);max-width:420px;">
-            Seguridad que entiende de negocio, velocidad y estrategia. Diseño funciones de ciberseguridad sin fricción y preparo startups para due diligence exigentes.
+        <div class="hero-tags">
+          <span class="hero-tag">CISO Global</span>
+          <span class="hero-tag">Startups &amp; hypergrowth</span>
+          <span class="hero-tag">Board &amp; advisory</span>
+        </div>
+
+        <div class="hero-actions">
+          <a
+            href="https://cal.com/nachogarciaegea/15min"
+            class="btn btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>➤</span> 15 min · Intro Call
+          </a>
+          <a
+            href="https://cal.com/nachogarciaegea/45min"
+            class="btn btn-outline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            45 min · Deep Dive
+          </a>
+        </div>
+
+        <div class="hero-meta">
+          <div class="hero-meta-item">
+            <span>Actual</span>
+            <span>Global CISO · Grupo Gigas (2023 - presente)</span>
+          </div>
+          <div class="hero-meta-item">
+            <span>Contacto</span>
+            <span>
+              <a href="mailto:ignaciojose.garciaegea@gmail.com">
+                ignaciojose.garciaegea@gmail.com
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios">
+      <div class="section-header">
+        <div class="section-kicker">Qué hago</div>
+        <h2 class="section-title">Servicios</h2>
+        <p class="section-sub">
+          Trabajo donde negocio, tecnología y riesgo se cruzan. Sin teatro,
+          sin FUD, con foco en decisiones accionables.
+        </p>
+      </div>
+
+      <div class="panel">
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-label">Mentoría</div>
+            <h3 class="service-title">Mentoría Ciberseguridad</h3>
+            <p class="service-text">
+              Acompaño a CISOs, futuros CISOs y perfiles clave para acelerar
+              criterio, visibilidad ejecutiva y decisiones de carrera.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-label">Startups</div>
+            <h3 class="service-title">Startup Advisor</h3>
+            <p class="service-text">
+              Hacemos que tu producto sea confiable, auditable y listo para
+              due diligence exigentes sin frenar el roadmap.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-label">Fractional CISO</div>
+            <h3 class="service-title">CISO Services</h3>
+            <p class="service-text">
+              Diseño y lidero la función de ciberseguridad alineada a negocio,
+              con foco en priorización y ejecución pragmática.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-label">Board</div>
+            <h3 class="service-title">Board Advisory</h3>
+            <p class="service-text">
+              Traducción directa de riesgos técnicos a decisiones de inversión,
+              apetito de riesgo y narrativa para consejo.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CARRERA -->
+    <section id="mi-carrera">
+      <div class="section-header">
+        <div class="section-kicker">Trayectoria</div>
+        <h2 class="section-title">Mi Carrera</h2>
+        <p class="section-sub">
+          +20 años viendo cómo la tecnología cambia el negocio, a veces con
+          explosiones controladas.
+        </p>
+      </div>
+
+      <div class="career-grid">
+        <div class="career-list">
+          <article class="career-item">
+            <div>
+              <div class="career-role">Global CISO</div>
+              <div class="career-company">Grupo Gigas</div>
+            </div>
+            <div class="career-meta">
+              <div>2023&nbsp;– presente</div>
+              <div class="career-tag">Cloud · Telco · Servicios</div>
+            </div>
+          </article>
+
+          <article class="career-item">
+            <div>
+              <div class="career-role">Ciberseguridad &amp; Servicios</div>
+              <div class="career-company">A3Sec</div>
+            </div>
+            <div class="career-meta">
+              <div>2020&nbsp;– 2023</div>
+              <div class="career-tag">SOC · Detección &amp; Respuesta</div>
+            </div>
+          </article>
+
+          <article class="career-item">
+            <div>
+              <div class="career-role">+20 años navegando el caos digital</div>
+              <div class="career-company">
+                Telco, servicios gestionados, cloud, startups y algo de fuego
+                amigo.
+              </div>
+            </div>
+            <div class="career-meta">
+              <div>2000s&nbsp;– hoy</div>
+              <div class="career-tag">CISO · Arquitecto · Advisor</div>
+            </div>
+          </article>
+        </div>
+
+        <aside class="career-stats">
+          <h3>Experiencia</h3>
+          <div class="career-stat-highlight">20+ años</div>
+          <p>
+            Combinando visión estratégica y manos en el barro: desde operaciones
+            de seguridad hasta conversaciones de board.
+          </p>
+          <p style="margin-top:10px;">
+            He visto programas de seguridad romper negocio y programas de
+            negocio romper seguridad. El punto óptimo está justo en medio.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- APARICIONES -->
+    <section id="apariciones">
+      <div class="section-header">
+        <div class="section-kicker">Visibilidad</div>
+        <h2 class="section-title">Apariciones</h2>
+        <p class="section-sub">
+          Espacios donde hablo de ciberseguridad aplicada, liderazgo técnico y
+          cómo no aburrir a un comité con un slide de CVEs.
+        </p>
+      </div>
+
+      <div class="panel">
+        <div class="apps-grid">
+          <article class="app-card">
+            <div class="app-label">Próximamente</div>
+            <div class="app-title">Conferencias y paneles</div>
+            <p>
+              Sesiones centradas en negocio donde la seguridad es parte del
+              lenguaje, no la nota al pie.
+            </p>
+          </article>
+
+          <article class="app-card">
+            <div class="app-label">Formatos</div>
+            <div class="app-title">Keynotes &amp; sesiones privadas</div>
+            <p>
+              Charlas abiertas, workshops para equipos de producto y sesiones
+              cerradas para comités y consejo.
+            </p>
+          </article>
+
+          <article class="app-card">
+            <div class="app-label">Estilo</div>
+            <div class="app-title">Menos FUD, más contexto</div>
+            <p>
+              Datos, riesgo y trade-offs reales. Nada de “el mundo se acaba”
+              sin un plan debajo.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto">
+      <div class="section-header">
+        <div class="section-kicker">Siguiente paso</div>
+        <h2 class="section-title">Contacto</h2>
+        <p class="section-sub">
+          Si quieres que la seguridad acompañe la velocidad del negocio,
+          aquí es donde empezamos la conversación.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-main panel">
+          <p>
+            Trabajo con equipos que quieren claridad, criterio y una visión de
+            ciberseguridad que no viva aislada en un PDF de políticas.
+          </p>
+          <p class="email">
+            Email:
+            <a href="mailto:ignaciojose.garciaegea@gmail.com">
+              ignaciojose.garciaegea@gmail.com
+            </a>
           </p>
 
-          <div class="hero-tags" style="margin:16px 0;">
-            <span>Estrategia CISO</span>
-            <span>Due Diligence</span>
-            <span>Startups</span>
+          <div class="contact-flags">
+            <span class="contact-flag">Remoto / Híbrido</span>
+            <span class="contact-flag">Enfoque internacional</span>
+            <span class="contact-flag">Hands-on &amp; ejecutivo</span>
           </div>
 
           <div class="hero-actions">
-            <a href="https://cal.com/nachogarciaegea/15min" class="btn btn-primary" target="_blank">➤ 15 min Intro</a>
-            <a href="https://cal.com/nachogarciaegea/45min" class="btn" target="_blank">45 min Deep Dive</a>
+            <a
+              href="https://cal.com/nachogarciaegea/15min"
+              class="btn btn-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>➤</span> 15 min · Intro Call
+            </a>
+            <a
+              href="https://cal.com/nachogarciaegea/45min"
+              class="btn btn-outline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              45 min · Deep Dive
+            </a>
           </div>
         </div>
-      </section>
 
-      <!-- SERVICIOS -->
-      <section id="servicios">
-        <div class="section-border-card">
-          <h2 style="margin-bottom:16px;">Servicios</h2>
-          <div class="services-grid">
-            <div class="service-card">
-              <h3>Mentoría Ciberseguridad</h3>
-              <p>Aceleración de carrera y criterio ejecutivo.</p>
-            </div>
-            <div class="service-card">
-              <h3>Startup Advisor</h3>
-              <p>Madurez de producto y seguridad para escalar sin fricción.</p>
-            </div>
-            <div class="service-card">
-              <h3>CISO Services</h3>
-              <p>Función de seguridad operativa sin inflar estructuras.</p>
-            </div>
-            <div class="service-card">
-              <h3>Board Advisory</h3>
-              <p>Riesgos técnicos traducidos a decisiones reales.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+        <aside class="contact-side">
+          <h3>Cómo trabajo</h3>
+          <small>
+            No vendo humo, ni checklists vacíos. Hacemos diseño de seguridad
+            que pueda explicarse a negocio en 5 minutos.
+          </small>
+          <ul>
+            <li>· Reuniones con agenda clara y siguiente paso definido.</li>
+            <li>· Métricas que entienden producto, ventas y board.</li>
+            <li>· Decisiones explícitas de riesgo, no implícitas.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
 
-      <!-- CARRERA -->
-      <section id="mi-carrera">
-        <div class="section-border-card">
-          <h2>Mi Carrera</h2>
-          <div class="timeline">
-            <div>
-              <strong>Global CISO · Grupo Gigas</strong> (2023–presente)
-            </div>
-            <div>
-              <strong>A3Sec</strong> (2020–2023)
-            </div>
-            <div>
-              <strong>+20 años</strong> en ciberseguridad, cloud, Telco y startups.
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- APARICIONES -->
-      <section id="apariciones">
-        <div class="section-border-card">
-          <h2>Apariciones</h2>
-          <div class="appearance-grid" style="margin-top:14px;">
-            <div class="appearance-card">Conferencias y paneles (Próximamente)</div>
-            <div class="appearance-card">Formatos: keynotes y comités</div>
-            <div class="appearance-card">Enfoque: datos, impacto y claridad</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- CONTACTO -->
-      <section id="contacto">
-        <div class="section-border-card contact-layout">
-          <div>
-            <p>¿Necesitas una visión estratégica de ciberseguridad con aterrizaje directo en negocio? Hablemos.</p>
-            <p>Email: <a href="mailto:ignaciojose.garciaegea@gmail.com">ignaciojose.garciaegea@gmail.com</a></p>
-
-            <div class="hero-actions" style="margin-top:12px;">
-              <a href="https://cal.com/nachogarciaegea/15min" class="btn btn-primary" target="_blank">➤ 15 min Intro</a>
-              <a href="https://cal.com/nachogarciaegea/45min" class="btn" target="_blank">45 min Deep Dive</a>
-            </div>
-          </div>
-
-          <div class="contact-card">
-            <h3>Cómo trabajo</h3>
-            <small>Claridad, foco y decisiones accionables.</small>
-            <ul>
-              <li>· Métricas entendibles.</li>
-              <li>· Sin buzzwords.</li>
-              <li>· Conexión directa con negocio.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-    </main>
-
+    <!-- FOOTER -->
     <footer>
-      <span>NGE · Fluorescencia operativa</span>
-      <span>© <span id="year"></span> Nacho García Egea</span>
+      <div class="footer-tag">NGE · Azul fluorescente</div>
+      <div>© <span id="year"></span> Nacho García Egea. Seguridad con propósito.</div>
     </footer>
-
-  </div>
+  </main>
 
   <script>
+    // Año dinámico
     document.getElementById("year").textContent = new Date().getFullYear();
 
+    // Toggle menú móvil
     const navToggle = document.querySelector(".nav-toggle");
+    const body = document.body;
+
     navToggle.addEventListener("click", () => {
-      document.body.classList.toggle("nav-open");
+      const open = body.classList.toggle("nav-open");
+      navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+
+    // Cerrar menú al hacer clic en un enlace
+    const navLinks = document.querySelectorAll("nav a[href^='#']");
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        if (body.classList.contains("nav-open")) {
+          body.classList.remove("nav-open");
+          navToggle.setAttribute("aria-expanded", "false");
+        }
+      });
     });
   </script>
 </body>
