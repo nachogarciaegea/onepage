@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentoría en Tecnología y Negocios Digitales</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header / Hero Section */
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            margin-bottom: 40px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Content Sections */
+        section {
+            background: white;
+            margin: 40px 0;
+            padding: 60px 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #667eea;
+            text-align: center;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            padding: 30px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #764ba2;
+        }
+
+        /* Booking Section */
+        .booking-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .booking-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .booking-card:hover {
+            transform: scale(1.05);
+        }
+
+        .booking-card h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .booking-card .price {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .booking-card ul {
+            list-style: none;
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .booking-card li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .booking-card li:before {
+            content: "✓ ";
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text ul {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .about-text li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .about-text li:before {
+            content: "▶";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+        }
+
+        /* Contact Section */
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .contact-link {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>🚀 Impulsa tu Carrera Digital</h1>
+            <p>Mentoría personalizada en tecnología, marketing digital y negocios online</p>
+            <a href="#reservar" class="cta-button">Reserva tu Sesión</a>
+        </div>
+
+        <!-- Servicios -->
+        <section id="servicios">
+            <h2>Servicios de Mentoría</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>💻 Desarrollo Web</h3>
+                    <p>HTML, CSS, JavaScript y frameworks modernos. Aprende a crear proyectos web profesionales desde cero.</p>
+                </div>
+                <div class="service-card">
+                    <h3>📊 Marketing Digital</h3>
+                    <p>Estrategias de marketing de afiliados, SEO, y optimización de conversiones para maximizar resultados.</p>
+                </div>
+                <div class="service-card">
+                    <h3>☁️ Cloud & Infraestructura</h3>
+                    <p>Arquitectura cloud, hosting, seguridad y mejores prácticas para escalar tu negocio digital.</p>
+                </div>
+                <div class="service-card">
+                    <h3>📈 E-commerce</h3>
+                    <p>Construye y optimiza tu tienda online. Estrategias de producto, conversión y growth hacking.</p>
+                </div>
+                <div class="service-card">
+                    <h3>🎯 Estrategia de Negocio</h3>
+                    <p>Planificación, análisis de mercado y modelos de negocio para emprendedores digitales.</p>
+                </div>
+                <div class="service-card">
+                    <h3>🤖 IA & Automatización</h3>
+                    <p>Cómo usar herramientas de IA para optimizar procesos y aumentar productividad.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reservar Sesión -->
+        <section id="reservar">
+            <h2>Elige tu Sesión</h2>
+            <div class="booking-options">
+                <div class="booking-card">
+                    <h3>💬 Consulta Inicial</h3>
+                    <div class="price">GRATIS</div>
+                    <ul>
+                        <li>15 minutos</li>
+                        <li>Conocernos</li>
+                        <li>Evaluar tus necesidades</li>
+                        <li>Orientación inicial</li>
+                    </ul>
+                    <a href="https://cal.com/tu-usuario/15min" class="cta-button" style="margin-top: 20px;">Reservar Gratis</a>
+                </div>
+                <div class="booking-card">
+                    <h3>🔥 Sesión Completa</h3>
+                    <div class="price">PAGO</div>
+                    <ul>
+                        <li>45 minutos</li>
+                        <li>Análisis profundo</li>
+                        <li>Estrategia personalizada</li>
+                        <li>Plan de acción</li>
+                        <li>Seguimiento post-sesión</li>
+                    </ul>
+                    <a href="https://cal.com/tu-usuario/45min" class="cta-button" style="margin-top: 20px;">Reservar Ahora</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sobre Mí -->
+        <section id="sobre-mi">
+            <h2>Sobre Mí</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Emprendedor digital y estratega de negocios con experiencia en:</p>
+                    <ul>
+                        <li>Marketing de afiliados y e-commerce</li>
+                        <li>Desarrollo web y diseño</li>
+                        <li>Infraestructura cloud y ciberseguridad</li>
+                        <li>Optimización de conversiones</li>
+                        <li>Estrategias de crecimiento digital</li>
+                    </ul>
+                    <p style="margin-top: 20px;">Mi objetivo es ayudarte a construir y escalar tu negocio digital de forma efectiva y sostenible.</p>
+                </div>
+                <div style="text-align: center; font-size: 10em;">👨‍💻</div>
+            </div>
+        </section>
+
+        <!-- Contacto -->
+        <section id="contacto">
+            <h2>Conecta Conmigo</h2>
+            <p style="text-align: center; margin-bottom: 20px;">Encuentra todos mis enlaces y recursos en un solo lugar</p>
+            <div class="contact-links">
+                <a href="https://linktr.ee/tu-usuario" class="contact-link" target="_blank">🔗 Linktree</a>
+                <a href="mailto:ignaciojose.garciaegea@gmail.com" class="contact-link">📧 Email</a>
+                <a href="https://linkedin.com/in/tu-perfil" class="contact-link" target="_blank">👤 LinkedIn</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Mentoría Digital. Construyendo el futuro juntos.</p>
+    </footer>
+</body>
+</html>
