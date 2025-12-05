@@ -15,30 +15,30 @@
             box-sizing: border-box;
         }
         
-        :root {
+                :root {
             --primary: #00d4ff;
             --secondary: #0099cc;
-            --dark: #1a1a2e;
-            --light: #f5f5f5;
+            --dark: #0a0e27;
+            --darker: #050812;
+            --light: #1a1f3a;
             --white: #ffffff;
-            --text: #333333;
-            --gray: #6c757d;
+            --text: #e8e8e8;
+            --gray: #a0a0a0;
         }
-        
-        body {
+                body {
             font-family: 'Poppins', sans-serif;
             line-height: 1.6;
             color: var(--text);
+            background: var(--darker);
             overflow-x: hidden;
-        }
+        }}
         
         /* HEADER */
         header {
             position: fixed;
             top: 0;
             width: 100%;
-            background: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: var(--dark);            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             z-index: 1000;
             transition: all 0.3s ease;
         }
@@ -55,8 +55,7 @@
         .logo {
             font-size: 1.8rem;
             font-weight: 700;
-            color: var(--dark);
-            text-decoration: none;
+            color: var(--white);            text-decoration: none;
         }
         
         .nav-links {
@@ -80,8 +79,7 @@
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: var(--white);
             padding: 0.8rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
+            border-radius: 8px;            text-decoration: none;
             font-weight: 600;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
@@ -114,8 +112,7 @@
         .hero-content h1 {
             font-size: 3.5rem;
             font-weight: 700;
-            color: var(--dark);
-            margin-bottom: 1rem;
+            color: var(--white);            margin-bottom: 1rem;
             line-height: 1.2;
         }
         
@@ -141,8 +138,7 @@
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: var(--white);
             padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
+            border-radius: 8px;            text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
         }
@@ -154,11 +150,8 @@
         
         .btn-secondary {
             background: transparent;
-            color: var(--dark);
-            padding: 1rem 2.5rem;
-            border: 2px solid var(--dark);
-            border-radius: 50px;
-            text-decoration: none;
+            color: var(--white);            padding: 1rem 2.5rem;
+            border: 2px solid var(--white);            border-radius: 8px;            text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
         }
@@ -207,15 +200,13 @@
         /* SERVICES SECTION */
         .services {
             padding: 6rem 2rem;
-            background: var(--light);
-        }
+            background: var(--dark);        }
         
         .section-title {
             text-align: center;
             font-size: 2.5rem;
             font-weight: 700;
-            color: var(--dark);
-            margin-bottom: 1rem;
+            color: var(--white);            margin-bottom: 1rem;
         }
         
         .section-subtitle {
