@@ -79,8 +79,7 @@
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: var(--white);
             padding: 0.8rem 2rem;
-            border-radius: 8px;            text-decoration: none;
-            font-weight: 600;
+            border-radius: 00;              text-decoration: none;            font-weight: 600;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
@@ -138,7 +137,7 @@
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: var(--white);
             padding: 1rem 2.5rem;
-            border-radius: 8px;            text-decoration: none;
+            border-radius: 08px;            text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
         }
@@ -151,7 +150,7 @@
         .btn-secondary {
             background: transparent;
             color: var(--white);            padding: 1rem 2.5rem;
-            border: 2px solid var(--white);            border-radius: 8px;            text-decoration: none;
+            border: 2px solid var(--white);            border-radius: 08px;            text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
         }
@@ -168,14 +167,14 @@
         .hero-image img {
             width: 100%;
             max-width: 500px;
-            border-radius: 20px;
+            border-radius: 020px;
             position: relative;
             z-index: 2;
         }
         
         .shape-1, .shape-2 {
             position: absolute;
-            border-radius: 50%;
+            border-radius: 050%;
             z-index: 1;
         }
         
@@ -227,7 +226,7 @@
         .service-card {
             background: var(--white);
             padding: 3rem 2rem;
-            border-radius: 20px;
+            border-radius: 020px;
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
@@ -242,7 +241,7 @@
             height: 80px;
             margin: 0 auto 2rem;
             background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 50%;
+            border-radius: 050%;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -277,7 +276,7 @@
         .about-image img {
             width: 100%;
             max-width: 500px;
-            border-radius: 20px;
+            border-radius: 020px;
         }
         
         .about-content h2 {
@@ -498,5 +497,59 @@
         </p>
     </footer>
 
+
+        <script>
+        // Smooth scroll para los links de navegación
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animación de aparición al hacer scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Aplicar animación a elementos
+        document.querySelectorAll('.service-item, .stat-item, .testimonial-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Sticky header al hacer scroll
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.3)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            }
+            
+            lastScroll = currentScroll;
+        });
+    </script>
 </body>
 </html>
