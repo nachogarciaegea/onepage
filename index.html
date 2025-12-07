@@ -3,1641 +3,500 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nacho García Egea | Global CISO | Hacker | CyberSecurity Board Advisor | Mentor | Startup Mentor</title>    
-    <meta name="description" content="Programa de mentoría 1:1 para profesionales de ciberseguridad que quieren acelerar su carrera. De junior a senior, de técnico a líder. +20 años experiencia, +500 mentorizados.">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%2300f0ff'>X</text></svg>"/>    
+    <title>Nacho García Egea | Global CISO | Cybersecurity Advisor & Mentor</title>
+    <meta name="description" content="Experto en ciberseguridad con +20 años de experiencia. Global CISO, Startup Advisor y Mentor de nuevos talentos en el sector tecnológico.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
-        :root {
-            --black: #000000;
-            --white: #FFFFFF;
-            --gray: #808080;
-            --light-gray: #F5F5F5;
+        
+                :root {
+            --primary: #00d4ff;
+            --secondary: #0099cc;
+            --dark: #0a0e27;
+            --darker: #050812;
+            --light: #1a1f3a;
+            --white: #ffffff;
+            --text: #e8e8e8;
+            --gray: #a0a0a0;
         }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--black);
+                body {
+            font-family: 'Poppins', sans-serif;
             line-height: 1.6;
-            background: var(--white);
-        }
-
-        /* Header */
+            color: var(--text);
+            background: var(--darker);
+            overflow-x: hidden;
+        }}
+        
+        /* HEADER */
         header {
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 2rem 5%;
-            background: var(--white);
+            background: var(--dark);            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             z-index: 1000;
-            border-bottom: 1px solid var(--black);
+            transition: all 0.3s ease;
         }
-
-        .nav-container {
-            max-width: 1600px;
+        
+        nav {
+            max-width: 1200px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 1rem 2rem;
         }
-
+        
         .logo {
-            font-size: 1.5rem;
-            font-weight: 900;
-            color: var(--black);
-            text-decoration: none;
-            letter-spacing: -1px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);            text-decoration: none;
         }
-
-        nav ul {
-            list-style: none;
+        
+        .nav-links {
             display: flex;
-            gap: 3rem;
+            list-style: none;
+            gap: 2rem;
         }
-
-        nav a {
-            color: var(--black);
+        
+        .nav-links a {
             text-decoration: none;
+            color: var(--text);
             font-weight: 500;
-            font-size: 0.95rem;
-            transition: opacity 0.3s;
+            transition: color 0.3s ease;
         }
-
-        nav a:hover {
-            opacity: 0.5;
+        
+        .nav-links a:hover {
+            color: var(--primary);
         }
-
-        /* Hero */
+        
+        .cta-button {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            padding: 0.8rem 2rem;
+            border-radius: 8px;            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
+        }
+        
+        /* HERO SECTION */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: 8rem 5% 4rem;
-            background: var(--black);
-            color: var(--white);
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
         }
-
+        
         .hero-container {
-            max-width: 1600px;
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        .hero-label {
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 2rem;
-            opacity: 0.7;
-        }
-
-        .hero h1 {
-            font-            font-size: 1.5rem;
-            font-weight: 500;
-            line-height: 1.5;
-            margin-bottom: 2rem;
-            color: var(--light-gray);
-            display: inline;
-
-        .hero-subtitle {
-            font-size: clamp(1.5rem, 3vw, 3rem);
-            font-weight: 300;
-            max-width: 900px;
-            margin-bottom: 4rem;
-            line-height: 1.4;
-        }
-
-        .hero-cta {
-            display: flex;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 1.2rem 3rem;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            transition: all 0.3s;
-            display: inline-block;
-        }
-
-        .btn-white {
-            background: var(--white);
-            color: var(--black);
-        }
-
-        .btn-white:hover {
-            background: transparent;
-            color: var(--white);
-            border: 2px solid var(--white);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--white);
-            border: 2px solid var(--white);
-        }
-
-        .btn-outline:hover {
-            background: var(--white);
-            color: var(--black);
-        }
-
-        .btn-black {
-            background: var(--black);
-            color: var(--white);
-            border: 2px solid var(--black);
-        }
-
-        .btn-black:hover {
-            background: var(--white);
-            color: var(--black);
-        }
-
-        /* Stats */
-        .stats {
-            padding: 8rem 5%;
-            background: var(--white);
-            border-bottom: 1px solid var(--black);
-        }
-
-        .stats-container {
-            max-width: 1600px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 4rem;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: clamp(4rem, 6vw, 8rem);
-            font-weight: 900;
-            line-height: 1;
-            margin-bottom: 1rem;
-        }
-
-        .stat-label {
-            font-size: 1rem;
-            font-weight: 500;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        /* Mission */
-        .mission {
-            padding: 12rem 5%;
-            background: var(--black);
-            color: var(--white);
-            text-align: center;
-        }
-
-        .mission-container {
             max-width: 1200px;
             margin: 0 auto;
-        }
-
-        .mission h2 {
-            font-size: clamp(3rem, 6vw, 6rem);
-            font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 3rem;
-        }
-
-        .mission p {
-            font-size: clamp(1.2rem, 2vw, 1.8rem);
-            line-height: 1.6;
-            font-weight: 300;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        /* Services */
-        .services {
-            padding: 8rem 5%;
-            background: var(--white);
-        }
-
-        .services-container {
-            max-width: 1600px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            margin-bottom: 6rem;
-        }
-
-        .section-label {
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 2rem;
-        }
-
-        .section-title {
-            font-size: clamp(3rem, 5vw, 5rem);
-            font-weight: 900;
-            line-height: 1.1;
-        }
-
-        .services-grid {
+            padding: 2rem;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 0;
-            border: 1px solid var(--black);
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
         }
-
-        .service-card {
-            padding: 4rem;
-            border-right: 1px solid var(--black);
-            border-bottom: 1px solid var(--black);
-            transition: all 0.3s;
-            background: var(--white);
-        }
-
-        .service-card:hover {
-            background: var(--black);
-            color: var(--white);
-        }
-
-        .service-number {
-            font-size: 1rem;
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
             font-weight: 700;
-            margin-bottom: 2rem;
-            opacity: 0.5;
-        }
-
-        .service-title {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
+            color: var(--white);            margin-bottom: 1rem;
             line-height: 1.2;
         }
-
-        .service-description {
-            font-size: 1rem;
-            line-height: 1.7;
-            opacity: 0.8;
+        
+        .hero-content .subtitle {
+            font-size: 1.5rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
         }
-
-        /* Mentorship Focus */
-        .mentorship {
-            padding: 12rem 5%;
-            background: var(--light-gray);
+        
+        .hero-content p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
         }
-
-        .mentorship-container {
-            max-width: 1400px;
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            border-radius: 8px;            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 212, 255, 0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);            padding: 1rem 2.5rem;
+            border: 2px solid var(--white);            border-radius: 8px;            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--dark);
+            color: var(--white);
+        }
+        
+        .hero-image {
+            position: relative;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .shape-1, .shape-2 {
+            position: absolute;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .shape-1 {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            top: -50px;
+            right: -50px;
+            opacity: 0.3;
+        }
+        
+        .shape-2 {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            bottom: -50px;
+            left: -50px;
+            opacity: 0.2;
+        }
+        
+        /* SERVICES SECTION */
+        .services {
+            padding: 6rem 2rem;
+            background: var(--dark);        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--white);            margin-bottom: 1rem;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 4rem;
+        }
+        
+        .services-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+        
+        .service-card {
+            background: var(--white);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 2rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .service-card p {
+            color: var(--gray);
+            line-height: 1.8;
+        }
+        
+        /* ABOUT SECTION */
+        .about {
+            padding: 6rem 2rem;
+        }
+        
+        .about-container {
+            max-width: 1200px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 6rem;
-            align-items: center;
-        }
-
-        .mentorship-content h2 {
-            font-size: clamp(3rem, 5vw, 5rem);
-            font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 2rem;
-        }
-
-        .mentorship-text {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            margin-bottom: 2rem;
-        }
-
-        .mentorship-list {
-            list-style: none;
-            margin: 3rem 0;
-        }
-
-        .mentorship-list li {
-            font-size: 1.1rem;
-            padding: 1.5rem 0;
-            border-bottom: 1px solid var(--black);
-            font-weight: 500;
-        }
-
-        .mentorship-list li:last-child {
-            border-bottom: none;
-        }
-
-        .mentorship-image {
-            aspect-ratio: 3/4;
-            background: var(--black);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .mentorship-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.9;
-        }
-
-        /* Experience */
-        .experience {
-            padding: 8rem 5%;
-            background: var(--white);
-        }
-
-        .experience-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .timeline-item {
-            padding: 4rem 0;
-            border-bottom: 1px solid var(--black);
-        }
-
-        .timeline-item:last-child {
-            border-bottom: none;
-        }
-
-        .timeline-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .timeline-company {
-            font-size: 2.5rem;
-            font-weight: 900;
-        }
-
-        .timeline-date {
-            font-size: 1rem;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .timeline-role {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-        }
-
-        .timeline-description {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            opacity: 0.8;
-            max-width: 800px;
-        }
-
-        /* Instagram */
-        .instagram {
-            padding: 8rem 5%;
-            background: var(--black);
-            color: var(--white);
-        }
-
-        .instagram-container {
-            max-width: 1600px;
-            margin: 0 auto;
-        }
-
-        .instagram .section-label {
-            color: var(--white);
-        }
-
-        .instagram .section-title {
-            color: var(--white);
-            margin-bottom: 4rem;
-        }
-
-        .instagram-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
-        }
-
-        .instagram-item {
-            aspect-ratio: 1;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .instagram-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-            filter: grayscale(100%);
-        }
-
-        .instagram-item:hover img {
-            transform: scale(1.05);
-            filter: grayscale(0%);
-        }
-
-        /* CTA */
-        .cta {
-            padding: 12rem 5%;
-            background: var(--white);
-            text-align: center;
-        }
-
-        .cta-container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .cta h2 {
-            font-size: clamp(3rem, 6vw, 6rem);
-            font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 3rem;
-        }
-
-        .cta p {
-            font-size: 1.5rem;
-            line-height: 1.6;
-            margin-bottom: 4rem;
-            opacity: 0.8;
-        }
-
-        /* Contact */
-        .contact {
-            padding: 8rem 5%;
-            background: var(--light-gray);
-        }
-
-        .contact-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 0;
-            border: 1px solid var(--black);
-            margin-top: 4rem;
-        }
-
-        .contact-card {
-            padding: 4rem;
-            border-right: 1px solid var(--black);
-            border-bottom: 1px solid var(--black);
-            text-align: center;
-            transition: all 0.3s;
-        }
-
-        .contact-card:hover {
-            background: var(--black);
-            color: var(--white);
-        }
-
-        .contact-icon {
-            font-size: 3rem;
-            margin-bottom: 2rem;
-        }
-
-        .contact-label {
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-            opacity: 0.6;
-        }
-
-        .contact-card a {
-            color: inherit;
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 600;
-        }
-
-        /* Footer */
-        footer {
-            padding: 4rem 5%;
-            background: var(--black);
-            color: var(--white);
-            text-align: center;
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-social {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .social-link {
-            width: 50px;
-            height: 50px;
-            border: 2px solid var(--white);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            color: var(--white);
-            font-size: 1.3rem;
-            transition: all 0.3s;
-        }
-
-        .social-link:hover {
-            background: var(--white);
-            color: var(--black);
-        }
-
-        .footer-text {
-            font-size: 0.9rem;
-            opacity: 0.7;
-        }
-
-        /* Icons SVG */
-        .icon {
-            width: 60px;
-            height: 60px;
-            margin-bottom: 2rem;
-        }
-
-        .icon-stroke {
-            stroke: currentColor;
-            fill: none;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-
-        /* Process */
-        .process {
-            padding: 8rem 5%;
-            background: var(--white);
-        }
-
-        .process-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 4rem;
-            margin-top: 4rem;
+            align-items: center;
         }
-
-        .process-step {
+        
+        .about-image img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 20px;
+        }
+        
+        .about-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--dark);
+        }
+        
+        .about-content p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        /* STATS SECTION */
+        .stats {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+        }
+        
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
             text-align: center;
         }
-
-        .process-number {
-            width: 80px;
-            height: 80px;
-            border: 2px solid var(--black);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            font-weight: 900;
-            margin: 0 auto 2rem;
-        }
-
-        .process-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .process-description {
-            font-size: 1rem;
-            line-height: 1.7;
-            opacity: 0.8;
-        }
-
-        /* Pricing */
-        .pricing {
-            padding: 8rem 5%;
-            background: var(--black);
-            color: var(--white);
-        }
-
-        .pricing-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .pricing .section-label,
-        .pricing .section-title {
-            color: var(--white);
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
-        }
-
-        .pricing-card {
-            background: var(--white);
-            color: var(--black);
-            padding: 4rem;
-            transition: all 0.3s;
-        }
-
-        .pricing-card.featured {
-            background: var(--black);
-            color: var(--white);
-            border: 2px solid var(--white);
-            transform: scale(1.05);
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .pricing-card.featured:hover {
-            transform: scale(1.05) translateY(-10px);
-        }
-
-        .pricing-tag {
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-            opacity: 0.7;
-        }
-
-        .pricing-name {
-            font-size: 2rem;
-            font-weight: 900;
-            margin-bottom: 1rem;
-        }
-
-        .pricing-price {
+        
+        .stat-item h3 {
             font-size: 3.5rem;
-            font-weight: 900;
+            font-weight: 700;
             margin-bottom: 0.5rem;
         }
-
-        .pricing-period {
-            font-size: 1rem;
-            opacity: 0.7;
-            margin-bottom: 2rem;
+        
+        .stat-item p {
+            font-size: 1.1rem;
+            opacity: 0.9;
         }
-
-        .pricing-features {
-            list-style: none;
-            margin-bottom: 3rem;
-        }
-
-        .pricing-features li {
-            padding: 1rem 0;
-            border-bottom: 1px solid currentColor;
-            opacity: 0.8;
-        }
-
-        .pricing-features li:last-child {
-            border-bottom: none;
-        }
-
-        .pricing-btn {
-            width: 100%;
+        
+        /* FOOTER */
+        footer {
+            background: var(--dark);
+            color: var(--white);
+            padding: 3rem 2rem 1rem;
             text-align: center;
         }
-
-        .pricing-card .btn-black {
-            background: var(--black);
-            color: var(--white);
-        }
-
-        .pricing-card.featured .btn-black {
-            background: var(--white);
-            color: var(--black);
-        }
-
-        /* Testimonials */
-        .testimonials {
-            padding: 8rem 5%;
-            background: var(--light-gray);
-        }
-
-        .testimonials-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
-            margin-top: 4rem;
-        }
-
-        .testimonial-card {
-            background: var(--white);
-            padding: 3rem;
-            border: 2px solid var(--black);
-        }
-
-        .testimonial-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 2rem;
-            font-style: italic;
-        }
-
-        .testimonial-author {
+        
+        .social-links {
             display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .testimonial-avatar {
-            width: 60px;
-            height: 60px;
-            background: var(--black);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
             justify-content: center;
-            color: var(--white);
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-
-        .testimonial-info h4 {
-            font-weight: 700;
-            margin-bottom: 0.3rem;
-        }
-
-        .testimonial-info p {
-            font-size: 0.9rem;
-            opacity: 0.7;
-        }
-
-        /* FAQ */
-        .faq {
-            padding: 8rem 5%;
-            background: var(--white);
-        }
-
-        .faq-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            border-bottom: 2px solid var(--black);
-            padding: 2rem 0;
-            cursor: pointer;
-        }
-
-        .faq-item:last-child {
-            border-bottom: none;
-        }
-
-        .faq-question {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 1.3rem;
-            font-weight: 700;
-        }
-
-        .faq-icon {
-            font-size: 1.5rem;
-            font-weight: 300;
-            transition: transform 0.3s;
-        }
-
-        .faq-item.active .faq-icon {
-            transform: rotate(45deg);
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            opacity: 0.8;
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 500px;
-            margin-top: 1.5rem;
-        }
-
-        /* Calendly Section */
-        .calendly-section {
-            padding: 8rem 5%;
-            background: var(--black);
-            color: var(--white);
-        }
-
-        .calendly-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .calendly-content {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .calendly-content h2 {
-            font-size: clamp(3rem, 5vw, 5rem);
-            font-weight: 900;
+            gap: 2rem;
             margin-bottom: 2rem;
         }
-
-        .calendly-content p {
-            font-size: 1.3rem;
-            opacity: 0.8;
+        
+        .social-links a {
+            color: var(--white);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
         }
-
-        .calendly-embed {
-            background: var(--white);
-            min-height: 700px;
-            border-radius: 0;
+        
+        .social-links a:hover {
+            color: var(--primary);
         }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .mentorship-container {
-                grid-template-columns: 1fr;
-            }
-
-            .services-grid,
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .service-card,
-            .contact-card {
-                border-right: none;
-            }
-        }
-
+        
+        /* RESPONSIVE */
         @media (max-width: 768px) {
-            nav ul {
+            .hero-container, .about-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
                 display: none;
             }
-
-            .hero h1 {
-                font-size: 4rem;
-            }
-
-            .timeline-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
+            
             .stats-container {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
             }
-        }
-
-                /* Estilos del Formulario de Contacto */
-        .contact-form-container {
-            max-width: 600px;
-            margin: 3rem auto 0;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .form-group label {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--white);
-        }
-
-        .form-group input,
-        .form-group textarea {
-            padding: 0.75rem 1rem;
-            background: rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            color: var(--white);
-            font-size: 1rem;
-            font-family: 'Inter', sans-serif;
-            transition: all 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: rgba(255, 255, 255, 0.3);
-            background: rgba(0, 0, 0, 0.4);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .contact-form button[type="submit"] {
-            align-self: flex-start;
-            margin-top: 0.5rem;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
+    <!-- HEADER -->
     <header>
-        <div class="nav-container">
-            <a href="#" class="logo"">NACHO GARCÍA EGEA</a>
-            <nav>
-                <ul>
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#mentoria">Te cuento</a></li>
-                    <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#programas">Programas de mentoría</a></li>
-                    <li><a href="/programa-6-meses.html">Agenda</a></li>
-                     <li><a href="#contacto">Contacto</a></li>
-                </ul>
-            </nav>
-        </div>
+        <nav>
+            <a href="#" class="logo">NGE</a>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#sobre-mi">Sobre Mí</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <a href="#contacto" class="cta-button">Agenda una Llamada</a>
+        </nav>
     </header>
 
-    <!-- Hero -->
+    <!-- HERO SECTION -->
     <section id="inicio" class="hero">
         <div class="hero-container">
-            <div class="hero-label">Global CISO |<div class="hero-label">Global CISO | <h1>Hacker | CyberSecurity Board Advisor | Mentor | Startup Mentor</h1>
-            <p class="hero-subtitle">
-                Más de 20 años navegando el ecosistema de ciberseguridad. Experiencia real en empresas, startups y boards. Te ayudo a entender el sector, construir tu red y tomar decisiones de carrera con criterio.            </p>
-            <div class="hero-cta">
-                <a href="/programa-6-meses.html" class="btn btn-white">Agenda tu Sesión Gratuita</a>
-                <a href="#mentoria" class="btn btn-outline">Cómo Funciona</a>
+            <div class="hero-content">
+                <p class="subtitle">CIBERSEGURIDAD · ESTRATEGIA · MENTORÍA</p>
+                <h1>Eleva Tu Estrategia de Ciberseguridad</h1>
+                <p>Más de 20 años diseñando funciones de ciberseguridad que entienden el P&L, acompañando a startups y formando al próximo talento del sector.</p>
+                <div class="hero-buttons">
+                    <a href="#servicios" class="btn-primary">Descubre Más</a>
+                    <a href="#contacto" class="btn-secondary">Contáctame</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="shape-1"></div>
+                <div class="shape-2"></div>
+                <img src="nacho.png" alt="Nacho García Egea">
             </div>
         </div>
     </section>
 
-    <!-- Stats -->
+    <!-- SERVICES SECTION -->
+    <section id="servicios" class="services">
+        <h2 class="section-title">Cómo Puedo Ayudarte</h2>
+        <p class="section-subtitle">Soluciones especializadas en ciberseguridad y estrategia empresarial</p>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🎯</div>
+                <h3>Mentoría Ciberseguridad</h3>
+                <p>Acompaño a futuros CISOs y perfiles clave para acelerar criterio, visibilidad ejecutiva y decisiones de carrera.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🚀</div>
+                <h3>Startup Advisor</h3>
+                <p>Hacemos que tu producto sea confiable, auditable y listo para due diligence exigentes sin frenar el roadmap.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🛡️</div>
+                <h3>CISO Services</h3>
+                <p>Diseño y lidero la función de ciberseguridad alineada a negocio, con foco en priorización y ejecución pragmática.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3>Board Advisory</h3>
+                <p>Traducción directa de riesgos técnicos a decisiones de inversión, apetito de riesgo y narrativa para consejo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="sobre-mi" class="about">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="nacho.png" alt="Nacho García Egea">
+            </div>
+            <div class="about-content">
+                <h2>Sobre Mí</h2>
+                <p>Soy <strong>Nacho García Egea</strong>, Global CISO con más de 20 años de experiencia en el sector tecnológico y ciberseguridad.</p>
+                <p>He visto cómo la tecnología cambia el negocio, a veces con explosiones controladas. Diseño funciones de ciberseguridad que entienden el P&L, acompaño a startups para que su producto sea confiable y preparo al talento del sector para conversaciones serias con clientes, inversores y comités.</p>
+                <p>Mi misión es traducir riesgos técnicos en decisiones de negocio claras, combinando visión estratégica y manos en el barro.</p>
+                <div class="hero-buttons" style="margin-top: 2rem;">
+                    <a href="#contacto" class="btn-primary">Contáctame</a>
+                    <a href="#servicios" class="btn-secondary">Ver Servicios</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS SECTION -->
     <section class="stats">
         <div class="stats-container">
             <div class="stat-item">
-                <div class="stat-number">500+</div>
-                <div class="stat-label">Profesionales Mentorizados</div>
+                <h3>20+</h3>
+                <p>Años de Experiencia</p>
             </div>
             <div class="stat-item">
-                <div class="stat-number">20+</div>
-                <div class="stat-label">Años Experiencia</div>
+                <h3>100+</h3>
+                <p>Startups Asesoradas</p>
             </div>
             <div class="stat-item">
-                <div class="stat-number">95%</div>
-                <div class="stat-label">Logran sus Objetivos</div>
+                <h3>10+</h3>
+                <p>Sectores Atendidos</p>
             </div>
             <div class="stat-item">
-                <div class="stat-number">8</div>
-                <div class="stat-label">Países (España + LATAM)</div>
+                <h3>Global</h3>
+                <p>CISO Actual</p>
             </div>
         </div>
     </section>
 
-    <!-- Mission -->
-    <section class="mission">
-        <div class="mission-container">
-            <h2>TU PRÓXIMO PASO EN CIBERSEGURIDAD EMPIEZA AQUÍ</h2>
-            <p>
-                He liderado equipos en 8 países y trabajado con las mejores empresas del mundo. Ahora dedico mi experiencia a lo que más me apasiona: acelerar el crecimiento de profesionales tech que quieren construir carreras extraordinarias en ciberseguridad.
-            </p>
+    <!-- CONTACT/FOOTER -->
+    <footer id="contacto">
+        <h2 style="margin-bottom: 1rem;">Conectemos</h2>
+        <p style="margin-bottom: 2rem; opacity: 0.8;">Agenda una llamada o contáctame directamente</p>
+        
+        <div class="hero-buttons" style="justify-content: center; margin-bottom: 3rem;">
+            <a href="https://calendly.com/nachogarciaegea" target="_blank" class="btn-primary">15 MIN · INTRO CALL</a>
+            <a href="https://calendly.com/nachogarciaegea" target="_blank" class="btn-primary">45 MIN · DEEP DIVE</a>
         </div>
-    </section>
-
-    <!-- Mentorship Focus -->
-    <section id="mentoria" class="mentorship">
-        <div class="mentorship-container">
-            <div class="mentorship-content">
-                <div class="section-label">Programa de mentoría Personalizada</div>
-                <h2>Para Profesionales que Quieren Más</h2>
-                <p class="mentorship-text">
-                    Si sientes que tu carrera está estancada, si no sabes qué hacer para dar el siguiente paso, o si quieres acelerar tu crecimiento en ciberseguridad, esta Programa de mentoría es para ti.
-                </p>
-                
-                <p class="mentorship-text">
-                    Trabajaremos juntos en tu desarrollo profesional con un plan personalizado, sesiones 1:1 y acceso directo a mí entre sesiones. No es teoría, es acción.
-                </p>
-                
-                <ul class="mentorship-list">
-                    <li>→ Define tu roadmap de carrera en ciberseguridad</li>
-                    <li>→ Desarrolla habilidades de liderazgo técnico</li>
-                    <li>→ Prepárate para roles senior o CISO</li>
-                    <li>→ Construye tu marca personal y networking</li>
-                    <li>→ Lanza tu startup o consultoría tech</li>
-                    <li>→ Aumenta tu salario y negocia ofertas</li>
-                </ul>
-
-                <a href="/programa-6-meses.html" class="btn btn-black">Agenda tu Sesión Gratuita (30 min)</a>
-            </div>
-            <div class="mentorship-image">
-                <!-- Reemplaza con tu foto dando una charla o mentorizando -->
-                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&h=1000&fit=crop&q=80" alt="Nacho García Egea - Mentor en Acción">
-            </div>
+        
+        <div class="social-links">
+            <a href="https://linkedin.com/in/nachogarciaegea" target="_blank" title="LinkedIn">🔗</a>
+            <a href="https://instagram.com/nachogarciaegea_" target="_blank" title="Instagram">📷</a>
+            <a href="https://tiktok.com/@nachogarciaegea_" target="_blank" title="TikTok">🎵</a>
+            <a href="https://x.com/nacho_ge" target="_blank" title="X (Twitter)">🐦</a>
         </div>
-    </section>
-
-    <!-- Services -->
-    <section id="servicios" class="services">
-        <div class="services-container">
-            <div class="section-header">
-                <div class="section-label">Cómo Puedo Ayudarte</div>
-                <h2 class="section-title">Servicios</h2>
-            </div>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-number">01</div>
-                    <h3 class="service-title">Programa de mentoría 1:1 Individual</h3>
-                    <p class="service-description">
-                        Sesiones personalizadas enfocadas en tu desarrollo profesional. Trabajamos en tu roadmap de carrera, habilidades técnicas y estrategia de crecimiento.
-                    </p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-number">02</div>
-                    <h3 class="service-title">Carrera & Posicionamiento</h3>
-                    <p class="service-description">
-                        Optimiza tu CV, LinkedIn y marca personal. Prepárate para entrevistas, negocia ofertas y construye tu reputación en el sector.
-                    </p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-number">03</div>
-                    <h3 class="service-title">Desarrollo de Liderazgo</h3>
-                    <p class="service-description">
-                        De técnico a líder. Aprende a gestionar equipos, comunicar con stakeholders y tomar decisiones estratégicas de seguridad.
-                    </p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-number">04</div>
-                    <h3 class="service-title">Preparación CISO</h3>
-                    <p class="service-description">
-                        Roadmap completo para llegar a CISO: habilidades necesarias, certificaciones, experiencia y cómo posicionarte para el rol.
-                    </p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-number">05</div>
-                    <h3 class="service-title">Emprendimiento Tech</h3>
-                    <p class="service-description">
-                        Lanza tu startup de ciberseguridad o consultoría. Estrategia, validación, primeros clientes y escalamiento del negocio.
-                    </p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-number">06</div>
-                    <h3 class="service-title">Networking & Conexiones</h3>
-                    <p class="service-description">
-                        Acceso a mi red profesional en 8 países. Conexiones con líderes tech, oportunidades laborales y comunidad de alumni.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Process -->
-    <section class="process">
-        <div class="process-container">
-            <div class="section-header">
-                <div class="section-label">Cómo Funciona</div>
-                <h2 class="section-title">Tu Proceso de Transformación</h2>
-            </div>
-            
-            <div class="process-grid">
-                <div class="process-step">
-                    <div class="process-number">1</div>
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path class="icon-stroke" d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-                        <line class="icon-stroke" x1="9" y1="10" x2="15" y2="10"/>
-                        <line class="icon-stroke" x1="12" y1="7" x2="12" y2="13"/>
-                    </svg>
-                    <h3 class="process-title">Sesión Gratuita (30 min)</h3>
-                    <p class="process-description">Nos conocemos, entiendo dónde estás y dónde quieres llegar. Sin compromiso. Evaluamos si hay buen fit.</p>
-                </div>
-                
-                <div class="process-step">
-                    <div class="process-number">2</div>
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path class="icon-stroke" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                        <polyline class="icon-stroke" points="14 2 14 8 20 8"/>
-                        <line class="icon-stroke" x1="12" y1="18" x2="12" y2="12"/>
-                        <line class="icon-stroke" x1="9" y1="15" x2="15" y2="15"/>
-                    </svg>
-                    <h3 class="process-title">Roadmap Personalizado</h3>
-                    <p class="process-description">Diseñamos tu plan de acción con objetivos claros, milestones medibles y timeline realista. Todo a tu medida.</p>
-                </div>
-                
-                <div class="process-step">
-                    <div class="process-number">3</div>
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <circle class="icon-stroke" cx="12" cy="12" r="10"/>
-                        <polyline class="icon-stroke" points="12 6 12 12 16 14"/>
-                    </svg>
-                    <h3 class="process-title">Sesiones + Soporte</h3>
-                    <p class="process-description">Reuniones 1:1 regulares más acceso directo entre sesiones. No estás solo en el proceso.</p>
-                </div>
-                
-                <div class="process-step">
-                    <div class="process-number">4</div>
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path class="icon-stroke" d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                        <polyline class="icon-stroke" points="22 4 12 14.01 9 11.01"/>
-                    </svg>
-                    <h3 class="process-title">Logras tus Objetivos</h3>
-                    <p class="process-description">Ascenso, cambio de rol, aumento de salario, o lanzamiento de tu startup. Celebramos tus victorias.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing -->
-    <section id="programas" class="pricing">
-        <div class="pricing-container">
-            <div class="section-header">
-                <div class="section-label">Inversión</div>
-            <h2 class="section-title">Programas de mentoría en Ciberseguridad</h2>            </div>
-            
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <div class="pricing-tag">Starter</div>
-                    <h3 class="pricing-name">Sesión Individual</h3>
-                    <div class="pricing-price">150€</div>
-                    <div class="pricing-period">por sesión de 60 min</div>
-                    <ul class="pricing-features">
-                        <li>1 sesión 1:1 de 60 minutos</li>
-                        <li>Revisión de CV y LinkedIn</li>
-                        <li>Estrategia de carrera</li>
-                        <li>Seguimiento por email (7 días)</li>
-                    </ul>
-            <a href="/mentoria-sesion-individual.html" class="btn btn-black pricing-btn">Reservar Sesión</a>                </div>
-                
-                <div class="pricing-card featured">
-                    <div class="pricing-tag">★ Más Popular</div>
-                    <h3 class="pricing-name">Programa de mentoría Mensual</h3>
-                    <div class="pricing-price">500€</div>
-                    <div class="pricing-period">al mes</div>
-                    <ul class="pricing-features">
-                        <li>4 sesiones 1:1 al mes</li>
-                        <li>Plan de acción personalizado</li>
-                        <li>Acceso directo por WhatsApp</li>
-                        <li>Revisión de proyectos/propuestas</li>
-                        <li>Networking y conexiones</li>
-                        <li>Recursos y materiales exclusivos</li>
-                    </ul>
-            <a href="/mentoria-mensual.html" class="btn btn-black pricing-btn">Empezar Ahora</a>                </div>
-                
-                <div class="pricing-card">
-                    <div class="pricing-tag">Premium</div>
-                    <h3 class="pricing-name">Programa 6 Meses</h3>
-                    <div class="pricing-price">2.400€</div>
-                    <div class="pricing-period">6 meses (400€/mes)</div>
-                    <ul class="pricing-features">
-                        <li>Todo lo de Programa de mentoría Mensual</li>
-                        <li>24 sesiones distribuidas</li>
-                        <li>Roadmap de 6 meses</li>
-                        <li>Preparación para certificaciones</li>
-                        <li>Simulación de entrevistas CISO</li>
-                        <li>Introducción a mi red profesional</li>
-                        <li>Garantía de resultados</li>
-                    </ul>
-                    <a href="/programa-6-meses.html" class="btn btn-black pricing-btn">Aplicar al Programa</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="testimonials">
-        <div class="testimonials-container">
-            <div class="section-header">
-                <div class="section-label">Historias de Éxito</div>
-                <h2 class="section-title">Transformaciones Reales</h2>
-            </div>
-            
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <p class="testimonial-text">
-                        "En 6 meses pasé de analista junior a Security Architect con un aumento de 35% en salario. Nacho me ayudó a identificar mis gaps técnicos, desarrollar mi marca personal y negociar la oferta. Game changer total."
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">MR</div>
-                        <div class="testimonial-info">
-                            <h4>María Rodríguez</h4>
-                            <p>Junior → Security Architect · Madrid</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <p class="testimonial-text">
-                        "Estaba estancado como analista SOC hace 3 años. Con la Programa de mentoría de Nacho, desarrollé habilidades de liderazgo y en 18 meses conseguí liderar mi propio equipo de 8 personas. Hoy soy el SOC Lead que siempre quise ser."
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">AG</div>
-                        <div class="testimonial-info">
-                            <h4>Alejandro García</h4>
-                            <p>Analista SOC → SOC Lead · Barcelona</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <p class="testimonial-text">
-                        "Lancé mi startup de ciberseguridad siguiendo el roadmap que diseñamos juntos. Nacho me conectó con inversores, me ayudó a validar mi propuesta y a conseguir mis primeros 5 clientes. Hoy facturamos +200K al año."
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">LC</div>
-                        <div class="testimonial-info">
-                            <h4>Laura Castro</h4>
-                            <p>Empleada → Founder & CEO · Lisboa</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="faq">
-        <div class="faq-container">
-            <div class="section-header">
-                <div class="section-label">Preguntas Frecuentes</div>
-                <h2 class="section-title">FAQ</h2>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>¿Para quién es esta Programa de mentoría?</span>
-                    <span class="faq-icon">+</span>
-                </div>
-                <div class="faq-answer">
-                    Para profesionales de ciberseguridad que quieren acelerar su carrera: juniors que buscan ser seniors, seniors que aspiran a liderar equipos, técnicos que quieren roles estratégicos, y personas que quieren emprender en tech. No importa tu nivel actual, importa tu compromiso de crecer.
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>¿Qué resultados puedo esperar?</span>
-                    <span class="faq-icon">+</span>
-                </div>
-                <div class="faq-answer">
-                    Mis mentorizados han logrado: ascensos en 3-6 meses, aumentos de salario del 20-40%, cambios a roles más estratégicos, lanzamiento de startups, preparación exitosa para CISO, y conexiones valiosas en el sector. Los resultados dependen de tu compromiso y acción consistente.
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>¿Cómo son las sesiones?</span>
-                    <span class="faq-icon">+</span>
-                </div>
-                <div class="faq-answer">
-                    Videollamadas 1:1 de 60 minutos vía Google Meet. No es una clase teórica, es una conversación práctica donde trabajamos en TUS desafíos específicos, revisamos tu progreso, ajustamos tu plan y defines acciones concretas para la semana.
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>¿Por qué debería invertir en Programa de mentoría?</span>
-                    <span class="faq-icon">+</span>
-                </div>
-                <div class="faq-answer">
-                    Porque puedes tardar años en aprender lo que yo te enseño en meses. He cometido errores, he tenido éxitos, he trabajado en 8 países con las mejores empresas. Compro tu tiempo y acelero tu curva de aprendizaje. La inversión en tu desarrollo siempre da el mejor ROI.
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>¿Trabajas solo con profesionales de España?</span>
-                    <span class="faq-icon">+</span>
-                </div>
-                <div class="faq-answer">
-                    No. Trabajo con profesionales en toda España, Latinoamérica y Europa. Las sesiones son online y me adapto a diferentes zonas horarias. La Programa de mentoría es en español o inglés. El talento no tiene fronteras.
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>¿Y si no funciona para mí?</span>
-                    <span class="faq-icon">+</span>
-                </div>
-                <div class="faq-answer">
-                    Por eso empezamos con una sesión gratuita de 30 minutos. Evaluamos si hay fit antes de comprometernos. Si después de las primeras sesiones sientes que no es para ti, puedes pausar o cancelar. Solo trabajo con gente comprometida que realmente quiere crecer.
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Calendly -->
-    <section id="agenda" class="calendly-section">
-        <div class="calendly-container">
-            <div class="calendly-content">
-                <h2>AGENDA TU PRIMERA SESIÓN</h2>
-                <p>Elige el día y hora que mejor te funcione. Te enviaré un email de confirmación con el link de la videollamada.</p>
-            </div>
-            
-            <!-- Calendly inline widget -->
-            <div class="calendly-embed" 
-                 data-url="https://calendly.com/nachogarciaegea/mentoria-inicial"
-                 style="position: relative; min-height: 700px;">
-                
-                <!-- Placeholder mientras no configures Calendly -->
-                <div style="background: white; padding: 4rem; text-align: center; color: black;">
-                    <h3 style="font-size: 2rem; margin-bottom: 2rem; color: black;">📅 Calendly Integration</h3>
-                    <p style="font-size: 1.2rem; margin-bottom: 2rem; color: black;">
-                        Para activar tu calendario de Calendly:
-                    </p>
-                    <ol style="text-align: left; max-width: 600px; margin: 0 auto; font-size: 1.1rem; line-height: 2; color: black;">
-                        <li>Crea tu cuenta gratuita en <a href="https://calendly.com" target="_blank" style="color: black; font-weight: 700;">calendly.com</a></li>
-                        <li>Configura tu tipo de evento "Programa de mentoría Inicial"</li>
-                        <li>Copia tu link de Calendly</li>
-                        <li>Reemplaza en el código: <code style="background: #f5f5f5; padding: 0.2rem 0.5rem; color: black;">data-url="TU_LINK_AQUI"</code></li>
-                        <li>Añade el script de Calendly antes del <code style="background: #f5f5f5; padding: 0.2rem 0.5rem; color: black;">&lt;/body&gt;</code></li>
-                    </ol>
-                    <p style="margin-top: 3rem; font-size: 1rem; opacity: 0.7; color: black;">
-                        Script a añadir: <br>
-                        <code style="background: #f5f5f5; padding: 0.5rem 1rem; display: inline-block; margin-top: 1rem; color: black;">
-                            &lt;script src="https://assets.calendly.com/assets/external/widget.js"&gt;&lt;/script&gt;
-                        </code>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience -->
-    <section id="experiencia" class="experience">
-        <div class="experience-container">
-            <div class="section-header">
-                <div class="section-label">Por Qué Puedo Ayudarte</div>
-                <h2 class="section-title">Mi Background</h2>
-            </div>
-            
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <div class="timeline-company">20+ AÑOS EN CIBERSEGURIDAD</div>
-                    <div class="timeline-date">2005 - Hoy</div>
-                </div>
-                <div class="timeline-role">He Recorrido Todo el Camino</div>
-                <p class="timeline-description">
-                    Empecé como técnico autodidacta desde adolescente. Pasé por roles junior, senior, lideré equipos en EY, PwC, Orange y HPE. Llegué a CTO y finalmente Global CISO gestionando seguridad en 8 países. Conozco cada paso del camino porque lo viví.
-                </p>
-            </div>
-            
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <div class="timeline-company">LIDERAZGO GLOBAL</div>
-                    <div class="timeline-date">8 Países</div>
-                </div>
-                <div class="timeline-role">Grupo Gigas · BeDisruptive · A3Sec</div>
-                <p class="timeline-description">
-                    Como Global CISO gestiono equipos internacionales en España, Portugal, Irlanda, México, Colombia, Chile, Perú y USA. Sé lo que buscan las empresas, cómo se toman decisiones de contratación y qué se necesita para destacar.
-                </p>
-            </div>
-            
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <div class="timeline-company">PENSAMIENTO DISRUPTIVO</div>
-                    <div class="timeline-date">Desde Siempre</div>
-                </div>
-                <div class="timeline-role">Melilla → Europa → LATAM</div>
-                <p class="timeline-description">
-                    Originario de Melilla, autodidacta, mentalidad de pensamiento lateral. He construido mi carrera desde cero, sin contactos, solo con trabajo y estrategia. Si yo pude, tú también. Te enseño el camino que a mí me tomó años descubrir.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="cta">
-        <div class="cta-container">
-            <h2>¿LISTO PARA TRANSFORMAR TU CARRERA?</h2>
-            <p>Si estás cansado de estar estancado, si quieres acelerar tu crecimiento, si necesitas claridad sobre tu próximo paso profesional... hablemos.</p>
-            <a href="/programa-6-meses.html" class="btn btn-black">Agenda tu Sesión Gratuita (30 min)</a>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contacto" class="contact">
-        <div class="contact-container">
-            <div class="section-header">
-                <div class="section-label">Contacto</div>
-                <h2 class="section-title">Conectemos</h2>
-            </div>
-            
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <div class="contact-icon">📧</div>
-                    <div class="contact-label">Email</div>
-                    <a href="mailto:nacho@nachogarciaegea.com">nacho@nachogarciaegea.com</a>
-                </div>
-                
-                <div class="contact-card">
-                    <div class="contact-icon">💼</div>
-                    <div class="contact-label">LinkedIn</div>
-                    <a href="https://linkedin.com/in/nachogarciaegea" target="_blank">@nachogarciaegea</a>
-                </div>
-                
-                <div class="contact-card">
-                    <div class="contact-icon">🌐</div>
-                    <div class="contact-label">Website</div>
-                    <a href="https://www.nachogarciaegea.com" target="_blank">nachogarciaegea.com</a>
-                </div>
-            </div>
-
-                            <!-- Formulario de Contacto -->
-                            <div class="contact-form-container">
-                    <form id="contactForm" class="contact-form">
-                        <div class="form-group">
-                            <label for="name">Nombre</label>
-                            <input type="text" id="name" name="name" required placeholder="Tu nombre">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required placeholder="tu@email.com">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Mensaje</label>
-                            <textarea id="message" name="message" rows="5" required placeholder="Cuéntame cómo puedo ayudarte..."></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
-                    </form>
-                </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-social">
-                <a href="https://linkedin.com/in/nachogarciaegea" target="_blank" class="social-link" aria-label="LinkedIn">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                        <rect x="2" y="9" width="4" height="12"/>
-                        <circle cx="4" cy="4" r="2"/>
-                    </svg>
-                </a>
-                <a href="https://instagram.com/nachogarciaegea" target="_blank" class="social-link" aria-label="Instagram">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-                    </svg>
-                </a>
-                <a href="https://www.nachogarciaegea.com" target="_blank" class="social-link" aria-label="Website">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10"/>
-                        <line x1="2" y1="12" x2="22" y2="12"/>
-                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                    </svg>
-                </a>
-                <a href="mailto:nacho@nachogarciaegea.com" class="social-link" aria-label="Email">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                        <polyline points="22,6 12,13 2,6"/>
-                    </svg>
-                </a>
-            </div>
-            
-            <div class="footer-text">
-                © 2025 Nacho García Egea · Mentor de Nuevos Talentos en Ciberseguridad · España + LATAM
-            </div>
-            <div class="footer-text" style="margin-top: 1rem; font-size: 0.85rem;">
-                De Melilla al mundo · Autodidacta · Pensamiento Disruptivo
-            </div>
-        </div>
+        
+        <p style="margin-top: 2rem; opacity: 0.6; font-size: 0.9rem;">
+            NGE - CYBERSECURITY ADVISOR<br>
+            yo@nachogarciaegea.com
+        </p>
+        <p style="margin-top: 1rem; opacity: 0.4; font-size: 0.8rem;">
+            © 2025 Nacho García Egea. Todos los derechos reservados.
+        </p>
     </footer>
 
-    <script>
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-
-        // FAQ Accordion
-        document.querySelectorAll('.faq-item').forEach(item => {
-            item.addEventListener('click', () => {
-                const isActive = item.classList.contains('active');
-                
-                // Close all items
-                document.querySelectorAll('.faq-item').forEach(otherItem => {
-                    otherItem.classList.remove('active');
-                });
-                
-                // Open clicked item if it wasn't active
-                if (!isActive) {
-                    item.classList.add('active');
-                }
-            });
-        });
-
-        // Fade-in animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-        document.querySelectorAll('.service-card, .timeline-item, .contact-card, .stat-item, .process-step, .pricing-card, .testimonial-card, .faq-item').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
-        });
-    </script>
-
-    <!-- 
-    CALENDLY SETUP:
-    Para activar Calendly, añade este script justo antes de cerrar el </body>:
-    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-    
-    Y actualiza el data-url en la sección calendly-embed con tu link personal de Calendly.
-    -->
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Nacho García Egea",
-      "jobTitle": "Mentor de Ciberseguridad y Global CISO",
-      "description": "Mentor especializado en desarrollo profesional de talento tech en ciberseguridad. Ayudando a profesionales a acelerar sus carreras.",
-      "url": "https://nachogarciaegea.com",
-      "sameAs": [
-        "https://www.linkedin.com/in/nachogarciaegea/",
-        "https://www.instagram.com/nachogarciaegea/",
-        "https://www.nachogarciaegea.com"
-      ],
-      "knowsAbout": [
-        "Programa de mentoría Profesional",
-        "Desarrollo de Carrera",
-        "Ciberseguridad",
-        "Liderazgo Técnico",
-        "Coaching Ejecutivo"
-      ],
-      "offers": {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Programa de mentoría Individual en Ciberseguridad",
-          "description": "Programa de mentoría 1:1 personalizada para profesionales de ciberseguridad"
-        }
-      }
-    }
-    </script>
 </body>
 </html>
