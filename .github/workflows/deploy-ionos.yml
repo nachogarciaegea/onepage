@@ -1,0 +1,24 @@
+name: Deploy to IONOS via FTP
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Deploy via FTP
+      uses: pontago/lftp-deploy-action@v1.0.1
+      with:
+        host: ${{ secrets.FTP_HOST }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local_dir: './'
+        remote_dir: '/'
+        protocol: ftp
