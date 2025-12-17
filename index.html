@@ -94,6 +94,10 @@
             margin: 0 auto;
             width: 100%;
         }
+                    display: grid;
+                    grid-template-columns: 1fr 400px;
+                    gap: 4rem;
+                    align-items: center;
 
         .hero-label {
             font-size: 0.85rem;
@@ -127,8 +131,6 @@
         }
 
                 .hero-image {
-            position: absolute;
-                        bottom: 0         right: 10%;;
             width: 350px;
             height: 450px;
                                 border-radius: 12px;
@@ -969,6 +971,7 @@
     <section id="inicio" class="hero">
         <div class="hero-container">
             <div class="hero-label">Mentor & Startup Advisor en Ciberseguridad</div>
+                        <div class="hero-content">
             <h1>Nacho García Egea</h1>
             <p class="hero-subtitle">
                 Apasionado por la ciberseguridad y la innovación con una visión/mentalidad hacker, con más de 20 años de experiencia protegiendo los activos más críticos de empresas de todo tipo. Mi misión es redefinir cómo las organizaciones ven la seguridad, integrando enfoques disruptivos que combinan la protección física y lógica para generar valor estratégico real.
@@ -978,10 +981,12 @@
                 <a href="#servicios" class="btn btn-outline">Ver Servicios</a>
             </div>
         </div>
-                <div class="hero-image">
+                        </div>
+        <div class="hero-image">
             <img src="nacho.png" alt="Nacho García Egea">
         </div>
     </section>
+                
 
     <!-- Stats -->
     <section class="stats">
