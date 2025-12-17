@@ -117,8 +117,7 @@
         }
 
         .hero-subtitle {
-            font-size: clamp(1.5rem, 3vw, 3rem);
-            font-weight: 300;
+            font-size: clamp(1.1rem, 2vw, 1.4rem);            font-weight: 300;
             max-width: 900px;
             margin-bottom: 4rem;
             line-height: 1.4;
@@ -155,6 +154,8 @@
             text-transform: uppercase;
             transition: all 0.3s;
             display: inline-block;
+                        border-radius: 4px;
+                        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
         }
 
         .btn-white {
@@ -166,6 +167,8 @@
             background: transparent;
             color: var(--white);
             border: 2px solid var(--white);
+                        transform: translateY(-2px);
+                        box-shadow: 0 4px 16px rgba(0,0,0,0.2);
         }
 
         .btn-outline {
@@ -177,6 +180,8 @@
         .btn-outline:hover {
             background: var(--white);
             color: var(--black);
+                        transform: translateY(-2px);
+                        box-shadow: 0 4px 16px rgba(255,255,255,0.3);
         }
 
         .btn-black {
