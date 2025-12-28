@@ -1,0 +1,1 @@
+Añade aquí og-image.png (1200x630) para previews sociales.
