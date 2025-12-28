@@ -1,1559 +1,337 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nacho García Egea | Mentor & Startup Advisor en Ciberseguridad</title>
-    
-    <meta name="description" content="Mentoría para profesionales de ciberseguridad + Advisory para startups tech. 20+ años experiencia, 500+ mentorizados, 50+ startups asesoradas. España + LATAM.">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --black: #000000;
-            --white: #FFFFFF;
-            --gray: #808080;
-            --light-gray: #F5F5F5;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--black);
-            line-height: 1.6;
-            background: var(--white);
-        }
-
-        /* Header */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 2rem 5%;
-            background: var(--white);
-            z-index: 1000;
-            border-bottom: 1px solid var(--black);
-        }
-
-        .nav-container {
-            max-width: 1600px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 900;
-            color: var(--black);
-            text-decoration: none;
-            letter-spacing: -1px;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 3rem;
-        }
-
-        nav a {
-            color: var(--black);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: opacity 0.3s;
-        }
-
-        nav a:hover {
-            opacity: 0.5;
-        }
-
-        /* Hero */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 8rem 5% 4rem;
-            background: var(--black);
-            color: var(--white);
-                    position: relative;
-        }
-
-        .hero-container {
-            max-width: 1600px;
-            margin: 0 auto;
-            width: 100%;
-        }
-                    display: grid;
-                    grid-template-columns: 1fr 400px;
-                    gap: 4rem;
-                    align-items: center;
-
-        .hero-label {
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 2rem;
-            opacity: 0.7;
-        }
-
-        .hero h1 {
-            font-size: clamp(4rem, 10vw, 9rem);
-            font-weight: 700;
-            line-height: 0.9;
-            margin-bottom: 3rem;
-            letter-spacing: -0.03em;
-        }
-
-        .hero-subtitle {
-            font-size: clamp(1.1rem, 2vw, 1.4rem);            font-weight: 300;
-            max-width: 900px;
-            margin-bottom: 4rem;
-            line-height: 1.4;
-        }
-
-        .hero-cta {
-            display: flex;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-                .hero-image {
-            width: 350px;
-            height: 450px;
-                                border-radius: 12px;
-0overflow: hidden;
-
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            z-index: 10;
-                            }
-        
-
-        .hero-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;        }
-
-        .btn {
-            padding: 1.5rem 3.5rem;            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.3s;
-            display: inline-block;
-                        border-radius: 4px;
-                        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-        }
-
-        .btn-white {
-            background: var(--white);
-            color: var(--black);
-        }
-
-        .btn-white:hover {
-            background: transparent;
-            color: var(--white);
-            border: 2px solid var(--white);
-                        transform: translateY(-2px);
-                        box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--white);
-            border: 2px solid var(--white);
-        }
-
-        .btn-outline:hover {
-            background: var(--white);
-            color: var(--black);
-                        transform: translateY(-2px);
-                        box-shadow: 0 4px 16px rgba(255,255,255,0.3);
-        }
-
-        .btn-black {
-            background: var(--black);
-            color: var(--white);
-            border: 2px solid var(--black);
-        }
-
-        .btn-black:hover {
-            background: var(--white);
-            color: var(--black);
-        }
-
-        /* Stats */
-        .stats {
-            padding: 8rem 5%;
-            background: var(--white);
-            border-bottom: 1px solid var(--black);
-        }
-
-        .stats-container {
-            max-width: 1600px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 4rem;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: clamp(4rem, 6vw, 8rem);
-            font-weight: 900;
-            line-height: 1;
-            margin-bottom: 1rem;
-        }
-
-        .stat-label {
-            font-size: 1rem;
-            font-weight: 500;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        /* Mission */
-        .mission {
-            padding: 12rem 5%;
-            background: var(--black);
-            color: var(--white);
-            text-align: center;
-        }
-
-        .mission-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .mission h2 {
-            font-size: clamp(3rem, 6vw, 6rem);
-            font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 3rem;
-        }
-
-        .mission p {
-            font-size: clamp(1.2rem, 2vw, 1.8rem);
-            line-height: 1.6;
-            font-weight: 300;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        /* Services */
-        .services {
-            padding: 8rem 5%;
-            background: var(--white);
-        }
-
-        .services-container {
-            max-width: 1600px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            margin-bottom: 6rem;
-        }
-
-        .section-label {
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 2rem;
-        }
-
-        .section-title {
-            font-size: clamp(3rem, 5vw, 5rem);
-            font-weight: 900;
-            line-height: 1.1;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 0;
-            border: 1px solid var(--black);
-        }
-
-        .service-card {
-            padding: 4rem;
-            border-right: 1px solid var(--black);
-            border-bottom: 1px solid var(--black);
-            transition: all 0.3s;
-            background: var(--white);
-        }
-
-        .service-card:hover {
-            background: var(--black);
-            color: var(--white);
-        }
-
-        .service-number {
-            font-size: 1rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            opacity: 0.5;
-        }
-
-        .service-title {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-        }
-
-        .service-description {
-            font-size: 1rem;
-            line-height: 1.7;
-            opacity: 0.8;
-        }
-
-        /* Mentorship Focus */
-        .mentorship {
-            padding: 12rem 5%;
-            background: var(--light-gray);
-        }
-
-        .mentorship-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 6rem;
-            align-items: center;
-        }
-
-        .mentorship-content h2 {
-            font-size: clamp(3rem, 5vw, 5rem);
-            font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 2rem;
-        }
-
-        .mentorship-text {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            margin-bottom: 2rem;
-        }
-
-        .mentorship-list {
-            list-style: none;
-            margin: 3rem 0;
-        }
-
-        .mentorship-list li {
-            font-size: 1.1rem;
-            padding: 1.5rem 0;
-            border-bottom: 1px solid var(--black);
-            font-weight: 500;
-        }
-
-        .mentorship-list li:last-child {
-            border-bottom: none;
-        }
-
-        .mentorship-image {
-            aspect-ratio: 3/4;
-            background: var(--black);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .mentorship-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.9;
-        }
-
-        /* Experience */
-        .experience {
-            padding: 8rem 5%;
-            background: var(--white);
-        }
-
-        .experience-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .timeline-item {
-            padding: 4rem 0;
-            border-bottom: 1px solid var(--black);
-        }
-
-        .timeline-item:last-child {
-            border-bottom: none;
-        }
-
-        .timeline-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .timeline-company {
-            font-size: 2.5rem;
-            font-weight: 900;
-        }
-
-        .timeline-date {
-            font-size: 1rem;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .timeline-role {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-        }
-
-        .timeline-description {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            opacity: 0.8;
-            max-width: 800px;
-        }
-
-        /* Instagram */
-        .instagram {
-            padding: 8rem 5%;
-            background: var(--black);
-            color: var(--white);
-        }
-
-        .instagram-container {
-            max-width: 1600px;
-            margin: 0 auto;
-        }
-
-        .instagram .section-label {
-            color: var(--white);
-        }
-
-        .instagram .section-title {
-            color: var(--white);
-            margin-bottom: 4rem;
-        }
-
-        .instagram-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
-        }
-
-        .instagram-item {
-            aspect-ratio: 1;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .instagram-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-            filter: grayscale(100%);
-        }
-
-        .instagram-item:hover img {
-            transform: scale(1.05);
-            filter: grayscale(0%);
-        }
-
-        /* CTA */
-        .cta {
-            padding: 12rem 5%;
-            background: var(--white);
-            text-align: center;
-        }
-
-        .cta-container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .cta h2 {
-            font-size: clamp(3rem, 6vw, 6rem);
-            font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 3rem;
-        }
-
-        .cta p {
-            font-size: 1.5rem;
-            line-height: 1.6;
-            margin-bottom: 4rem;
-            opacity: 0.8;
-        }
-
-        /* Contact */
-        .contact {
-            padding: 8rem 5%;
-            background: var(--light-gray);
-        }
-
-        .contact-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 0;
-            border: 1px solid var(--black);
-            margin-top: 4rem;
-        }
-
-        .contact-card {
-            padding: 4rem;
-            border-right: 1px solid var(--black);
-            border-bottom: 1px solid var(--black);
-            text-align: center;
-            transition: all 0.3s;
-        }
-
-        .contact-card:hover {
-            background: var(--black);
-            color: var(--white);
-        }
-
-        .contact-icon {
-            font-size: 3rem;
-            margin-bottom: 2rem;
-        }
-
-        .contact-label {
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-            opacity: 0.6;
-        }
-
-        .contact-card a {
-            color: inherit;
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 600;
-        }
-
-        /* Footer */
-        footer {
-            padding: 4rem 5%;
-            background: var(--black);
-            color: var(--white);
-            text-align: center;
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-social {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .social-link {
-            width: 50px;
-            height: 50px;
-            border: 2px solid var(--white);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            color: var(--white);
-            font-size: 1.3rem;
-            transition: all 0.3s;
-        }
-
-        .social-link:hover {
-            background: var(--white);
-            color: var(--black);
-        }
-
-        .footer-text {
-            font-size: 0.9rem;
-            opacity: 0.7;
-        }
-
-        /* Icons SVG */
-        .icon {
-            width: 60px;
-            height: 60px;
-            margin-bottom: 2rem;
-        }
-
-        .icon-stroke {
-            stroke: currentColor;
-            fill: none;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-
-        /* Process */
-        .process {
-            padding: 8rem 5%;
-            background: var(--white);
-        }
-
-        .process-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 4rem;
-            margin-top: 4rem;
-        }
-
-        .process-step {
-            text-align: center;
-        }
-
-        .process-number {
-            width: 80px;
-            height: 80px;
-            border: 2px solid var(--black);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            font-weight: 900;
-            margin: 0 auto 2rem;
-        }
-
-        .process-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .process-description {
-            font-size: 1rem;
-            line-height: 1.7;
-            opacity: 0.8;
-        }
-
-        /* Pricing */
-        .pricing {
-            padding: 8rem 5%;
-            background: var(--black);
-            color: var(--white);
-        }
-
-        .pricing-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .pricing .section-label,
-        .pricing .section-title {
-            color: var(--white);
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
-        }
-
-        .pricing-card {
-            background: var(--white);
-            color: var(--black);
-            padding: 4rem;
-            transition: all 0.3s;
-        }
-
-        .pricing-card.featured {
-            background: var(--black);
-            color: var(--white);
-            border: 2px solid var(--white);
-            transform: scale(1.05);
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .pricing-card.featured:hover {
-            transform: scale(1.05) translateY(-10px);
-        }
-
-        .pricing-tag {
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-            opacity: 0.7;
-        }
-
-        .pricing-name {
-            font-size: 2rem;
-            font-weight: 900;
-            margin-bottom: 1rem;
-        }
-
-        .pricing-price {
-            font-size: 3.5rem;
-            font-weight: 900;
-            margin-bottom: 0.5rem;
-        }
-
-        .pricing-period {
-            font-size: 1rem;
-            opacity: 0.7;
-            margin-bottom: 2rem;
-        }
-
-        .pricing-features {
-            list-style: none;
-            margin-bottom: 3rem;
-        }
-
-        .pricing-features li {
-            padding: 1rem 0;
-            border-bottom: 1px solid currentColor;
-            opacity: 0.8;
-        }
-
-        .pricing-features li:last-child {
-            border-bottom: none;
-        }
-
-        .pricing-btn {
-            width: 100%;
-            text-align: center;
-        }
-
-        .pricing-card .btn-black {
-            background: var(--black);
-            color: var(--white);
-        }
-
-        .pricing-card.featured .btn-black {
-            background: var(--white);
-            color: var(--black);
-        }
-
-        /* Testimonials */
-        .testimonials {
-            padding: 8rem 5%;
-            background: var(--light-gray);
-        }
-
-        .testimonials-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
-            margin-top: 4rem;
-        }
-
-        .testimonial-card {
-            background: var(--white);
-            padding: 3rem;
-            border: 2px solid var(--black);
-        }
-
-        .testimonial-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 2rem;
-            font-style: italic;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .testimonial-avatar {
-            width: 60px;
-            height: 60px;
-            background: var(--black);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-
-        .testimonial-info h4 {
-            font-weight: 700;
-            margin-bottom: 0.3rem;
-        }
-
-        .testimonial-info p {
-            font-size: 0.9rem;
-            opacity: 0.7;
-        }
-
-        /* FAQ */
-        .faq {
-            padding: 8rem 5%;
-            background: var(--white);
-        }
-
-        .faq-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            border-bottom: 2px solid var(--black);
-            padding: 2rem 0;
-            cursor: pointer;
-        }
-
-        .faq-item:last-child {
-            border-bottom: none;
-        }
-
-        .faq-question {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 1.3rem;
-            font-weight: 700;
-        }
-
-        .faq-icon {
-            font-size: 1.5rem;
-            font-weight: 300;
-            transition: transform 0.3s;
-        }
-
-        .faq-item.active .faq-icon {
-            transform: rotate(45deg);
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            opacity: 0.8;
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 500px;
-            margin-top: 1.5rem;
-        }
-
-        /* Calendly Section */
-        .calendly-section {
-            padding: 8rem 5%;
-            background: var(--black);
-            color: var(--white);
-        }
-
-        .calendly-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .calendly-content {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .calendly-content h2 {
-            font-size: clamp(3rem, 5vw, 5rem);
-            font-weight: 900;
-            margin-bottom: 2rem;
-        }
-
-        .calendly-content p {
-            font-size: 1.3rem;
-            opacity: 0.8;
-        }
-
-        .calendly-embed {
-            background: var(--white);
-            min-height: 700px;
-            border-radius: 0;
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .mentorship-container {
-                grid-template-columns: 1fr;
-            }
-
-            .services-grid,
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .service-card,
-            .contact-card {
-                border-right: none;
-            }
-        }
-
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 4rem;
-            }
-
-            .timeline-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .stats-container {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nacho García Egea | Advisor Ciberseguridad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Nacho García Egea. Advisor en ciberseguridad para startups y scale-ups: diagnóstico estándares internacionales + roadmap en semanas. Mentoría para nuevos talentos." />
+  <meta name="theme-color" content="#000000" />
+  <meta property="og:title" content="Nacho García Egea | Advisor Ciberseguridad" />
+  <meta property="og:description" content="Diagnóstico claro, priorización por riesgo de negocio y acompañamiento ejecutivo. Startups/scale-ups y mentoría." />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="nav-container">
-            <a href="#" class="logo">NGE</a>
-            <nav>
-                <ul>
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#mentoria">Mentoría</a></li>
-                    <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#agenda">Agenda</a></li>
-                </ul>
-            </nav>
+  <div class="progress" aria-hidden="true"><div class="progress__bar" id="progress"></div></div>
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a class="logo" href="#top" aria-label="Inicio">
+        <img src="assets/logo-nge.svg" alt="NGE" class="logo__img" />
+        <span class="logo__sep" aria-hidden="true">|</span>
+        <span class="logo__text">Nacho García Egea</span>
+      </a>
+
+      <nav class="nav" aria-label="Navegación principal">
+        <a class="nav__link" href="#startups">Startups & Scale-ups</a>
+        <a class="nav__link" href="#mentoria">Mentoría</a>
+          <a class="nav__link" href="#comotrabajo">Como trabajo</a>
+        <a class="nav__link" href="#sobre">Sobre mí</a>
+</nav>
+
+      <div class="header__actions">
+        <a class="btn btn--primary" href="TU_LINK_STRIPE_O_GUMROAD" target="_blank" rel="noopener">
+          Solicitar consulta
+        </a>
+        <button class="burger" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      </div>
+    </div>
+
+    <div class="mobile-nav" aria-hidden="true">
+      <a class="mobile-nav__link" href="#startups">Startups & Scale-ups</a>
+      <a class="mobile-nav__link" href="#mentoria">Mentoría</a>
+      <a class="mobile-nav__link" href="#sobre">Sobre mí</a>
+      <a class="mobile-nav__link" href="#faq">FAQ</a>
+      <div class="mobile-nav__cta">
+        <a class="btn btn--primary" href="TU_LINK_STRIPE_O_GUMROAD" target="_blank" rel="noopener">Solicitar consulta</a>
+        <a class="btn btn--ghost" href="mailto:yo@nachogarciaegea.com?subject=Consulta%20-%20Nacho%20Garc%C3%ADa%20Egea">Contactar</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__copy reveal">
+          <p class="badge">Advisor en ciberseguridad · Enfoque riesgo de negocio</p>
+
+          <h1>
+            Claridad en ciberseguridad para decidir mejor.
+            <span class="h1__line">Con foco en riesgo y negocio.</span>
+          </h1>
+
+          <p class="subtitle">
+            Diagnóstico y priorización para startups/scale-ups B2B que venden a enterprise.
+            Mentoría para nuevos talentos orientada a criterio, comunicación y toma de decisiones.
+          </p>
+
+          <div class="hero__ctas">
+            <a class="btn btn--primary" href="TU_LINK_STRIPE_O_GUMROAD" target="_blank" rel="noopener">Solicitar consulta</a>
+            <a class="btn btn--ghost" href="#startups">Ver soluciones</a>
+            <button class="btn btn--ghost" id="copyEmailBtn" type="button" title="Copiar email">Copiar email</button>
+          </div>
+
+          <div class="trust">
+            <span>+20 años en ciberseguridad</span>
+            <span>Traducción técnico → riesgo de negocio</span>
+            <span>Contexto enterprise sin burocracia</span>
+          </div>
+
+          <div class="social" aria-label="Redes sociales">
+            <a class="social__icon" href="https://www.linkedin.com/in/nachogarciaegea/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a class="social__icon" href="https://www.instagram.com/nachogarciaegea" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>
+            </a>
+            <a class="social__icon" href="https://www.tiktok.com/@nachogarciaegea_" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok">
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M10.492 2c.198 1.703 1.149 2.718 2.802 2.826v1.915c-.958.094-1.797-.22-2.773-.81v3.582c0 4.551-4.963 5.973-6.958 2.711-1.282-2.098-.497-5.781 3.616-5.93v2.02c-.313.051-.648.13-.954.235-.915.31-1.434.889-1.29 1.911.278 1.959 3.872 2.538 3.573-1.289V2.004h1.984V2Z"/></svg>
+            </a>
+            <a class="social__icon" href="https://www.youtube.com/@nachogarciaegea" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.593 7.203a2.506 2.506 0 0 0-1.762-1.766C18.265 5.007 12 5 12 5s-6.264-.007-7.831.404a2.56 2.56 0 0 0-1.766 1.778c-.413 1.566-.417 4.814-.417 4.814s-.004 3.264.406 4.814c.23.857.905 1.534 1.763 1.765 1.582.43 7.83.437 7.83.437s6.265.007 7.831-.403a2.515 2.515 0 0 0 1.767-1.763c.414-1.565.417-4.812.417-4.812s.02-3.265-.407-4.831zM9.996 15.005l.005-6 5.207 3.005-5.212 2.995z"/></svg>
+            </a>
+          </div>
+
+          
+          <div class="stats" aria-label="Indicadores">
+            <div class="stat">
+              <div class="stat__value" data-count="500">0</div>
+              <div class="stat__label">Profesionales mentorizados</div>
+            </div>
+            <div class="stat">
+              <div class="stat__value" data-count="50">0</div>
+              <div class="stat__label">Startups asesoradas</div>
+            </div>
+            <div class="stat">
+              <div class="stat__value" data-count="20">0</div>
+              <div class="stat__label">Años de experiencia</div>
+            </div>
+            <div class="stat">
+              <div class="stat__value" data-count="8">0</div>
+              <div class="stat__label">Países (ES + LATAM)</div>
+            </div>
+          </div>
+
+          <div class="kitline">
+            <span class="kitline__tag">Producto</span>
+            <span class="kitline__text">Diagnóstico de postura + plan de mejora</span>
+          </div>
+
+          <p class="micro" id="copyToast" aria-live="polite"></p>
+
         </div>
+
+        <div class="hero__panel reveal" aria-label="Accesos rápidos">
+          <div class="panel">
+            <div class="panel__title">Selecciona tu ruta</div>
+
+            <div class="panel__item">
+              <div class="panel__kicker">Founder / C-level</div>
+              <div class="panel__desc">Ventas B2B, due diligence y board. Claridad y ejecución sin contratar FTE.</div>
+              <div class="panel__actions">
+                <a class="btn btn--primary" href="#startups">Startups & Scale-ups</a>
+                <a class="btn btn--ghost" href="TU_LINK_STRIPE_O_GUMROAD" target="_blank" rel="noopener">Solicitar consulta</a>
+              </div>
+            </div>
+
+            <div class="panel__item">
+              <div class="panel__kicker">Talento en ciberseguridad</div>
+              <div class="panel__desc">Mentoría para crecer con criterio, visión de negocio y mentalidad advisor.</div>
+              <div class="panel__actions">
+                <a class="btn btn--primary" href="#mentoria">Mentoría</a>
+                <a class="btn btn--ghost" href="#sobre">Sobre mí</a>
+              </div>
+            </div>
+
+            <div class="panel__fineprint">
+              Email: <a href="mailto:yo@nachogarciaegea.com">yo@nachogarciaegea.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section id="startups" class="section">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2><span class="ms" aria-hidden="true">apartment</span>Startups & Scale-ups</h2>
+          <p class="lead">
+            El problema no es la ciberseguridad. Es la incertidumbre: no saber si hoy pasarías un cuestionario enterprise,
+            ni qué hacer primero para mejorar.
+          </p>
+        </div>
+
+        <div class="callout reveal">
+          <strong>Referencia rápida:</strong> para vender de forma consistente a enterprise, el mínimo aceptable suele ser
+          <strong>Nivel 3 (≥60%)</strong>.
+        </div>
+
+        <div class="two-col">
+          <div class="card reveal">
+            <h3>Producto: Diagnóstico de postura + plan de mejora</h3>
+            <ul class="list">
+              <li>Diagnóstico estándares internacionales (80 preguntas Sí/No)</li>
+              <li>Score automático + nivel + semáforo por dominios</li>
+              <li>Quick wins y roadmap de en semanas</li>
+              <li>Sin contratar FTE</li>
+            </ul>
+            <div class="card__actions">
+              <a class="btn btn--primary" href="TU_LINK_STRIPE_O_GUMROAD" target="_blank" rel="noopener">Solicitar consulta</a>
+              <a class="btn btn--ghost" href="#faq">FAQ</a>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <h3>Servicio: Advisory / Aceleración</h3>
+            <ul class="list">
+              <li>Office Hours (priorización ejecutiva)</li>
+              <li>Sprint 2–4 semanas (subir madurez rápido)</li>
+              <li>Retainer (mantener Nivel 3 y escalar)</li>
+            </ul>
+            <div class="card__actions">
+              <a class="btn btn--primary" href="mailto:yo@nachogarciaegea.com?subject=Advisory%20Startups%20-%20Quiero%20hablar">Solicitar llamada</a>
+              <a class="btn btn--ghost" href="#como">Cómo trabajo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+<div class="consult-wrap">
+        <div class="card reveal card--consult">
+            <h3>Solicitud de consulta</h3>
+            <p class="body">Cuéntame 4 datos y te respondo por email con el siguiente paso recomendado.</p>
+            <form class="form form--consult" action="mailto:yo@nachogarciaegea.com" method="post" enctype="text/plain">
+  <label>
+    Empresa
+    <input type="text" name="empresa" required>
+  </label>
+  <label>
+    Rol
+    <input type="text" name="rol" required>
+  </label>
+  <label>
+    Email
+    <input type="email" name="email" required>
+  </label>
+  <label>
+    Contexto (cliente enterprise, auditoría, ventas, etc.)
+    <textarea name="contexto" rows="3" required></textarea>
+  </label>
+  <button class="btn btn--primary" type="submit">Enviar y solicitar consulta</button>
+</form>
+
+</section>
+
+    <section id="comotrabajo" class="section section--alt">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2>Cómo trabajo</h2>
+          <p class="lead">Un proceso simple y repetible, orientado a decisiones y ejecución.</p>
+        </div>
+
+        <div class="steps">
+          <div class="step reveal">
+            <h3><span class="ms" aria-hidden="true">visibility</span>1) Entender</h3>
+            <p>Diagnóstico honesto: dónde estás hoy, sin autoengaño.</p>
+          </div>
+          <div class="step reveal">
+            <h3><span class="ms" aria-hidden="true">format_list_bulleted</span>2) Priorizar</h3>
+            <p>Riesgo real y contexto de negocio: qué mueve la aguja primero.</p>
+          </div>
+          <div class="step reveal">
+            <h3><span class="ms" aria-hidden="true">play_arrow</span>3) Ejecutar</h3>
+            <p>plan de mejora corto, medible, con owners. en semanas, no 12 meses.</p>
+          </div>
+        </div>
+
+        <div class="cta-row reveal">
+          <a class="btn btn--primary" href="TU_LINK_STRIPE_O_GUMROAD" target="_blank" rel="noopener">Solicitar consulta</a>
+          <a class="btn btn--ghost" href="mailto:yo@nachogarciaegea.com?subject=Office%20Hours%20-%20Quiero%20reservar">Reservar Office Hours</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="mentoria" class="section">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2><span class="ms" aria-hidden="true">school</span>Mentoría para nuevos talentos</h2>
+
+<p class="muted">
+Para perfiles técnicos que quieren:
+</p>
+<ul class="muted-list">
+  <li>dejar de acumular cursos sin criterio</li>
+  <li>aprender a priorizar y explicar riesgo</li>
+  <li>entender negocio sin dejar de ser técnicos</li>
+  <li>construir una narrativa profesional creíble</li>
+  <li>tomar mejores decisiones, no saber más herramientas</li>
+</ul>
+
+          <p class="lead">
+            Mucho contenido, poco criterio. La mentoría va de pensar mejor: priorizar, comunicar riesgo, entender negocio,
+            y evitar el culto a la herramienta.
+          </p>
+        </div>
+
+        <div class="card reveal">
+          <h3>Mentoría (1:1 o grupos reducidos)</h3>
+          <ul class="list">
+            <li>Mentalidad advisor: decisiones y trade-offs</li>
+            <li>Comunicación: técnico → impacto y riesgo</li>
+            <li>Plan de crecimiento: skills, proyectos y narrativa profesional</li>
+            <li>Sesiones prácticas, enfoque realista</li>
+          </ul>
+          <div class="card__actions">
+            <a class="btn btn--primary" href="mailto:yo@nachogarciaegea.com?subject=Mentor%C3%ADa%20-%20Solicitud%20de%20plaza">Solicitar plaza</a>
+            <a class="btn btn--ghost" href="#faq">FAQ</a>
+          </div>
+        </div>
+      </div>
+    
+
+</section>
+
+    <section id="sobre" class="section">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <h2><span class="ms" aria-hidden="true">person</span>Sobre mí</h2>
     </header>
 
-    <!-- Hero -->
-    <section id="inicio" class="hero">
-        <div class="hero-container">
-            <div class="hero-label">Mentor & Startup Advisor en Ciberseguridad</div>
-                        <div class="hero-content">
-            <h1>Nacho García Egea</h1>
-            <p class="hero-subtitle">
-                Apasionado por la ciberseguridad y la innovación con una visión/mentalidad hacker, con más de 20 años de experiencia protegiendo los activos más críticos de empresas de todo tipo. Mi misión es redefinir cómo las organizaciones ven la seguridad, integrando enfoques disruptivos que combinan la protección física y lógica para generar valor estratégico real.
-            </p>
-            <div class="hero-cta">
-                <a href="#agenda" class="btn btn-white">Agenda tu Sesión Gratuita</a>
-                <a href="#servicios" class="btn btn-outline">Ver Servicios</a>
-            </div>
-        </div>
-                        </div>
-        <div class="hero-image">
-            <img src="nacho.png" alt="Nacho García Egea">
-        </div>
-    </section>
-                
+    <div class="about">
+      <p>Soy <strong>Nacho García Egea</strong>, advisor en ciberseguridad con más de <strong>20 años de experiencia</strong> trabajando con entornos complejos, riesgo real y decisiones que impactan directamente en negocio.</p>
 
-    <!-- Stats -->
-    <section class="stats">
-        <div class="stats-container">
-            <div class="stat-item">
-                <div class="stat-number">500+</div>
-                <div class="stat-label">Profesionales Mentorizados</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">50+</div>
-                <div class="stat-label">Startups Asesoradas</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">20+</div>
-                <div class="stat-label">Años Experiencia</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">8</div>
-                <div class="stat-label">Países (España + LATAM)</div>
-            </div>
-        </div>
-    </section>
+      <p>He trabajado la seguridad desde múltiples ángulos —operación, gobierno, cumplimiento y acompañamiento a equipos técnicos y directivos— lo que me ha dado una visión poco común: entender la ciberseguridad no como un problema técnico, sino como un problema de <strong>decisión</strong>.</p>
 
-    <!-- Mission -->
-    <section class="mission">
-        <div class="mission-container">
-            <h2>AYUDO A PROFESIONALES A CRECER Y A STARTUPS A ESCALAR</h2>
-            <p>
-                20+ años liderando equipos globales y gestionando seguridad en 8 países. Ahora dedico mi experiencia a dos pasiones: acelerar carreras de profesionales tech y ayudar a founders a construir startups de ciberseguridad exitosas.
-            </p>
-        </div>
-    </section>
+      <p>Hoy ayudo a <strong>startups y scale-ups</strong> a ganar claridad sobre su postura de seguridad, priorizar correctamente y evitar inversiones innecesarias en herramientas, proveedores o controles mal enfocados. Mi trabajo no va de implantar “más seguridad”, sino de decidir mejor <em>cuándo, cómo y por qué</em>.</p>
 
-    <!-- Mentorship Focus -->
-    <section id="mentoria" class="mentorship">
-        <div class="mentorship-container">
-            <div class="mentorship-content">
-                <div class="section-label">Dos Caminos, Un Objetivo: Tu Éxito</div>
-                <h2>Mentoría & Startup Advisory</h2>
-                <p class="mentorship-text">
-                    <strong>¿Eres un profesional que quiere crecer o un nuevo talento que necesita un roadmap para empezar en ciberseguridad?</strong> Te ayudo a diseñar tu roadmap de carrera, desarrollar habilidades de liderazgo y conseguir el siguiente nivel: senior, líder de equipo o CISO.
-                </p>
-                
-                <p class="mentorship-text">
-                    <strong>¿Estás construyendo una startup de ciberseguridad?</strong> Te asesoro en estrategia de producto, go-to-market, fundraising, contratación de equipo y escalamiento. He visto qué funciona y qué no.
-                </p>
-                
-                <ul class="mentorship-list">
-                    <li>→ Mentoría 1:1 para profesionales de ciberseguridad</li>
-                    <li>→ Advisory estratégico para founders tech</li>
-                    <li>→ Preparación para roles de liderazgo (CISO, CTO)</li>
-                    <li>→ Go-to-market y validación de producto</li>
-                    <li>→ Networking con inversores y clientes</li>
-                    <li>→ Pitch deck review y preparación fundraising</li>
-                </ul>
+      <p>En paralelo, acompaño a perfiles técnicos que quieren construir una carrera sólida en ciberseguridad: entender fundamentos, desarrollar criterio y aprender a explicar riesgo y valor en contextos reales de negocio.</p>
 
-                <a href="#agenda" class="btn btn-black">Agenda tu Sesión Gratuita (30 min)</a>
-            </div>
-            <div class="mentorship-image">
-                <!-- Reemplaza con tu foto dando una charla o mentorizando -->
-                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&h=1000&fit=crop&q=80" alt="Nacho García Egea - Mentor en Acción">
-            </div>
-        </div>
-    </section>
+      <p class="muted">No vendo humo, certificaciones milagro ni frameworks de moda. Trabajo con criterio, contexto y decisiones.</p>
+    </div>
+  </div>
+</section>
 
-    <!-- Services -->
-    <section id="servicios" class="services">
-        <div class="services-container">
-            <div class="section-header">
-                <div class="section-label">Servicios</div>
-                <h2 class="section-title">Cómo Puedo Ayudarte</h2>
-            </div>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-number">01</div>
-                    <h3 class="service-title">Mentoría 1:1 Profesional</h3>
-                    <p class="service-description">
-                        Para profesionales de ciberseguridad: roadmap de carrera, desarrollo de habilidades, preparación para ascensos y negociación de ofertas.
-                    </p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-number">02</div>
-                    <h3 class="service-title">Startup Advisory</h3>
-                    <p class="service-description">
-                        Para founders de ciberseguridad: estrategia de producto, go-to-market, fundraising, contratación de equipo tech y escalamiento del negocio.
-                    </p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-number">03</div>
-                    <h3 class="service-title">Preparación CISO/CTO</h3>
-                    <p class="service-description">
-                        Roadmap completo para llegar a roles ejecutivos: habilidades de liderazgo, visión estratégica, comunicación con board y gestión de equipos.
-                    </p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-number">04</div>
-                    <h3 class="service-title">Product & GTM Strategy</h3>
-                    <p class="service-description">
-                        Validación de producto, posicionamiento en mercado, pricing, primeros clientes y estrategia de ventas para startups de ciberseguridad.
-                    </p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-number">05</div>
-                    <h3 class="service-title">Fundraising & Pitch</h3>
-                    <p class="service-description">
-                        Review de pitch deck, preparación para inversores, valoración, term sheets y conexiones con VCs enfocados en ciberseguridad.
-                    </p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-number">06</div>
-                    <h3 class="service-title">Networking Global</h3>
-                    <p class="service-description">
-                        Acceso a mi red en 8 países: inversores, clientes enterprise, partners estratégicos y comunidad de alumni de alto nivel.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+</main>
 
-    <!-- Process -->
-    <section class="process">
-        <div class="process-container">
-            <div class="section-header">
-                <div class="section-label">Cómo Funciona</div>
-                <h2 class="section-title">Tu Proceso de Transformación</h2>
-            </div>
-            
-            <div class="process-grid">
-                <div class="process-step">
-                    <div class="process-number">1</div>
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path class="icon-stroke" d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-                        <line class="icon-stroke" x1="9" y1="10" x2="15" y2="10"/>
-                        <line class="icon-stroke" x1="12" y1="7" x2="12" y2="13"/>
-                    </svg>
-                    <h3 class="process-title">Sesión Gratuita (30 min)</h3>
-                    <p class="process-description">Nos conocemos, entiendo dónde estás y dónde quieres llegar. Sin compromiso. Evaluamos si hay buen fit.</p>
-                </div>
-                
-                <div class="process-step">
-                    <div class="process-number">2</div>
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path class="icon-stroke" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                        <polyline class="icon-stroke" points="14 2 14 8 20 8"/>
-                        <line class="icon-stroke" x1="12" y1="18" x2="12" y2="12"/>
-                        <line class="icon-stroke" x1="9" y1="15" x2="15" y2="15"/>
-                    </svg>
-                    <h3 class="process-title">Roadmap Personalizado</h3>
-                    <p class="process-description">Diseñamos tu plan de acción con objetivos claros, milestones medibles y timeline realista. Todo a tu medida.</p>
-                </div>
-                
-                <div class="process-step">
-                    <div class="process-number">3</div>
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <circle class="icon-stroke" cx="12" cy="12" r="10"/>
-                        <polyline class="icon-stroke" points="12 6 12 12 16 14"/>
-                    </svg>
-                    <h3 class="process-title">Sesiones + Soporte</h3>
-                    <p class="process-description">Reuniones 1:1 regulares más acceso directo entre sesiones. No estás solo en el proceso.</p>
-                </div>
-                
-                <div class="process-step">
-                    <div class="process-number">4</div>
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path class="icon-stroke" d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                        <polyline class="icon-stroke" points="22 4 12 14.01 9 11.01"/>
-                    </svg>
-                    <h3 class="process-title">Logras tus Objetivos</h3>
-                    <p class="process-description">Ascenso, cambio de rol, aumento de salario, o lanzamiento de tu startup. Celebramos tus victorias.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© <span id="year"></span> Nacho García Egea</span>
+      <div class="footer__links" aria-label="Enlaces">
+        <a class="footer__icon" href="https://www.linkedin.com/in/nachogarciaegea/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a class="footer__icon" href="https://www.instagram.com/nachogarciaegea" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg></a>
+        <a class="footer__icon" href="https://www.tiktok.com/@nachogarciaegea_" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M10.492 2c.198 1.703 1.149 2.718 2.802 2.826v1.915c-.958.094-1.797-.22-2.773-.81v3.582c0 4.551-4.963 5.973-6.958 2.711-1.282-2.098-.497-5.781 3.616-5.93v2.02c-.313.051-.648.13-.954.235-.915.31-1.434.889-1.29 1.911.278 1.959 3.872 2.538 3.573-1.289V2.004h1.984V2Z"/></svg></a>
+        <a class="footer__icon" href="https://www.youtube.com/@nachogarciaegea" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.593 7.203a2.506 2.506 0 0 0-1.762-1.766C18.265 5.007 12 5 12 5s-6.264-.007-7.831.404a2.56 2.56 0 0 0-1.766 1.778c-.413 1.566-.417 4.814-.417 4.814s-.004 3.264.406 4.814c.23.857.905 1.534 1.763 1.765 1.582.43 7.83.437 7.83.437s6.265.007 7.831-.403a2.515 2.515 0 0 0 1.767-1.763c.414-1.565.417-4.812.417-4.812s.02-3.265-.407-4.831zM9.996 15.005l.005-6 5.207 3.005-5.212 2.995z"/></svg></a>
+        <a class="footer__text" href="mailto:yo@nachogarciaegea.com"><span class="ms" aria-hidden="true">mail</span>Email</a>
+        <a class="footer__text" href="https://nachogarciaegea.com"><span class="ms" aria-hidden="true">policy</span>Legal</a>
+      </div>
+    </div>
+  </footer>
 
-    <!-- Pricing -->
-    <section id="precios" class="pricing">
-        <div class="pricing-container">
-            <div class="section-header">
-                <div class="section-label">Inversión</div>
-                <h2 class="section-title">Planes · Mentoría & Advisory</h2>
-            </div>
-            
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <div class="pricing-tag">Para Profesionales</div>
-                    <h3 class="pricing-name">Sesión Individual</h3>
-                    <div class="pricing-price"></div>
-                    <div class="pricing-period">por sesión de 60 min</div>
-                    <ul class="pricing-features">
-                        <li>1 sesión 1:1 de 60 minutos</li>
-                        <li>Revisión de CV y LinkedIn</li>
-                        <li>Estrategia de carrera</li>
-                        <li>Seguimiento por email (7 días)</li>
-                    </ul>
-                    <a href="#agenda" class="btn btn-black pricing-btn">Reservar Sesión</a>
-                </div>
-                
-                <div class="pricing-card featured">
-                    <div class="pricing-tag">★ Para Profesionales</div>
-                    <h3 class="pricing-name">Mentoría Mensual</h3>
-                    <div class="pricing-price"></div>
-                    <div class="pricing-period">al mes</div>
-                    <ul class="pricing-features">
-                        <li>4 sesiones 1:1 al mes</li>
-                        <li>Plan de acción personalizado</li>
-                        <li>Acceso directo por WhatsApp</li>
-                        <li>Revisión de proyectos/propuestas</li>
-                        <li>Networking y conexiones</li>
-                        <li>Recursos y materiales exclusivos</li>
-                    </ul>
-                    <a href="#agenda" class="btn btn-black pricing-btn">Empezar Ahora</a>
-                </div>
-                
-                <div class="pricing-card">
-                    <div class="pricing-tag">Para Startups</div>
-                    <h3 class="pricing-name">Startup Advisory</h3>
-                    <div class="pricing-price">Custom</div>
-                    <div class="pricing-period">según etapa y necesidades</div>
-                    <ul class="pricing-features">
-                        <li>Sesiones regulares estratégicas</li>
-                        <li>Product & GTM strategy</li>
-                        <li>Pitch deck review completo</li>
-                        <li>Conexiones con inversores</li>
-                        <li>Soporte en contratación</li>
-                        <li>Acceso directo a founders</li>
-                        <li>Posibilidad de angel investment</li>
-                    </ul>
-                    <a href="#agenda" class="btn btn-black pricing-btn">Hablemos</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- FAQ -->
-    <section class="faq">
-        <div class="faq-container">
-            <div class="section-header">
-                <div class="section-label">Preguntas Frecuentes</div>
-                <h2 class="section-title">FAQ</h2>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>¿Para quién es esto?</span>
-                    <span class="faq-icon">+</span>
-                </div>
-                <div class="faq-answer">
-                    Para dos perfiles: (1) Profesionales de ciberseguridad que quieren acelerar su carrera - desde juniors hasta futuros CISOs. (2) Founders construyendo startups de ciberseguridad que necesitan guidance estratégico, conexiones y experiencia práctica.
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>¿Qué incluye el advisory para startups?</span>
-                    <span class="faq-icon">+</span>
-                </div>
-                <div class="faq-answer">
-                    Estrategia de producto, validación de mercado, go-to-market, pricing, preparación de pitch deck, conexiones con inversores, contratación de equipo tech, escalamiento y todo lo que necesitas desde pre-seed hasta Serie A. Sesiones regulares + acceso directo para dudas urgentes.
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>¿Qué resultados puedo esperar?</span>
-                    <span class="faq-icon">+</span>
-                </div>
-                <div class="faq-answer">
-                    Profesionales: ascensos en 3-6 meses, aumentos de 20-40%, cambios a roles más estratégicos. Startups: validación de producto, primeros clientes, fundraising exitoso, equipo contratado, escalamiento a 6-7 cifras. Los resultados dependen de tu ejecución, yo te doy el mapa.
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>¿Cómo son las sesiones?</span>
-                    <span class="faq-icon">+</span>
-                </div>
-                <div class="faq-answer">
-                    Videollamadas 1:1 de 60 minutos vía Google Meet. No es teoría académica, es consultoría práctica. Trabajamos en TUS desafíos específicos: pitch deck review, negociación de ofertas, decisiones de producto, estrategia de contratación, lo que necesites en ese momento.
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>¿Inviertes en startups?</span>
-                    <span class="faq-icon">+</span>
-                </div>
-                <div class="faq-answer">
-                    Ocasionalmente hago angel investing en startups de ciberseguridad que asesoro. Pero mi foco principal es advisory: te ayudo a construir algo investible y te conecto con los VCs correctos. Mi valor no es capital, es experiencia y red.
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>¿Trabajas solo con España?</span>
-                    <span class="faq-icon">+</span>
-                </div>
-                <div class="faq-answer">
-                    No. Trabajo con profesionales y startups en toda España, Latinoamérica y Europa. Tengo experiencia gestionando equipos en 8 países y conozco las particularidades de cada mercado. Las sesiones son online, en español o inglés.
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Calendly -->
-    <section id="agenda" class="calendly-section">
-        <div class="calendly-container">
-            <div class="calendly-content">
-                <h2>AGENDA TU PRIMERA SESIÓN</h2>
-                <p>Elige el día y hora que mejor te funcione. Te enviaré un email de confirmación con el link de la videollamada.</p>
-            </div>
-            
-            <!-- Calendly inline widget -->
-            <div class="calendly-embed" 
-                 data-url="https://calendly.com/nachogarciaegea/mentoria-inicial"
-                 style="position: relative; min-height: 700px;">
-                
-                <!-- Placeholder mientras no configures Calendly -->
-                <div style="background: white; padding: 4rem; text-align: center; color: black;">
-                    <h3 style="font-size: 2rem; margin-bottom: 2rem; color: black;">📅 Calendly Integration</h3>
-                    <p style="font-size: 1.2rem; margin-bottom: 2rem; color: black;">
-                        Para activar tu calendario de Calendly:
-                    </p>
-                    <ol style="text-align: left; max-width: 600px; margin: 0 auto; font-size: 1.1rem; line-height: 2; color: black;">
-                        <li>Crea tu cuenta gratuita en <a href="https://calendly.com" target="_blank" style="color: black; font-weight: 700;">calendly.com</a></li>
-                        <li>Configura tu tipo de evento "Mentoría Inicial"</li>
-                        <li>Copia tu link de Calendly</li>
-                        <li>Reemplaza en el código: <code style="background: #f5f5f5; padding: 0.2rem 0.5rem; color: black;">data-url="TU_LINK_AQUI"</code></li>
-                        <li>Añade el script de Calendly antes del <code style="background: #f5f5f5; padding: 0.2rem 0.5rem; color: black;">&lt;/body&gt;</code></li>
-                    </ol>
-                    <p style="margin-top: 3rem; font-size: 1rem; opacity: 0.7; color: black;">
-                        Script a añadir: <br>
-                        <code style="background: #f5f5f5; padding: 0.5rem 1rem; display: inline-block; margin-top: 1rem; color: black;">
-                            &lt;script src="https://assets.calendly.com/assets/external/widget.js"&gt;&lt;/script&gt;
-                        </code>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience -->
-    <section id="experiencia" class="experience">
-        <div class="experience-container">
-            <div class="section-header">
-                <div class="section-label">Por Qué Puedo Ayudarte</div>
-                <h2 class="section-title">Mi Background</h2>
-            </div>
-            
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <div class="timeline-company">20+ AÑOS EN CIBERSEGURIDAD</div>
-                    <div class="timeline-date">2005 - Hoy</div>
-                </div>
-                <div class="timeline-role">He Recorrido Todo el Camino</div>
-                <p class="timeline-description">
-                    Empecé como técnico autodidacta desde adolescente. Pasé por roles junior, senior, lideré equipos en EY, PwC, Orange y HPE. Llegué a CTO y finalmente Global CISO gestionando seguridad en 8 países. Conozco cada paso del camino porque lo viví.
-                </p>
-            </div>
-            
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <div class="timeline-company">LIDERAZGO GLOBAL</div>
-                    <div class="timeline-date">8 Países</div>
-                </div>
-                <div class="timeline-role">Grupo Gigas · BeDisruptive · A3Sec</div>
-                <p class="timeline-description">
-                    Como Global CISO gestiono equipos internacionales en España, Portugal, Irlanda, México, Colombia, Chile, Perú y USA. Sé lo que buscan las empresas, cómo se toman decisiones de contratación y qué se necesita para destacar.
-                </p>
-            </div>
-            
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <div class="timeline-company">PENSAMIENTO DISRUPTIVO</div>
-                    <div class="timeline-date">Desde Siempre</div>
-                </div>
-                <div class="timeline-role">Melilla → Europa → LATAM</div>
-                <p class="timeline-description">
-                    Originario de Melilla, autodidacta, mentalidad de pensamiento lateral. He construido mi carrera desde cero, sin contactos, solo con trabajo y estrategia. Si yo pude, tú también. Te enseño el camino que a mí me tomó años descubrir.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="cta">
-        <div class="cta-container">
-            <h2>¿LISTO PARA ACELERAR?</h2>
-            <p>Si quieres crecer profesionalmente o escalar tu startup, si necesitas guidance con experiencia real, si buscas alguien que ya recorrió el camino... hablemos.</p>
-            <a href="#agenda" class="btn btn-black">Agenda tu Sesión Gratuita (30 min)</a>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contacto" class="contact">
-        <div class="contact-container">
-            <div class="section-header">
-                <div class="section-label">Contacto</div>
-                <h2 class="section-title">Conectemos</h2>
-            </div>
-            
-            <div class="contact-grid">
-
-                    <div class="contact-card" style="max-width: 600px; margin: 0 auto; padding: 3rem; background: var(--white); border: 1px solid var(--black); border-radius: 0;">
-                        <h3 style="font-size: 1.5rem; margin-bottom: 2rem; text-align: center; font-weight: 700; letter-spacing: 2px;">CONTACTO</h3>
-                                                    <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: var(--gray);">o escribe a <a href="mailto:yo@nachogarciaegea.com" style="color: var(--black); text-decoration: underline;">yo@nachogarciaegea.com</a></p>
-            <form action="https://formspree.io/f/xanypojd" method="POST">                            <div style="margin-bottom: 1.5rem;">
-                                <input type="text" name="name" placeholder="Nombre" required style="width: 100%; padding: 1rem; border: 1px solid var(--black); border-radius: 0; font-size: 1rem; font-family: 'Inter', sans-serif; background: var(--white); transition: border 0.3s;">
-                            </div>
-                            <div style="margin-bottom: 1.5rem;">
-                                <input type="email" name="email" placeholder="Email" required style="width: 100%; padding: 1rem; border: 1px solid var(--black); border-radius: 0; font-size: 1rem; font-family: 'Inter', sans-serif; background: var(--white); transition: border 0.3s;">
-                            </div>
-                            <div style="margin-bottom: 1.5rem;">
-                                <textarea name="message" placeholder="Mensaje" required style="width: 100%; padding: 1rem; border: 1px solid var(--black); border-radius: 0; font-size: 1rem; font-family: 'Inter', sans-serif; background: var(--white); min-height: 150px; resize: vertical; transition: border 0.3s;"></textarea>
-                            </div>
-                            <button type="submit" style="width: 100%; padding: 1rem 2rem; background: var(--black); color: var(--white); border: none; border-radius: 0; cursor: pointer; font-size: 1rem; font-weight: 600; letter-spacing: 1px; transition: all 0.3s; font-family: 'Inter', sans-serif;">ENVIAR MENSAJE</button>
-                        </form>
-                    </div>                
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-social">
-                <a href="https://linkedin.com/in/nachogarciaegea" target="_blank" class="social-link" aria-label="LinkedIn">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                        <rect x="2" y="9" width="4" height="12"/>
-                        <circle cx="4" cy="4" r="2"/>
-                    </svg>
-                </a>
-                <a href="https://instagram.com/nachogarciaegea" target="_blank" class="social-link" aria-label="Instagram">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-                    </svg>
-                </a>
-                <a href="https://www.nachogarciaegea.com" target="_blank" class="social-link" aria-label="Website">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10"/>
-                        <line x1="2" y1="12" x2="22" y2="12"/>
-                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                    </svg>
-                </a>
-                <a href="mailto:nacho@nachogarciaegea.com" class="social-link" aria-label="Email">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                        <polyline points="22,6 12,13 2,6"/>
-                    </svg>
-                </a>
-            </div>
-            
-            <div class="footer-text">
-                © 2025 Nacho García Egea · Mentor & Startup Advisor en Ciberseguridad · España + LATAM
-            </div>
-            <div class="footer-text" style="margin-top: 1rem; font-size: 0.85rem;">
-                500+ Profesionales Mentorizados · 50+ Startups Asesoradas · 20+ Años Experiencia
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-
-        // FAQ Accordion
-        document.querySelectorAll('.faq-item').forEach(item => {
-            item.addEventListener('click', () => {
-                const isActive = item.classList.contains('active');
-                
-                // Close all items
-                document.querySelectorAll('.faq-item').forEach(otherItem => {
-                    otherItem.classList.remove('active');
-                });
-                
-                // Open clicked item if it wasn't active
-                if (!isActive) {
-                    item.classList.add('active');
-                }
-            });
-        });
-
-        // Fade-in animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-        document.querySelectorAll('.service-card, .timeline-item, .contact-card, .stat-item, .process-step, .faq-item').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
-        });
-    </script>
-
-    <!-- 
-    CALENDLY SETUP:
-    Para activar Calendly, añade este script justo antes de cerrar el </body>:
-    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-    
-    Y actualiza el data-url en la sección calendly-embed con tu link personal de Calendly.
-    -->
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Nacho García Egea",
-      "jobTitle": "Mentor & Startup Advisor en Ciberseguridad",
-      "description": "Mentor para profesionales de ciberseguridad y advisor estratégico para startups tech. 20+ años experiencia global.",
-      "url": "https://nachogarciaegea.com",
-      "sameAs": [
-        "https://www.linkedin.com/in/nachogarciaegea/",
-        "https://www.instagram.com/nachogarciaegea/",
-        "https://www.nachogarciaegea.com"
-      ],
-      "knowsAbout": [
-        "Mentoría Profesional",
-        "Startup Advisory",
-        "Ciberseguridad",
-        "Liderazgo Técnico",
-        "Product Strategy",
-        "Go-to-Market",
-        "Fundraising"
-      ],
-      "offers": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Mentoría Individual",
-            "description": "Mentoría 1:1 para profesionales de ciberseguridad"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Startup Advisory",
-            "description": "Advisory estratégico para startups de ciberseguridad"
-          }
-        }
-      ]
-    }
-    </script>
+  <script src="app.js"></script>
 </body>
 </html>
+
