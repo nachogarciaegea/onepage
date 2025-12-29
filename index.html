@@ -1,29 +1,312 @@
 <!doctype html>
 <html lang="es">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Nacho</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            font-family: Arial, sans-serif;
-        }
-        h1 {
-            font-size: 120px;
-            color: white;
-            text-shadow: 3px 3px 10px rgba(0,0,0,0.3);
-            margin: 0;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nacho García Egea | Advisor Ciberseguridad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Nacho García Egea. Advisor en ciberseguridad para startups y scale-ups: diagnóstico estándares internacionales + roadmap en semanas. Mentoría para nuevos talentos." />
+  <meta name="theme-color" content="#000000" />
+  <meta property="og:title" content="Nacho García Egea | Advisor Ciberseguridad" />
+  <meta property="og:description" content="Diagnóstico claro, priorización por riesgo de negocio y acompañamiento ejecutivo. Startups/scale-ups y mentoría." />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <h1>nacho</h1>
+  <div class="progress" aria-hidden="true"><div class="progress__bar" id="progress"></div></div>
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a class="logo" href="#top" aria-label="Inicio">
+        <img src="assets/logo-nge.svg" alt="NGE" class="logo__img" />
+        <span class="logo__sep" aria-hidden="true">|</span>
+        <span class="logo__text">Nacho García Egea</span>
+      </a>
+
+      <nav class="nav" aria-label="Navegación principal">
+        <a class="nav__link" href="#top">Inicio</a>
+        <a class="nav__link" href="#comotrabajo">Cómo trabajo</a>
+        <a class="nav__link" href="#startups">Startups & Scale-ups</a>
+        <a class="nav__link" href="#mentoria">Mentoría</a></nav>
+        <a class="nav__link" href="#sobre">Sobre mí</a>
+      <div class="header__actions">
+        <button class="burger" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      </div>
+    </div>
+
+    <div class="mobile-nav" aria-hidden="true">
+      <a class="mobile-nav__link" href="#mentoria">Mentoría</a>
+      <a class="mobile-nav__link" href="#sobre">Sobre mí</a>
+      <a class="mobile-nav__link" href="#faq">FAQ</a>
+      <div class="mobile-nav__cta">
+        <a class="btn btn--primary" href="TU_LINK_STRIPE_O_GUMROAD" target="_blank" rel="noopener">Solicitar consulta</a>
+        <a class="btn btn--ghost" href="mailto:yo@nachogarciaegea.com?subject=Consulta%20-%20Nacho%20Garc%C3%ADa%20Egea">Contactar</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__copy reveal">
+          <p class="badge">Advisor en ciberseguridad · Enfoque riesgo de negocio</p>
+
+          <h1>
+            Claridad en ciberseguridad para decidir mejor.
+            <span class="h1__line">Con foco en riesgo y negocio.</span>
+          </h1>
+
+          <p class="subtitle">
+            Diagnóstico y priorización para startups/scale-ups B2B que venden a enterprise.
+            Mentoría para nuevos talentos orientada a criterio, comunicación y toma de decisiones.
+          </p>
+
+          <div class="hero__ctas">
+            <a class="btn btn--primary" href="TU_LINK_STRIPE_O_GUMROAD" target="_blank" rel="noopener">Solicitar consulta</a>
+            <a class="btn btn--ghost" href="#startups">Ver soluciones</a>
+            <button class="btn btn--ghost" id="copyEmailBtn" type="button" title="Copiar email">Copiar email <span class="ms" aria-hidden="true">content_copy</span></button>
+          </div>
+
+          <div class="trust">
+            <span>+20 años en ciberseguridad</span>
+            <span>Traducción técnico → riesgo de negocio</span>
+            <span>Contexto enterprise sin burocracia</span>
+          </div>
+
+          <div class="social" aria-label="Redes sociales">
+            <a class="social__icon" href="https://www.linkedin.com/in/nachogarciaegea/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a class="social__icon" href="https://www.instagram.com/nachogarciaegea" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>
+            </a>
+            <a class="social__icon" href="https://www.tiktok.com/@nachogarciaegea_" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok">
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M10.492 2c.198 1.703 1.149 2.718 2.802 2.826v1.915c-.958.094-1.797-.22-2.773-.81v3.582c0 4.551-4.963 5.973-6.958 2.711-1.282-2.098-.497-5.781 3.616-5.93v2.02c-.313.051-.648.13-.954.235-.915.31-1.434.889-1.29 1.911.278 1.959 3.872 2.538 3.573-1.289V2.004h1.984V2Z"/></svg>
+            </a>
+            <a class="social__icon" href="https://www.youtube.com/@nachogarciaegea" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.593 7.203a2.506 2.506 0 0 0-1.762-1.766C18.265 5.007 12 5 12 5s-6.264-.007-7.831.404a2.56 2.56 0 0 0-1.766 1.778c-.413 1.566-.417 4.814-.417 4.814s-.004 3.264.406 4.814c.23.857.905 1.534 1.763 1.765 1.582.43 7.83.437 7.83.437s6.265.007 7.831-.403a2.515 2.515 0 0 0 1.767-1.763c.414-1.565.417-4.812.417-4.812s.02-3.265-.407-4.831zM9.996 15.005l.005-6 5.207 3.005-5.212 2.995z"/></svg>
+            </a>
+          </div>
+
+          
+          <div class="kitline">
+            <span class="kitline__tag">Producto</span>
+            <span class="kitline__text">Diagnóstico de postura + plan de mejora</span>
+          </div>
+
+          <p class="micro" id="copyToast" aria-live="polite"></p>
+
+        </div>
+
+        <div class="hero__panel reveal" aria-label="Accesos rápidos">
+          <div class="panel">
+            <div class="panel__title">Selecciona tu ruta</div>
+
+            <div class="panel__item">
+              <div class="panel__kicker">Founder / C-level</div>
+              <div class="panel__desc">Ventas B2B, due diligence y board. Claridad y ejecución sin contratar FTE.</div>
+              <div class="panel__actions">
+                <a class="btn btn--primary" href="#startups">Startups & Scale-ups</a>
+                <a class="btn btn--ghost" href="TU_LINK_STRIPE_O_GUMROAD" target="_blank" rel="noopener">Solicitar consulta</a>
+              </div>
+            </div>
+
+            <div class="panel__item">
+              <div class="panel__kicker">Talento en ciberseguridad</div>
+              <div class="panel__desc">Mentoría para crecer con criterio, visión de negocio y mentalidad advisor.</div>
+              <div class="panel__actions">
+                <a class="btn btn--primary" href="#mentoria">Mentoría</a>
+                <a class="btn btn--ghost" href="#sobre">Sobre mí</a>
+              </div>
+            </div>
+
+            <div class="panel__fineprint">
+              Email: <a href="mailto:yo@nachogarciaegea.com">yo@nachogarciaegea.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section id="startups" class="section">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2><span class="ms" aria-hidden="true">apartment</span>Startups & Scale-ups</h2>
+          <p class="lead">
+            El problema no es la ciberseguridad. Es la incertidumbre: no saber si hoy pasarías un cuestionario enterprise,
+            ni qué hacer primero para mejorar.
+          </p>
+        </div>
+
+        <div class="callout reveal">
+          <strong>Referencia rápida:</strong> para vender de forma consistente a enterprise, el mínimo aceptable suele ser
+          <strong>Nivel 3 (≥60%)</strong>.
+        </div>
+
+        <div class="two-col">
+          <div class="card reveal">
+            <h3>Producto: Diagnóstico de postura + plan de mejora</h3>
+            <ul class="list">
+              <li>Diagnóstico estándares internacionales (80 preguntas Sí/No)</li>
+              <li>Score automático + nivel + semáforo por dominios</li>
+              <li>Quick wins y roadmap de en semanas</li>
+              <li>Sin contratar FTE</li>
+            </ul>
+            <div class="card__actions">
+              <a class="btn btn--primary" href="TU_LINK_STRIPE_O_GUMROAD" target="_blank" rel="noopener">Solicitar consulta</a>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <h3>Servicio: Advisory / Aceleración</h3>
+            <ul class="list">
+              <li>Office Hours (priorización ejecutiva)</li>
+              <li>Sprint 2–4 semanas (subir madurez rápido)</li>
+              <li>Retainer (mantener Nivel 3 y escalar)</li>
+            </ul>
+            <div class="card__actions">
+              <a class="btn btn--primary" href="mailto:yo@nachogarciaegea.com?subject=Advisory%20Startups%20-%20Quiero%20hablar">Solicitar llamada</a>
+              <a class="btn btn--ghost" href="#comotrabajo">Cómo trabajo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+</section>
+
+    <section id="comotrabajo" class="section section--alt">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2><span class="ms" aria-hidden="true">work_outline</span>Cómo trabajo</h2>
+          <p class="lead">Un proceso simple y repetible, orientado a decisiones y ejecución.</p>
+        </div>
+
+        <div class="steps">
+          <div class="step reveal">
+            <h3><span class="ms" aria-hidden="true">visibility</span>1) Entender</h3>
+            <p>Diagnóstico honesto: dónde estás hoy, sin autoengaño.</p>
+          </div>
+          <div class="step reveal">
+            <h3><span class="ms" aria-hidden="true">format_list_bulleted</span>2) Priorizar</h3>
+            <p>Riesgo real y contexto de negocio: qué mueve la aguja primero.</p>
+          </div>
+          <div class="step reveal">
+            <h3><span class="ms" aria-hidden="true">play_arrow</span>3) Ejecutar</h3>
+            <p>plan de mejora corto, medible, con owners. en semanas, no 12 meses.</p>
+          </div>
+        </div>
+
+        <div class="cta-row reveal">
+          <a class="btn btn--primary" href="TU_LINK_STRIPE_O_GUMROAD" target="_blank" rel="noopener">Solicitar consulta</a>
+          <a class="btn btn--ghost" href="mailto:yo@nachogarciaegea.com?subject=Office%20Hours%20-%20Quiero%20reservar">Reservar Office Hours</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="mentoria" class="section">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2><span class="ms" aria-hidden="true">school</span>Mentoría para nuevos talentos</h2>
+
+<p class="muted">
+Para perfiles técnicos que quieren:
+</p>
+<ul class="muted-list">
+  <li>dejar de acumular cursos sin criterio</li>
+  <li>aprender a priorizar y explicar riesgo</li>
+  <li>entender negocio sin dejar de ser técnicos</li>
+  <li>construir una narrativa profesional creíble</li>
+  <li>tomar mejores decisiones, no saber más herramientas</li>
+</ul>
+
+          <p class="lead">
+            Mucho contenido, poco criterio. La mentoría va de pensar mejor: priorizar, comunicar riesgo, entender negocio,
+            y evitar el culto a la herramienta.
+          </p>
+        </div>
+
+        <div class="card reveal">
+          <h3>Mentoría (1:1 o grupos reducidos)</h3>
+          <ul class="list">
+            <li>Mentalidad advisor: decisiones y trade-offs</li>
+            <li>Comunicación: técnico → impacto y riesgo</li>
+            <li>Plan de crecimiento: skills, proyectos y narrativa profesional</li>
+            <li>Sesiones prácticas, enfoque realista</li>
+          </ul>
+          <div class="card__actions">
+            <a class="btn btn--primary" href="mailto:yo@nachogarciaegea.com?subject=Mentor%C3%ADa%20-%20Solicitud%20de%20plaza">Solicitar plaza</a>
+            <a class="btn btn--ghost" href="#faq">FAQ</a>
+          </div>
+        </div>
+      </div>
+    
+
+</section>
+
+    <section id="sobre" class="section">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <h2><span class="ms" aria-hidden="true">person</span>Sobre mí</h2>
+    </header>
+
+    <div class="about">
+      <p>Soy <strong>Nacho García Egea</strong>, advisor en ciberseguridad con más de <strong>20 años de experiencia</strong> trabajando con entornos complejos, riesgo real y decisiones que impactan directamente en negocio.</p>
+
+      <p>He trabajado la seguridad desde múltiples ángulos —operación, gobierno, cumplimiento y acompañamiento a equipos técnicos y directivos— lo que me ha dado una visión poco común: entender la ciberseguridad no como un problema técnico, sino como un problema de <strong>decisión</strong>.</p>
+
+      <p>Hoy ayudo a <strong>startups y scale-ups</strong> a ganar claridad sobre su postura de seguridad, priorizar correctamente y evitar inversiones innecesarias en herramientas, proveedores o controles mal enfocados. Mi trabajo no va de implantar “más seguridad”, sino de decidir mejor <em>cuándo, cómo y por qué</em>.</p>
+
+      <p>En paralelo, acompaño a perfiles técnicos que quieren construir una carrera sólida en ciberseguridad: entender fundamentos, desarrollar criterio y aprender a explicar riesgo y valor en contextos reales de negocio.</p>
+
+      <p class="muted">No vendo humo, certificaciones milagro ni frameworks de moda. Trabajo con criterio, contexto y decisiones.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+    <section class="newsletter-section">
+    <div class="container">
+      <div class="newsletter-box text-align: center;">
+        <h3>Suscríbete a lo que cuento</h3>
+        <p class="muted">Criterio y decisión. Sin humo ni frameworks de moda.</p style="padding-bottom: 40;">
+            <!-- INSTRUCCIONES MAILERLITE:
+                 1. Ve a https://www.mailerlite.com y crea una cuenta gratuit style="margin: 0 auto; max-width: 500px;">
+                 2. En el panel, ve a 'Sitios' > 'Formularios embebidos' o 'Forms'
+                 3. Crea un nuevo formulario embebido (embedded for
+                 4. Copia el código HTML que te dan y busca el 'action=' del form
+                 5. Reemplaza la URL en la línea 278 por la URL real de MailerLite
+                 Ejemplo de URL: https://assets.mailerlite.com/jsonp/123456/forms/789012/subscribe
+            -->
+            <!-- ⬇️ REEMPLAZA ESTA URL ⬇️ -->
+        <form class="newsletter-form" action="https://mailerlite.com/api/emails/embed-subscribe/nachogarciaegea" method="post" target="_blank">
+          <div class="form-group">
+            <input type="email" name="email" placeholder="tu@email.com" required />
+            <button class="btn btn--primary" type="submit">Suscribirme</button>
+          </div>
+          <p class="micro">1 email al mes. Sin spam. Puedes darte de baja cuando quieras.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer style="padding: 30px 0;"">
+    <div class="container footer__inner">
+      <span>© <span id="year"></span> Nacho García Egea</span>
+      <div class="footer__links" aria-label="Enlaces">
+        <a class="footer__icon" href="https://www.linkedin.com/in/nachogarciaegea/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a class="footer__icon" href="https://www.instagram.com/nachogarciaegea" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg></a>
+        <a class="footer__icon" href="https://www.tiktok.com/@nachogarciaegea_" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M10.492 2c.198 1.703 1.149 2.718 2.802 2.826v1.915c-.958.094-1.797-.22-2.773-.81v3.582c0 4.551-4.963 5.973-6.958 2.711-1.282-2.098-.497-5.781 3.616-5.93v2.02c-.313.051-.648.13-.954.235-.915.31-1.434.889-1.29 1.911.278 1.959 3.872 2.538 3.573-1.289V2.004h1.984V2Z"/></svg></a>
+        <a class="footer__icon" href="https://www.youtube.com/@nachogarciaegea" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.593 7.203a2.506 2.506 0 0 0-1.762-1.766C18.265 5.007 12 5 12 5s-6.264-.007-7.831.404a2.56 2.56 0 0 0-1.766 1.778c-.413 1.566-.417 4.814-.417 4.814s-.004 3.264.406 4.814c.23.857.905 1.534 1.763 1.765 1.582.43 7.83.437 7.83.437s6.265.007 7.831-.403a2.515 2.515 0 0 0 1.767-1.763c.414-1.565.417-4.812.417-4.812s.02-3.265-.407-4.831zM9.996 15.005l.005-6 5.207 3.005-5.212 2.995z"/></svg></a>
+        <a class="footer__text" href="mailto:yo@nachogarciaegea.com"><span class="ms" aria-hidden="true">mail</span>Email</a>
+        <a class="footer__text" href="https://nachogarciaegea.com"><span class="ms" aria-hidden="true">policy</span>Legal</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>
