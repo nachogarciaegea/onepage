@@ -12,10 +12,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
-              - name: Remove .git folder
-        run: rm -rf .git .github
         
+      - name: Remove .git folder
+        run: rm -rf .git .github
+
+       
       - name: Deploy via SFTP
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
@@ -25,4 +26,3 @@ jobs:
           local_path: './'
           remote_path: '/'
           sftp_only: true
-                    exclude: '.git*,.github'
