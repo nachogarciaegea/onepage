@@ -22,3 +22,4 @@ jobs:
           local_path: './'
           remote_path: '/'
           sftp_only: true
+                    exclude: '.git*,.github'
