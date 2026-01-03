@@ -67,7 +67,7 @@
         </video>
 
         <h1><i class="fas fa-exclamation-triangle"></i> ¡HAS CAÍDO!</h1>
-        <p class="alert">Acabas de escanear un QR "sospechoso" en la calle de Melilla...</p>
+        <p class="alert">Acabas de escanear un QR "sospechoso" en las calles de Melilla...</p>
 
         <!-- Información del dispositivo (se rellena con JavaScript) -->
         <div class="device-info">
@@ -136,33 +136,20 @@
                 document.getElementById("ip").textContent = "No disponible";
             });
 
-        // Geolocalización
+        // Geolocalización (sin redirección automática)
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
                 function(position) {
                     const lat = position.coords.latitude;
                     const lon = position.coords.longitude;
                     document.getElementById("location").textContent = `Lat: ${lat.toFixed(4)}, Lon: ${lon.toFixed(4)}`;
-                    
-                    // Redirigir al curso después de 3 segundos
-                    setTimeout(function() {
-                        window.location.href = "https://cybersecurityproschool.com/courses/protege-tu-identidad-que-hacer-si-tus-datos-han-sido-robados-en-un-ciberataque/";
-                    }, 3000);
                 },
                 function(error) {
                     document.getElementById("location").textContent = "Permiso denegado o no disponible";
-                    // Redirigir al curso aunque no se obtenga la ubicación
-                    setTimeout(function() {
-                        window.location.href = "https://cybersecurityproschool.com/courses/protege-tu-identidad-que-hacer-si-tus-datos-han-sido-robados-en-un-ciberataque/";
-                    }, 3000);
                 }
             );
         } else {
             document.getElementById("location").textContent = "Geolocalización no soportada";
-            // Redirigir al curso
-            setTimeout(function() {
-                window.location.href = "https://cybersecurityproschool.com/courses/protege-tu-identidad-que-hacer-si-tus-datos-han-sido-robados-en-un-ciberataque/";
-            }, 3000);
         }
     </script>
 </body>
