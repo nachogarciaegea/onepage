@@ -44,6 +44,10 @@
             max-width: 800px; 
             font-size: 1.3em;
         }
+        .device-info p {
+            margin: 10px 0;
+            font-size: 1em;
+        }
         .btn { 
             display: inline-block; 
             background: linear-gradient(135deg, #0f0, #00cc00); 
@@ -94,14 +98,22 @@
 
         <!-- Información del dispositivo (se rellena con JavaScript) -->
         <div class="device-info">
-            <h2><i class="fas fa-mobile-alt"></i> Ya sabemos esto de tu móvil:</h2>
-            <p><strong>Navegador:</strong> <span id="browser">Cargando...</span></p>
-            <p><strong>Sistema operativo:</strong> <span id="os">Cargando...</span></p>
-            <p><strong>Resolución de pantalla:</strong> <span id="resolution">Cargando...</span></p>
-            <p><strong>IP pública aproximada:</strong> <span id="ip">Cargando...</span></p>
-            <p><strong>Ubicación:</strong> <span id="location">Obteniendo...</span></p>
+            <h2><i class="fas fa-mobile-alt"></i> Ya sabemos esto de tu dispositivo:</h2>
+            <p><strong>🌐 Navegador:</strong> <span id="browser">Cargando...</span></p>
+            <p><strong>💻 Sistema operativo:</strong> <span id="os">Cargando...</span></p>
+            <p><strong>📱 Modelo:</strong> <span id="platform">Cargando...</span></p>
+            <p><strong>📐 Resolución de pantalla:</strong> <span id="resolution">Cargando...</span></p>
+            <p><strong>🔄 Orientación:</strong> <span id="orientation">Cargando...</span></p>
+            <p><strong>🔌 IP pública:</strong> <span id="ip">Cargando...</span></p>
+            <p><strong>🌍 Idioma del sistema:</strong> <span id="language">Cargando...</span></p>
+            <p><strong>🕐 Zona horaria:</strong> <span id="timezone">Cargando...</span></p>
+            <p><strong>📅 Fecha y hora de acceso:</strong> <span id="datetime">Cargando...</span></p>
+            <p><strong>🔋 Nivel de batería:</strong> <span id="battery">Cargando...</span></p>
+            <p><strong>📡 Tipo de conexión:</strong> <span id="connection">Cargando...</span></p>
+            <p><strong>💾 Memoria del dispositivo:</strong> <span id="memory">Cargando...</span></p>
+            <p><strong>🖥️ Núcleos del procesador:</strong> <span id="cores">Cargando...</span></p>
             <p style="font-size:0.9em; margin-top:20px; color:#ff8888;">
-                (Datos públicos que cualquier web puede obtener en segundos... ¡imagina un ataque real!)
+                (Datos públicos que cualquier web puede obtener SIN pedir permiso... ¡imagina un ataque real!)
             </p>
         </div>
 
@@ -126,7 +138,7 @@
 
     <footer>Campaña de concienciación ética en ciberseguridad © 2026 | Protégete siempre <i class="fas fa-lock"></i></footer>
 
-    <!-- JavaScript para detectar datos del dispositivo y redirección -->
+    <!-- JavaScript para detectar datos del dispositivo (SIN pedir permisos) -->
     <script>
         // Navegador y SO
         const browserInfo = navigator.userAgent;
@@ -135,7 +147,7 @@
 
         if (browserInfo.includes("Chrome")) browser = "Chrome";
         else if (browserInfo.includes("Firefox")) browser = "Firefox";
-        else if (browserInfo.includes("Safari")) browser = "Safari";
+        else if (browserInfo.includes("Safari") && !browserInfo.includes("Chrome")) browser = "Safari";
         else if (browserInfo.includes("Edge")) browser = "Edge";
 
         if (browserInfo.includes("Android")) os = "Android";
@@ -147,7 +159,56 @@
 
         document.getElementById("browser").textContent = browser;
         document.getElementById("os").textContent = os;
+        document.getElementById("platform").textContent = navigator.platform || "No disponible";
         document.getElementById("resolution").textContent = screen.width + "x" + screen.height;
+
+        // Orientación del dispositivo
+        const orientation = screen.orientation ? screen.orientation.type : 
+                           (window.innerWidth > window.innerHeight ? "landscape" : "portrait");
+        document.getElementById("orientation").textContent = orientation.includes("portrait") ? "Vertical" : "Horizontal";
+
+        // Idioma del sistema
+        document.getElementById("language").textContent = navigator.language || navigator.userLanguage || "No disponible";
+
+        // Zona horaria
+        const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        document.getElementById("timezone").textContent = timezone;
+
+        // Fecha y hora actual
+        const now = new Date();
+        document.getElementById("datetime").textContent = now.toLocaleString('es-ES');
+
+        // Núcleos del procesador
+        document.getElementById("cores").textContent = navigator.hardwareConcurrency || "No disponible";
+
+        // Memoria del dispositivo (aproximada)
+        if (navigator.deviceMemory) {
+            document.getElementById("memory").textContent = navigator.deviceMemory + " GB";
+        } else {
+            document.getElementById("memory").textContent = "No disponible";
+        }
+
+        // Tipo de conexión
+        if (navigator.connection) {
+            const connection = navigator.connection;
+            let connType = connection.effectiveType || connection.type || "Desconocida";
+            document.getElementById("connection").textContent = connType.toUpperCase();
+        } else {
+            document.getElementById("connection").textContent = "No disponible";
+        }
+
+        // Nivel de batería (sin pedir permiso explícito en la mayoría de navegadores)
+        if (navigator.getBattery) {
+            navigator.getBattery().then(function(battery) {
+                const level = Math.round(battery.level * 100);
+                const charging = battery.charging ? " (Cargando)" : "";
+                document.getElementById("battery").textContent = level + "%" + charging;
+            }).catch(() => {
+                document.getElementById("battery").textContent = "No disponible";
+            });
+        } else {
+            document.getElementById("battery").textContent = "No disponible";
+        }
 
         // IP pública (usando API gratuita y fiable)
         fetch('https://api.ipify.org?format=json')
@@ -158,22 +219,6 @@
             .catch(() => {
                 document.getElementById("ip").textContent = "No disponible";
             });
-
-        // Geolocalización
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(
-                function(position) {
-                    const lat = position.coords.latitude;
-                    const lon = position.coords.longitude;
-                    document.getElementById("location").textContent = `Lat: ${lat.toFixed(4)}, Lon: ${lon.toFixed(4)}`;
-                },
-                function(error) {
-                    document.getElementById("location").textContent = "Permiso denegado o no disponible";
-                }
-            );
-        } else {
-            document.getElementById("location").textContent = "Geolocalización no soportada";
-        }
 
         // Contador de redirección de 60 segundos
         let timeLeft = 60;
