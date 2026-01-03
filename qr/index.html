@@ -61,13 +61,23 @@
         .tips { background: rgba(0, 255, 0, 0.1); padding: 20px; border-radius: 12px; margin: 40px auto; max-width: 800px; }
         footer { margin-top: auto; padding: 20px; font-size: 1em; color: #666; }
         i { color: #0f0; margin-right: 10px; }
+        .countdown { 
+            background: rgba(255, 255, 0, 0.2); 
+            border: 2px solid #ff0; 
+            border-radius: 8px; 
+            padding: 15px; 
+            margin: 20px auto; 
+            max-width: 600px;
+            font-size: 1.2em;
+            color: #ff0;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Video de YouTube -->
+        <!-- Video de YouTube con autoplay -->
         <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/9pbOxVRKaV4" 
+            <iframe src="https://www.youtube.com/embed/9pbOxVRKaV4?autoplay=1&mute=1&loop=1&playlist=9pbOxVRKaV4" 
                     title="Alerta QR - Concienciación en Ciberseguridad" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                     allowfullscreen>
@@ -76,6 +86,11 @@
 
         <h1><i class="fas fa-exclamation-triangle"></i> ¡HAS CAÍDO!</h1>
         <p class="alert">Acabas de escanear un QR "sospechoso" en las calles de Melilla...</p>
+
+        <!-- Contador de redirección -->
+        <div class="countdown">
+            <p>⏱️ Serás redirigido al curso de protección en <strong><span id="countdown">60</span> segundos</strong></p>
+        </div>
 
         <!-- Información del dispositivo (se rellena con JavaScript) -->
         <div class="device-info">
@@ -111,7 +126,7 @@
 
     <footer>Campaña de concienciación ética en ciberseguridad © 2026 | Protégete siempre <i class="fas fa-lock"></i></footer>
 
-    <!-- JavaScript para detectar datos del dispositivo -->
+    <!-- JavaScript para detectar datos del dispositivo y redirección -->
     <script>
         // Navegador y SO
         const browserInfo = navigator.userAgent;
@@ -144,7 +159,7 @@
                 document.getElementById("ip").textContent = "No disponible";
             });
 
-        // Geolocalización (sin redirección automática)
+        // Geolocalización
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
                 function(position) {
@@ -159,6 +174,21 @@
         } else {
             document.getElementById("location").textContent = "Geolocalización no soportada";
         }
+
+        // Contador de redirección de 60 segundos
+        let timeLeft = 60;
+        const countdownElement = document.getElementById("countdown");
+        const courseUrl = "https://cybersecurityproschool.com/courses/protege-tu-identidad-que-hacer-si-tus-datos-han-sido-robados-en-un-ciberataque/";
+
+        const countdownTimer = setInterval(function() {
+            timeLeft--;
+            countdownElement.textContent = timeLeft;
+            
+            if (timeLeft <= 0) {
+                clearInterval(countdownTimer);
+                window.location.href = courseUrl;
+            }
+        }, 1000);
     </script>
 </body>
 </html>
