@@ -1,1 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Alerta QR! - Concienciación en Ciberseguridad</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { 
+            margin: 0; padding: 0; 
+            font-family: 'Segoe UI', Arial, sans-serif; 
+            background: #0d0d0d; 
+            color: #e0e0e0; 
+            text-align: center; 
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .container { max-width: 900px; padding: 20px; margin: 0 auto; }
+        video { 
+            width: 100%; max-width: 800px; 
+            border: 3px solid #0f0; 
+            border-radius: 12px; 
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.3); 
+            margin: 20px auto; 
+            display: block; 
+        }
+        h1 { font-size: 3em; color: #0f0; text-shadow: 0 0 10px #0f0; margin: 40px 0 20px; }
+        .alert { color: #ff3333; font-size: 1.8em; margin: 20px 0; text-shadow: 0 0 8px #ff3333; }
+        p { font-size: 1.4em; line-height: 1.8; max-width: 800px; margin: 20px auto; }
+        .device-info { 
+            background: rgba(255, 0, 0, 0.15); 
+            border: 2px solid #f00; 
+            border-radius: 12px; 
+            padding: 20px; 
+            margin: 30px auto; 
+            max-width: 800px; 
+            font-size: 1.3em;
+        }
+        .btn { 
+            display: inline-block; 
+            background: linear-gradient(135deg, #0f0, #00cc00); 
+            color: #000; 
+            padding: 20px 50px; 
+            font-size: 2em; 
+            font-weight: bold; 
+            text-decoration: none; 
+            border-radius: 12px; 
+            margin: 50px 0; 
+            box-shadow: 0 0 30px rgba(0, 255, 0, 0.6); 
+            transition: all 0.3s; 
+        }
+        .btn:hover { transform: scale(1.05); box-shadow: 0 0 40px rgba(0, 255, 0, 0.8); }
+        .tips { background: rgba(0, 255, 0, 0.1); padding: 20px; border-radius: 12px; margin: 40px auto; max-width: 800px; }
+        footer { margin-top: auto; padding: 20px; font-size: 1em; color: #666; }
+        i { color: #0f0; margin-right: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Video con autoplay -->
+        <video autoplay muted loop playsinline controls poster="https://via.placeholder.com/800x450/0d0d0d/0f0?text=Escaneando+QR+en+Melilla">
+            <!-- Reemplaza con tu video generado (el de Melilla + glitch) -->
+            <source src="TU_VIDEO_AQUI.mp4" type="video/mp4">
+            Tu navegador no soporta video.
+        </video>
 
+        <h1><i class="fas fa-exclamation-triangle"></i> ¡HAS CAÍDO!</h1>
+        <p class="alert">Acabas de escanear un QR "sospechoso" en la calle de Melilla...</p>
+
+        <!-- Información del dispositivo (se rellena con JavaScript) -->
+        <div class="device-info">
+            <h2><i class="fas fa-mobile-alt"></i> Ya sabemos esto de tu móvil:</h2>
+            <p><strong>Navegador:</strong> <span id="browser">Cargando...</span></p>
+            <p><strong>Sistema operativo:</strong> <span id="os">Cargando...</span></p>
+            <p><strong>Resolución de pantalla:</strong> <span id="resolution">Cargando...</span></p>
+            <p><strong>IP pública aproximada:</strong> <span id="ip">Cargando...</span></p>
+            <p style="font-size:0.9em; margin-top:20px; color:#ff8888;">
+                (Datos públicos que cualquier web puede obtener en segundos... ¡imagina un ataque real!)
+            </p>
+        </div>
+
+        <p>¡TRANQUILO! Esto es solo una prueba ética de concienciación sobre <strong>QUISHING</strong> (phishing con códigos QR).</p>
+        <p>En un ataque real ya podrían tener acceso a mucho más: contraseñas, fotos, banca online...</p>
+
+        <div class="tips">
+            <h2><i class="fas fa-shield-alt"></i> Tips rápidos para protegerte:</h2>
+            <ul style="text-align:left; max-width:600px; margin:0 auto;">
+                <li>Usa apps que previsualicen la URL del QR antes de abrirla.</li>
+                <li>Evita QR manipulados en lugares públicos.</li>
+                <li>Nunca introduzcas datos sensibles tras un QR desconocido.</li>
+            </ul>
+        </div>
+
+        <a href="https://cybersecurityproschool.com/courses/protege-tu-identidad-que-hacer-si-tus-datos-han-sido-robados-en-un-ciberataque/" target="_blank" class="btn">
+            <i class="fas fa-user-shield"></i> ¡Protege tu Identidad AHORA - Curso GRATIS!
+        </a>
+
+        <p>By Nacho García Egea - Security Advisor | <a href="https://www.nachogarciaegea.com" style="color:#0f0;">nachogarciaegea.com</a></p>
+    </div>
+
+    <footer>Campaña de concienciación ética en ciberseguridad © 2026 | Protégete siempre <i class="fas fa-lock"></i></footer>
+
+    <!-- JavaScript para detectar datos del dispositivo -->
+    <script>
+        // Navegador y SO
+        const browserInfo = navigator.userAgent;
+        let browser = "Desconocido";
+        let os = "Desconocido";
+
+        if (browserInfo.includes("Chrome")) browser = "Chrome";
+        else if (browserInfo.includes("Firefox")) browser = "Firefox";
+        else if (browserInfo.includes("Safari")) browser = "Safari";
+        else if (browserInfo.includes("Edge")) browser = "Edge";
+
+        if (browserInfo.includes("Android")) os = "Android";
+        else if (browserInfo.includes("iPhone")) os = "iOS (iPhone)";
+        else if (browserInfo.includes("iPad")) os = "iOS (iPad)";
+        else if (browserInfo.includes("Windows")) os = "Windows";
+        else if (browserInfo.includes("Mac")) os = "macOS";
+        else if (browserInfo.includes("Linux")) os = "Linux";
+
+        document.getElementById("browser").textContent = browser;
+        document.getElementById("os").textContent = os;
+        document.getElementById("resolution").textContent = screen.width + "x" + screen.height;
+
+        // IP pública (usando API gratuita y fiable)
+        fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("ip").textContent = data.ip;
+            })
+            .catch(() => {
+                document.getElementById("ip").textContent = "No disponible";
+            });
+    </script>
+</body>
+</html>
