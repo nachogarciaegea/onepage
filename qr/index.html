@@ -76,6 +76,7 @@
             <p><strong>Sistema operativo:</strong> <span id="os">Cargando...</span></p>
             <p><strong>Resolución de pantalla:</strong> <span id="resolution">Cargando...</span></p>
             <p><strong>IP pública aproximada:</strong> <span id="ip">Cargando...</span></p>
+            <p><strong>Ubicación:</strong> <span id="location">Obteniendo...</span></p>
             <p style="font-size:0.9em; margin-top:20px; color:#ff8888;">
                 (Datos públicos que cualquier web puede obtener en segundos... ¡imagina un ataque real!)
             </p>
@@ -134,6 +135,35 @@
             .catch(() => {
                 document.getElementById("ip").textContent = "No disponible";
             });
+
+        // Geolocalización
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                function(position) {
+                    const lat = position.coords.latitude;
+                    const lon = position.coords.longitude;
+                    document.getElementById("location").textContent = `Lat: ${lat.toFixed(4)}, Lon: ${lon.toFixed(4)}`;
+                    
+                    // Redirigir al curso después de 3 segundos
+                    setTimeout(function() {
+                        window.location.href = "https://cybersecurityproschool.com/courses/protege-tu-identidad-que-hacer-si-tus-datos-han-sido-robados-en-un-ciberataque/";
+                    }, 3000);
+                },
+                function(error) {
+                    document.getElementById("location").textContent = "Permiso denegado o no disponible";
+                    // Redirigir al curso aunque no se obtenga la ubicación
+                    setTimeout(function() {
+                        window.location.href = "https://cybersecurityproschool.com/courses/protege-tu-identidad-que-hacer-si-tus-datos-han-sido-robados-en-un-ciberataque/";
+                    }, 3000);
+                }
+            );
+        } else {
+            document.getElementById("location").textContent = "Geolocalización no soportada";
+            // Redirigir al curso
+            setTimeout(function() {
+                window.location.href = "https://cybersecurityproschool.com/courses/protege-tu-identidad-que-hacer-si-tus-datos-han-sido-robados-en-un-ciberataque/";
+            }, 3000);
+        }
     </script>
 </body>
 </html>
