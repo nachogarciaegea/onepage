@@ -416,10 +416,59 @@
         .hero {
             padding: 80px 0 60px;
             background: var(--bg-dark);
+                    position: relative;
+        overflow: hidden;
+        }
+
+                /* Video Background Styles */
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+        
+        .video-background video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            opacity: 0.4;
+        }
+        
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 255, 0, 0.1) 0%, rgba(0, 0, 0, 0.8) 100%);
+            backdrop-filter: blur(2px);
+            z-index: 1;
+            animation: gradientShift 8s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% {
+                background: linear-gradient(135deg, rgba(0, 255, 0, 0.1) 0%, rgba(0, 0, 0, 0.8) 100%);
+            }
+            50% {
+                background: linear-gradient(135deg, rgba(0, 100, 255, 0.1) 0%, rgba(0, 0, 0, 0.9) 100%);
+            }
         }
 
         .hero-content {
             max-width: 800px;
+                    position: relative;
+            z-index: 2;
         }
 
         .hero-tag {
@@ -1002,6 +1051,14 @@
     </div>
 
     <section class="hero" id="top">
+                <!-- Video Background -->
+        <div class="video-background">
+            <video autoplay muted loop playsinline id="heroVideo">
+                <source src="assets/cyber-bg.mp4" type="video/mp4">
+                Tu navegador no soporta el tag de video.
+            </video>
+            <div class="video-overlay"></div>
+        </div>
         <div class="container">
             <div class="hero-content">
                 <div class="hero-tag">CYBERSECURITY ADVISOR & MENTOR</div>
