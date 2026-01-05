@@ -1015,6 +1015,112 @@
                 text-align: center;
             }
         }
+
+        /* Modal de Contacto */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 40px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 32px;
+    font-weight: 300;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: color 0.3s, transform 0.3s;
+    line-height: 1;
+}
+
+.modal-close:hover {
+    color: var(--primary);
+    transform: rotate(90deg);
+}
+
+.modal h2 {
+    margin-bottom: 8px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    background: var(--bg-dark);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--text-primary);
+    font-size: 15px;
+    font-family: inherit;
+    transition: border-color 0.3s, background 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: var(--bg-card-hover);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
     </style>
 </head>
 <body>
@@ -1071,7 +1177,7 @@
                     Mentoría para nuevos talentos orientada a criterio, comunicación y toma de decisiones.
                 </p>
                 <div class="hero-buttons">
-                    <a href="#contacto" class="btn btn-primary">Solicitar consulta</a>
+                    <a href="javascript:void(0)" onclick="openContactModal()" class="btn btn-primary">Solicitar consulta</a>
                     <a href="mailto:yo@nachogarciaegea.com" class="btn btn-secondary">Copiar email</a>
                 </div>
                 <div class="hero-stats">
@@ -1110,7 +1216,7 @@
                         Ventas B2B, due diligence y board. Claridad y ejecución sin contratar FTE.
                     </p>
                     <a href="#startups" class="btn btn-primary">Startups & Scale-ups</a>
-                    <a href="#contacto" class="btn btn-secondary" style="margin-top: 12px;">Solicitar consulta</a>
+                    <a href="javascript:void(0)" onclick="openContactModal()" class="btn btn-secondary" style="margin-top: 12px;">Solicitar consulta</a>
                 </div>
 
                 <div class="card">
@@ -1166,7 +1272,7 @@
                         <li>Quick wins y roadmap en semanas</li>
                         <li>Sin contratar FTE</li>
                     </ul>
-                    <a href="#contacto" class="btn btn-primary">Solicitar consulta</a>
+                    <a href="javascript:void(0)" onclick="openContactModal()" class="btn btn-primary">Solicitar consulta</a>
                 </div>
 
                 <div class="card">
@@ -1351,14 +1457,14 @@
                     <ul class="footer-links">
                         <li><a href="#sobre-mi">Sobre mí</a></li>
                         <li><a href="#proceso">Cómo trabajo</a></li>
-                        <li><a href="#contacto">Contacto</a></li>
+                        <li><a href="javascript:void(0)" onclick="openContactModal()">Contacto</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h4>Contacto</h4>
                     <ul class="footer-links">
                         <li><a href="mailto:yo@nachogarciaegea.com">yo@nachogarciaegea.com</a></li>
-                        <li><a href="#contacto">Solicitar consulta</a></li>
+                        <li><a href="javascript:void(0)" onclick="openContactModal()">Solicitar consulta</a></li>
                     </ul>
                 </div>
             </div>
@@ -1464,6 +1570,43 @@
             });
         });
 
+        // Funciones del modal de contacto
+function openContactModal() {
+    const modal = document.getElementById('contactModal');
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeContactModal() {
+    const modal = document.getElementById('contactModal');
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// Cerrar modal al hacer clic fuera del contenido
+document.getElementById('contactModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeContactModal();
+    }
+});
+
+// Cerrar modal con tecla ESC
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeContactModal();
+    }
+});
+
+// Manejo del formulario
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    // Formspree manejará el envío
+    // Después del envío, cerrar el modal
+    setTimeout(() => {
+        closeContactModal();
+    }, 1000);
+});
+
+
         // Parallax suave en el hero
         window.addEventListener('scroll', function() {
             const scrolled = window.pageYOffset;
@@ -1474,5 +1617,33 @@
             }
         });
     </script>
+
+    <!-- Modal de Contacto -->
+<div id="contactModal" class="modal">
+    <div class="modal-content">
+        <span class="modal-close" onclick="closeContactModal()">&times;</span>
+        <h2>Solicitar Consulta</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 24px;">Cuéntame cómo puedo ayudarte</p>
+        
+        <form id="contactForm" action="https://formspree.io/f/xbljqaqp" method="POST">            <div class="form-group">
+                <label for="name">Nombre</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Consulta</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Enviar consulta</button>
+        </form>
+    </div>
+</div>
+
 </body>
 </html>
