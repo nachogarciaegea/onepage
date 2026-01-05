@@ -1159,9 +1159,7 @@
     <section class="hero" id="top">
                 <!-- Video Background -->
         <div class="video-background">
-            <video autoplay muted loop playsinline id="heroVideo">
-                <source src="assets/cyber-bg.mp4" type="video/mp4">
-                Tu navegador no soporta el tag de video.
+                        <video id="bgVideo" autoplay muted loop playsinline class="hero-video">
             </video>
             <div class="video-overlay"></div>
         </div>
@@ -1646,4 +1644,34 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
 </div>
 
 </body>
+
+        <!-- Script para encadenar videos de fondo -->
+    <script>
+        const videoFiles = [
+            'assets/video1.mp4',
+            'assets/video2.mp4'
+        ];
+
+        const bgVideo = document.getElementById('bgVideo');
+        let currentVideoIndex = 0;
+
+        function playCurrentVideo() {
+            bgVideo.src = videoFiles[currentVideoIndex];
+            bgVideo.load();
+            bgVideo.play().catch(() => {
+                // Por si el navegador bloquea el autoplay
+            });
+        }
+
+        bgVideo.addEventListener('ended', () => {
+            currentVideoIndex++;
+            if (currentVideoIndex >= videoFiles.length) {
+                currentVideoIndex = 0; // vuelve al primero (loop de lista)
+            }
+            playCurrentVideo();
+        });
+
+        // Iniciar al cargar la página
+        document.addEventListener('DOMContentLoaded', playCurrentVideo);
+    </script>
 </html>
