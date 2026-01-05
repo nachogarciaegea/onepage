@@ -1645,35 +1645,32 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     </div>
 </div>
 
+    //script videos
+<script>
+    const videoFiles = [
+        'assets/video1.mp4',
+        'assets/video2.mp4'
+    ];
+
+    const bgVideo = document.getElementById('bgVideo');
+    let currentVideoIndex = 0;
+
+    function playCurrentVideo() {
+        bgVideo.src = videoFiles[currentVideoIndex];
+        bgVideo.load();
+        bgVideo.play().catch(() => {});
+    }
+
+    bgVideo.addEventListener('ended', () => {
+        currentVideoIndex++;
+        if (currentVideoIndex >= videoFiles.length) {
+            currentVideoIndex = 0;
+        }
+        playCurrentVideo();
+    });
+
+    document.addEventListener('DOMContentLoaded', playCurrentVideo);
+</script>
 </body>
 
-        <!-- Script para encadenar videos de fondo -->
-    <script>
-        const videoFiles = [
-            'assets/video1.mp4',
-            'assets/video2.mp4'
-        ];
-
-        const bgVideo = document.getElementById('bgVideo');
-        let currentVideoIndex = 0;
-
-        function playCurrentVideo() {
-            bgVideo.src = videoFiles[currentVideoIndex];
-            bgVideo.load();
-            bgVideo.play().catch(() => {
-                // Por si el navegador bloquea el autoplay
-            });
-        }
-
-        bgVideo.addEventListener('ended', () => {
-            currentVideoIndex++;
-            if (currentVideoIndex >= videoFiles.length) {
-                currentVideoIndex = 0; // vuelve al primero (loop de lista)
-            }
-            playCurrentVideo();
-        });
-
-        // Iniciar al cargar la página
-        document.addEventListener('DOMContentLoaded', playCurrentVideo);
-    </script>
-</html>
+     
