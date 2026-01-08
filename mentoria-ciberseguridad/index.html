@@ -1,26 +1,10 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nacho García Egea | CyberSecurity Advisor & Mentor</title> 
-        <link rel="icon" type="image/svg+xml" href="assets/logo-nge.svg">
-        <!-- SEO Meta Tags -->
-    <meta name="description" content="Nacho García Egea - CyberSecurity Advisor & Mentor especializado asesorar en ciberseguridad para startups, scaleups y nuevos talentos.">
-    <meta name="keywords" content="ciberseguridad, CISO, ciberseguridad, mentor ciberseguridad, formación ciberseguridad, startups, Melilla, Madrid">
-    <meta name="author" content="Nacho García Egea">
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Nacho García Egea | CyberSecurity Advisor & Mentor">
-    <meta property="og:description" content="Global CISO y Mentor de Ciberseguridad especializado en startups, scaleups. Asesoramiento estratégico en ciberseguridad.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://nachogarciaegea.com">
-    <meta property="og:image" content="https://nachogarciaegea.com/assets/logo-nge.svg">
-    
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Nacho García Egea | CyberSecurity Advisor & Mentor">
-    <meta name="twitter:description" content="Global CISO y Mentor de Ciberseguridad especializado en startups, scaleups. Asesoramiento estratégico en ciberseguridad.">
-    <meta name="twitter:image" content="https://nachogarciaegea.com/assets/logo-nge.svg">
+    <title>Mentoría en Ciberseguridad | Nacho García Egea</title>
+    <meta name="description" content="Mentoría personalizada para nuevos talentos en ciberseguridad. Aprende con un experto y acelera tu carrera.">
     <style>
         * {
             margin: 0;
@@ -28,1649 +12,282 @@
             box-sizing: border-box;
         }
 
-        :root {
-            --primary: #3b82f6;
-            --primary-hover: #2563eb;
-            --accent: #06b6d4;
-            --bg-dark: #0f172a;
-            --bg-darker: #020617;
-            --bg-card: #1e293b;
-            --bg-card-hover: #334155;
-            --text-primary: #f1f5f9;
-            --text-secondary: #cbd5e1;
-            --text-muted: #94a3b8;
-            --border: #334155;
-            --shadow: rgba(0, 0, 0, 0.3);
-        }
-
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: var(--bg-dark);
-            color: var(--text-primary);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
         }
-
-        /* Smooth scroll */
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 80px;
-        }
-
-        /* Cursor personalizado para enlaces */
-        a, button {
-            cursor: pointer;
-        }
-
-        /* Animaciones de entrada */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate-on-scroll {
-            opacity: 0;
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-
-        .delay-1 { animation-delay: 0.1s; }
-        .delay-2 { animation-delay: 0.2s; }
-        .delay-3 { animation-delay: 0.3s; }
-        .delay-4 { animation-delay: 0.4s; }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 40px 20px;
         }
 
-        .container-narrow {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        /* Header */
         header {
-            background: var(--bg-darker);
-            border-bottom: 1px solid var(--border);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            backdrop-filter: blur(12px);
-            background: rgba(2, 6, 23, 0.95);
-            transition: all 0.3s ease;
-        }
-
-        header.scrolled {
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            background: rgba(2, 6, 23, 0.98);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-            position: relative;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .logo:hover {
-            transform: translateX(5px);
-        }
-
-        .logo-icon {
-            width: 56px;
-            height: 56px;
-            background: var(--bg-darker);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            font-weight: 800;
-            color: var(--primary);
-            letter-spacing: -1px;
-            transition: all 0.3s ease;
-        }
-
-        .logo:hover .logo-icon {
-            background: var(--primary);
-            color: var(--bg-darker);
-        }
-
-        .logo-separator {
-            width: 1px;
-            height: 32px;
-            background: var(--border);
-            transition: all 0.3s ease;
-        }
-
-        .logo:hover .logo-separator {
-            background: var(--primary);
-            height: 40px;
-        }
-
-        .logo-text {
-            font-size: 22px;
-            font-weight: 700;
-            color: var(--text-primary);
-            letter-spacing: -0.5px;
-            transition: color 0.3s ease;
-        }
-
-        .logo:hover .logo-text {
-            color: var(--primary);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 8px;
-            list-style: none;
-            align-items: center;
-            position: relative;
-        }
-
-        .nav-links li {
-            position: relative;
-        }
-
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 15px;
-            font-weight: 500;
-            transition: color 0.3s;
-            padding: 10px 16px;
-            display: block;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .nav-links a::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            transform: translateX(-50%);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        .nav-links a:hover::before {
-            width: 80%;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(59, 130, 246, 0.05);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.3s ease;
-            z-index: -1;
-        }
-
-        .nav-links a:hover::after {
-            transform: scaleX(1);
-        }
-
-        /* Indicador activo */
-        .nav-links a.active {
-            color: var(--primary);
-            background: rgba(59, 130, 246, 0.1);
-        }
-
-        .nav-links a.active::before {
-            width: 80%;
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: 2px solid var(--border);
-            color: var(--text-primary);
-            cursor: pointer;
-            padding: 10px;
-            flex-direction: column;
-            gap: 5px;
-            width: 44px;
-            height: 44px;
-            justify-content: center;
-            align-items: center;
-            transition: all 0.3s ease;
-        }
-
-        .mobile-menu-btn:hover {
-            border-color: var(--primary);
-            background: rgba(59, 130, 246, 0.05);
-        }
-
-        .mobile-menu-btn span {
-            display: block;
-            width: 24px;
-            height: 2px;
-            background: var(--text-primary);
-            transition: all 0.3s ease;
-        }
-
-        .mobile-menu-btn:hover span {
-            background: var(--primary);
-        }
-
-        .mobile-menu-btn.active {
-            border-color: var(--primary);
-            background: rgba(59, 130, 246, 0.1);
-        }
-
-        .mobile-menu-btn.active span {
-            background: var(--primary);
-        }
-
-        .mobile-menu-btn.active span:nth-child(1) {
-            transform: rotate(45deg) translate(7px, 7px);
-        }
-
-        .mobile-menu-btn.active span:nth-child(2) {
-            opacity: 0;
-            transform: translateX(-20px);
-        }
-
-        .mobile-menu-btn.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -7px);
-        }
-
-        .mobile-menu {
-            display: none;
-            position: fixed;
-            top: 73px;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: var(--bg-darker);
-            padding: 40px 24px;
-            z-index: 999;
-            overflow-y: auto;
-            opacity: 0;
-            transform: translateY(-20px);
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-
-        .mobile-menu.active {
-            display: block;
-            animation: slideDown 0.3s ease forwards;
-        }
-
-        @keyframes slideDown {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .mobile-menu ul {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-        }
-
-        .mobile-menu li {
-            opacity: 0;
-            transform: translateX(-20px);
-            animation: slideIn 0.3s ease forwards;
-        }
-
-        .mobile-menu.active li:nth-child(1) { animation-delay: 0.1s; }
-        .mobile-menu.active li:nth-child(2) { animation-delay: 0.15s; }
-        .mobile-menu.active li:nth-child(3) { animation-delay: 0.2s; }
-        .mobile-menu.active li:nth-child(4) { animation-delay: 0.25s; }
-        .mobile-menu.active li:nth-child(5) { animation-delay: 0.3s; }
-
-        @keyframes slideIn {
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .mobile-menu a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: 500;
-            display: block;
-            padding: 20px 16px;
-            transition: all 0.3s ease;
-            border-bottom: 1px solid var(--border);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .mobile-menu a::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 4px;
-            height: 100%;
-            background: var(--primary);
-            transform: scaleY(0);
-            transition: transform 0.3s ease;
-        }
-
-        .mobile-menu a:hover::before {
-            transform: scaleY(1);
-        }
-
-        .mobile-menu a::after {
-            content: '→';
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%) translateX(-10px);
-            opacity: 0;
-            transition: all 0.3s ease;
-            color: var(--primary);
-        }
-
-        .mobile-menu a:hover {
-            color: var(--primary);
-            background: rgba(59, 130, 246, 0.05);
-            padding-left: 24px;
-        }
-
-        .mobile-menu a:hover::after {
-            opacity: 1;
-            transform: translateY(-50%) translateX(0);
-        }
-
-        .mobile-menu li:last-child a {
-            border-bottom: none;
-        }
-
-        /* Hero */
-        .hero {
-            padding: 80px 0 60px;
-            background: var(--bg-dark);
-                    position: relative;
-        overflow: hidden;
-        }
-
-                /* Video Background Styles */
-        .video-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            overflow: hidden;
-        }
-        
-        .video-background video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            transform: translate(-50%, -50%);
-            object-fit: cover;
-            opacity: 0.4;
-        }
-        
-        .video-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(0, 255, 0, 0.1) 0%, rgba(0, 0, 0, 0.8) 100%);
-            backdrop-filter: blur(2px);
-            z-index: 1;
-            animation: gradientShift 8s ease infinite;
-        }
-        
-        @keyframes gradientShift {
-            0%, 100% {
-                background: linear-gradient(135deg, rgba(0, 255, 0, 0.1) 0%, rgba(0, 0, 0, 0.8) 100%);
-            }
-            50% {
-                background: linear-gradient(135deg, rgba(0, 100, 255, 0.1) 0%, rgba(0, 0, 0, 0.9) 100%);
-            }
-        }
-
-        .hero-content {
-            max-width: 800px;
-                    position: relative;
-            z-index: 2;
-        }
-
-        .hero-tag {
-            display: inline-block;
-            padding: 6px 14px;
-            background: var(--bg-card);
-            color: var(--text-secondary);
-            font-size: 15;
-            font-weight: 600;
-            margin-bottom: 24px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            border: 1px solid var(--border);
-        }
-
-        h1 {
-            font-size: 52px;
-            font-weight: 700;
-            line-height: 1.1;
-            color: var(--text-primary);
-            margin-bottom: 24px;
-            letter-spacing: -1px;
-        }
-
-        .hero-subtitle {
-            font-size: 21px;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: 32px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 16px;
-            margin-bottom: 48px;
-        }
-
-        .btn {
-            padding: 14px 28px;
-            font-size: 16px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            display: inline-block;
-            border: 2px solid transparent;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-        }
-
-        .btn:hover::before {
-            width: 300px;
-            height: 300px;
-        }
-
-        .btn span {
-            position: relative;
-            z-index: 1;
-        }
-
-        .btn-primary {
-            background: var(--primary);
+            text-align: center;
             color: white;
+            margin-bottom: 60px;
         }
 
-        .btn-primary:hover {
-            background: var(--primary-hover);
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
-        .btn-secondary {
-            background: transparent;
-            color: var(--text-primary);
-            border: 2px solid var(--border);
+        header p {
+            font-size: 1.3rem;
+            opacity: 0.95;
         }
 
-        .btn-secondary:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-        }
-
-        .hero-stats {
-            display: flex;
-            gap: 48px;
-            padding-top: 32px;
-            border-top: 1px solid var(--border);
-        }
-
-        .stat {
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.3s ease;
-        }
-
-        .stat:hover {
-            transform: translateY(-5px);
-        }
-
-        .stat-number {
-            font-size: 32px;
-            font-weight: 700;
-            color: var(--text-primary);
-            line-height: 1;
-            margin-bottom: 8px;
-            transition: color 0.3s;
-        }
-
-        .stat:hover .stat-number {
-            color: var(--primary);
-        }
-
-        .stat-label {
-            font-size: 14px;
-            color: var(--text-muted);
-            font-weight: 500;
-        }
-
-        /* Section */
-        .section {
-            padding: 80px 0;
-        }
-
-        .section-alt {
-            background: var(--bg-darker);
-        }
-
-        .section-header {
-            max-width: 700px;
-            margin-bottom: 56px;
-        }
-
-        .section-tag {
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--primary);
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            margin-bottom: 12px;
+        .content {
+            background: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
         }
 
         h2 {
-            font-size: 40px;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 16px;
-            letter-spacing: -0.5px;
-        }
-
-        .section-description {
-            font-size: 19px;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        /* Cards Grid */
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 32px;
-        }
-
-        .card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            padding: 40px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.05), transparent);
-            transition: left 0.5s;
-        }
-
-        .card:hover::before {
-            left: 100%;
-        }
-
-        .card:hover {
-            background: var(--bg-card-hover);
-            border-color: var(--primary);
-            box-shadow: 0 8px 24px var(--shadow);
-            transform: translateY(-4px);
-        }
-
-        .card-icon {
-            width: 56px;
-            height: 56px;
-            background: var(--bg-dark);
-            border: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 24px;
-        }
-
-        .icon-svg {
-            width: 28px;
-            height: 28px;
-            stroke: var(--primary);
-            stroke-width: 2;
-            fill: none;
-            transition: all 0.3s ease;
-        }
-
-        .card:hover .icon-svg {
-            transform: scale(1.1);
-            stroke: var(--primary);
-            filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.5));
-        }
-
-        .card h3 {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 12px;
-            color: var(--text-primary);
-        }
-
-        .card-description {
-            font-size: 16px;
-            color: var(--text-secondary);
-            margin-bottom: 24px;
-            line-height: 1.6;
-        }
-
-        .card-features {
-            list-style: none;
-            margin-bottom: 24px;
-        }
-
-        .card-features li {
-            padding: 10px 0;
-            color: var(--text-secondary);
-            font-size: 15px;
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-        }
-
-        .card-features li:before {
-            content: '✓';
-            width: 18px;
-            height: 18px;
-            background: var(--primary);
-            flex-shrink: 0;
-            margin-top: 3px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 12px;
-            font-weight: 700;
-        }
-
-        /* Process Steps */
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-            margin-top: 56px;
-        }
-
-        .process-step {
-            position: relative;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            padding: 32px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .process-step:hover {
-            border-color: var(--primary);
-            background: var(--bg-card-hover);
-            transform: translateY(-8px) scale(1.02);
-        }
-
-        .step-number {
-            width: 48px;
-            height: 48px;
-            background: var(--primary);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            transition: all 0.3s;
-        }
-
-        .process-step:hover .step-number {
-            transform: rotate(360deg) scale(1.1);
-        }
-
-        .process-step h3 {
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 12px;
-            color: var(--text-primary);
-        }
-
-        .process-step p {
-            font-size: 16px;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        /* Value Props */
-        .value-props {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
-            margin-top: 48px;
-        }
-
-        .value-prop {
+            color: #667eea;
+            font-size: 2rem;
+            margin-bottom: 30px;
             text-align: center;
-            padding: 32px 24px;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            transition: all 0.2s;
         }
 
-        .value-prop:hover {
-            border-color: var(--primary);
-            background: var(--bg-card-hover);
+        .hero-text {
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #555;
         }
 
-        .value-icon {
-            width: 48px;
-            height: 48px;
-            margin: 0 auto 16px;
-            background: var(--bg-dark);
-            border: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
         }
 
-        .value-prop h4 {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 8px;
-            color: var(--text-primary);
+        .benefit-card {
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
         }
 
-        .value-prop p {
-            font-size: 15px;
-            color: var(--text-secondary);
-            line-height: 1.5;
+        .benefit-card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
         }
 
-        /* CTA Section */
         .cta-section {
-            background: var(--bg-card);
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-            padding: 80px 0;
             text-align: center;
-        }
-
-        .cta-section h2 {
-            color: var(--text-primary);
-            margin-bottom: 16px;
-        }
-
-        .cta-section p {
-            font-size: 19px;
-            color: var(--text-secondary);
-            margin-bottom: 32px;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--bg-darker);
-            padding: 64px 0 32px;
-            border-top: 1px solid var(--border);
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 48px;
-            margin-bottom: 48px;
-        }
-
-        .footer-about {
-            max-width: 320px;
-        }
-
-        .footer-logo {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 16px;
-            color: var(--text-primary);
-        }
-
-        .footer-description {
-            font-size: 15px;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 12px;
-        }
-
-        .social-link {
-            width: 40px;
-            height: 40px;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: all 0.2s;
-        }
-
-        .social-link:hover {
-            background: var(--primary);
-            border-color: var(--primary);
+            margin: 50px 0;
+            padding: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
             color: white;
         }
 
-        .social-icon {
-            width: 20px;
-            height: 20px;
-            stroke: currentColor;
-            stroke-width: 2;
-            fill: none;
+        .cta-section h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
         }
 
-        .footer-column h4 {
-            font-size: 14px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 16px;
-            color: var(--text-primary);
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-
-        .footer-links a {
-            color: var(--text-secondary);
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 18px 50px;
+            font-size: 1.3rem;
+            font-weight: bold;
             text-decoration: none;
-            font-size: 15px;
-            transition: color 0.2s;
+            border-radius: 50px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-top: 20px;
         }
 
-        .footer-links a:hover {
-            color: var(--primary);
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
-        .footer-bottom {
+        .form-section {
+            margin-top: 60px;
+            padding: 40px;
+            background: #f8f9fa;
+            border-radius: 15px;
+        }
+
+        .form-section h3 {
+            color: #667eea;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
             text-align: center;
-            padding-top: 32px;
-            border-top: 1px solid var(--border);
-            color: var(--text-muted);
-            font-size: 14px;
         }
 
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .nav-links {
-                display: none;
-            }
-
-            .mobile-menu-btn {
-                display: flex;
-            }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
         }
 
-        @media (max-width: 968px) {
-            h1 {
-                font-size: 40px;
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            margin-top: 60px;
+            padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .content {
+                padding: 30px 20px;
             }
 
             h2 {
-                font-size: 32px;
-            }
-
-            .cards-grid,
-            .process-grid,
-            .value-props {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-stats {
-                flex-wrap: wrap;
-                gap: 32px;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 32px;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .mobile-menu-btn {
-                display: block;
+                font-size: 1.5rem;
             }
         }
-
-        @media (max-width: 640px) {
-            .hero-buttons {
-                flex-direction: column;
-            }
-
-            .btn {
-                text-align: center;
-            }
-        }
-
-        /* Modal de Contacto */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(5px);
-    animation: fadeIn 0.3s ease;
-}
-
-.modal.active {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.modal-content {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 40px;
-    max-width: 500px;
-    width: 90%;
-    position: relative;
-    animation: slideUp 0.3s ease;
-}
-
-@keyframes slideUp {
-    from {
-        transform: translateY(50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-.modal-close {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    font-size: 32px;
-    font-weight: 300;
-    color: var(--text-secondary);
-    cursor: pointer;
-    transition: color 0.3s, transform 0.3s;
-    line-height: 1;
-}
-
-.modal-close:hover {
-    color: var(--primary);
-    transform: rotate(90deg);
-}
-
-.modal h2 {
-    margin-bottom: 8px;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    color: var(--text-primary);
-    font-weight: 500;
-    font-size: 15px;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 12px 16px;
-    background: var(--bg-dark);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    color: var(--text-primary);
-    font-size: 15px;
-    font-family: inherit;
-    transition: border-color 0.3s, background 0.3s;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--primary);
-    background: var(--bg-card-hover);
-}
-
-.form-group textarea {
-    resize: vertical;
-    min-height: 100px;
-}
-
     </style>
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <a href="#top" class="logo">
-                <div class="logo-icon">NGE</div>
-                <div class="logo-separator"></div>
-                <span class="logo-text">Nacho García Egea</span>
-            </a>
-            <ul class="nav-links">
-                <li><a href="#top">Inicio</a></li>
-                <li><a href="#comotrabajo">Cómo trabajo</a></li>
-                <li><a href="#startups">Startups & Scale-ups</a></li>
-                <li><a href="#mentoria">Mentoría</a></li>
-                <li><a href="#sobre">Sobre mí</a></li>
-            </ul>
-            <button class="mobile-menu-btn" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </nav>
-    </header>
+    <div class="container">
+        <header>
+            <h1>Mentoría en Ciberseguridad</h1>
+            <p>Acelera tu carrera con mentoría personalizada</p>
+        </header>
 
-    <div class="mobile-menu" id="mobileMenu">
-        <ul>
-            <li><a href="#top" onclick="toggleMenu()">Inicio</a></li>
-            <li><a href="#comotrabajo" onclick="toggleMenu()">Cómo trabajo</a></li>
-            <li><a href="#startups" onclick="toggleMenu()">Startups & Scale-ups</a></li>
-            <li><a href="#mentoria" onclick="toggleMenu()">Mentoría</a></li>
-            <li><a href="#sobre" onclick="toggleMenu()">Sobre mí</a></li>
-        </ul>
+        <div class="content">
+            <h2>Mentoría para Nuevos Talentos</h2>
+            <p class="hero-text">
+                ¿Quieres dar el salto en tu carrera de ciberseguridad? Te ayudo a desarrollar las habilidades, 
+                la mentalidad y la estrategia que necesitas para destacar en el sector.
+            </p>
+
+            <div class="benefits">
+                <div class="benefit-card">
+                    <h3>🎯 Diagnóstico Personalizado</h3>
+                    <p>Evaluación completa de tu perfil actual y objetivos profesionales en ciberseguridad.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>📈 Plan de Mejora</h3>
+                    <p>Hoja de ruta clara y accionable para alcanzar tus metas en el menor tiempo posible.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>💼 Mentoría 1:1</h3>
+                    <p>Sesiones personalizadas donde resolveremos tus dudas y trabajaremos juntos tu desarrollo.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>🚀 Recursos Exclusivos</h3>
+                    <p>Acceso a materiales, plantillas y herramientas que uso en mi día a día como advisor.</p>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <h3>🎁 Starter Kit Gratuito</h3>
+                <p style="font-size: 1.1rem; margin-bottom: 10px;">
+                    Descarga mi guía completa con los fundamentos esenciales para empezar tu carrera en ciberseguridad
+                </p>
+                <a href="#" class="cta-button">Descargar Starter Kit Gratis</a>
+            </div>
+
+            <div class="form-section">
+                <h3>📩 Solicita Más Información</h3>
+                <p style="text-align: center; margin-bottom: 30px; color: #666;">
+                    Déjame tus datos y te contactaré para conocer tu situación y ver cómo puedo ayudarte
+                </p>
+                <form action="https://formsubmit.co/yo@nachogarciaegea.com" method="POST">
+                    <input type="hidden" name="_subject" value="Nueva solicitud de mentoría">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://nachogarciaegea.com/mentoria-ciberseguridad/gracias.html">
+                    
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo *</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="telefono">Teléfono (opcional)</label>
+                        <input type="tel" id="telefono" name="telefono">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="situacion">Cuéntame tu situación actual *</label>
+                        <textarea id="situacion" name="situacion" required placeholder="Ej: Soy estudiante de informática y quiero especializarme en ciberseguridad..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-button">Enviar Solicitud</button>
+                </form>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Nacho García Egea | Mentoría en Ciberseguridad</p>
+            <p style="margin-top: 12px;">
+                <a href="mailto:yo@nachogarciaegea.com" style="color: white; text-decoration: none;">yo@nachogarciaegea.com</a>
+            </p>
+        </footer>
     </div>
-
-    <section class="hero" id="top">
-                <!-- Video Background -->
-        <div class="video-background">
-            
-<video id="bgVideo" autoplay muted playsinline preload="auto" class="hero-video">
-    
-</video>
-            <div class="video-overlay"></div>
-        </div>
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-tag">CYBERSECURITY ADVISOR & MENTOR</div>
-                <h1>Claridad en ciberseguridad para decidir mejor. Con foco en riesgo y negocio.</h1>
-                <p class="hero-subtitle">
-                    Trabajo cuando la ciberseguridad empieza a costar decisiones equivocadas.
-                </p>
-                <p class="hero-subtitle" style="margin-top: -16px;">
-                    Diagnóstico y priorización para startups/scale-ups B2B que venden a enterprise.<br>
-                    Mentoría para nuevos talentos orientada a criterio, comunicación y toma de decisiones.
-                </p>
-                <div class="hero-buttons">
-                    <a href="javascript:void(0)" onclick="openContactModal()" class="btn btn-primary">Solicitar consulta</a>
-                    <a href="mailto:yo@nachogarciaegea.com" class="btn btn-secondary">Copiar email</a>
-                </div>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <div class="stat-number">+20 años</div>
-                        <div class="stat-label">en ciberseguridad</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">Técnico → Riesgo</div>
-                        <div class="stat-label">Traducción de negocio</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">Sin burocracia</div>
-                        <div class="stat-label">Contexto enterprise</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="servicios" class="section section-alt">
-        <div class="container">
-            <div class="section-header" style="text-align: center; margin-bottom: 40px;">
-                <h2 style="text-align: center;  display: inline-block; background: var(--primary); padding: 8px 20px;font-size: 32px; margin-bottom: 10px;">¿Con qué quieres que te ayude?</h2>
-            </div>
-            <div class="cards-grid">
-                <div class="card">
-                    <div class="card-icon">
-                        <svg class="icon-svg" viewBox="0 0 24 24">
-                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                        </svg>
-                    </div>
-                    <h3>Founder / C-level</h3>
-                    <p class="card-description">
-                        Ventas B2B, due diligence y board. Claridad y ejecución sin contratar FTE.
-                    </p>
-                    <a href="#startups" class="btn btn-primary">Startups & Scale-ups</a>
-                    <a href="javascript:void(0)" onclick="openContactModal()" class="btn btn-secondary" style="margin-top: 12px;">Solicitar consulta</a>
-                </div>
-
-                <div class="card">
-                    <div class="card-icon">
-                        <svg class="icon-svg" viewBox="0 0 24 24">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="9" cy="7" r="4"></circle>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                        </svg>
-                    </div>
-                    <h3>Talento en ciberseguridad</h3>
-                    <p class="card-description">
-                        Mentoría para crecer con criterio, visión de negocio y mentalidad advisor.
-                    </p>
-                    <a href="#mentoria" class="btn btn-primary">Mentoría</a>
-                    <a href="#sobre-mi" class="btn btn-secondary" style="margin-top: 12px;">Sobre mí</a>
-                </div>
-            </div>
-            <div style="text-align: center; margin-top: 60px; padding: 32px; background: var(--bg-dark); border: 1px solid var(--border);">
-                <p style="color: var(--text-secondary); font-size: 16px;">
-                    <strong style="color: var(--text-primary);">Email:</strong> 
-                    <a href="mailto:yo@nachogarciaegea.com" style="color: var(--primary); text-decoration: none;">yo@nachogarciaegea.com</a>
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section id="startups" class="section">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-tag">Startups & Scale-ups</div>
-                <h2>Diagnóstico de postura + plan de mejora</h2>
-            </div>
-            <div style="font-size: 17px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 40px;">
-                <p style="margin-bottom: 20px;">
-                    El problema no es la ciberseguridad. Es la incertidumbre: no saber si hoy pasarías un cuestionario enterprise, ni qué hacer primero para mejorar.
-                </p>
-                <p style="margin-bottom: 20px;">
-                    <strong style="color: var(--text-primary);">Referencia rápida:</strong> para vender de forma consistente a enterprise, el mínimo aceptable suele ser <strong style="color: var(--text-primary);">Nivel 3 (≥60%)</strong>.
-                </p>
-                <p>
-                    Suelo trabajar con equipos pequeños, presión real y decisiones con impacto.
-                </p>
-            </div>
-
-            <div class="cards-grid">
-                <div class="card">
-                    <h3>Producto: Diagnóstico de postura + plan de mejora</h3>
-                    <ul class="card-features">
-                        <li>Diagnóstico estándares internacionales (80 preguntas Sí/No)</li>
-                        <li>Score automático + nivel + semáforo por dominios</li>
-                        <li>Quick wins y roadmap en semanas</li>
-                        <li>Sin contratar FTE</li>
-                    </ul>
-                    <a href="javascript:void(0)" onclick="openContactModal()" class="btn btn-primary">Solicitar consulta</a>
-                </div>
-
-                <div class="card">
-                    <h3>Servicio: Advisory / Aceleración</h3>
-                    <ul class="card-features">
-                        <li>Office Hours (priorización ejecutiva)</li>
-                        <li>Sprint 2–4 semanas (subir madurez rápido)</li>
-                        <li>Retainer (mantener Nivel 3 y escalar)</li>
-                    </ul>
-                    <a href="mailto:yo@nachogarciaegea.com?subject=Advisory%20Startups" class="btn btn-primary">Solicitar llamada</a>
-                    <a href="#comotrabajo" class="btn btn-secondary" style="margin-top: 12px;">Cómo trabajo</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="comotrabajo" class="section">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-tag">Metodología</div>
-                <h2>Un proceso simple y repetible</h2>
-                <p class="section-description">
-                    Orientado a decisiones y ejecución, no a documentación sin propósito.
-                </p>
-            </div>
-            <div class="process-grid">
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <h3>Entender</h3>
-                    <p>
-                        Diagnóstico honesto: dónde estás hoy, sin autoengaño.
-                    </p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <h3>Priorizar</h3>
-                    <p>
-                        Riesgo real y contexto de negocio: qué mueve la aguja primero.
-                    </p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <h3>Ejecutar</h3>
-                    <p>
-                        Plan de mejora corto, medible, con owners. En semanas, no 12 meses.
-                    </p>
-                </div>
-            </div>
-            <div style="text-align: center; margin-top: 40px;">
-                <a href="mailto:yo@nachogarciaegea.com?subject=Office%20Hours" class="btn btn-primary">Reservar Office Hours</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="mentoria" class="section section-alt">
-        <div class="container-narrow">
-            <div class="section-header">
-                <div class="section-tag">Mentoría</div>
-                <h2>Mentoría para nuevos talentos</h2>
-                <p class="section-description">
-                    Para perfiles técnicos que quieren:
-                </p>
-            </div>
-            <div class="card">
-                <div class="card-icon">
-                    <svg class="icon-svg" viewBox="0 0 24 24">
-                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="9" cy="7" r="4"></circle>
-                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                    </svg>
-                </div>
-                <ul class="card-features" style="margin-bottom: 20px;">
-                    <li>Dejar de acumular cursos sin criterio</li>
-                    <li>Aprender a priorizar y explicar riesgo</li>
-                    <li>Entender negocio sin dejar de ser técnicos</li>
-                    <li>Construir una narrativa profesional creíble</li>
-                    <li>Tomar mejores decisiones, no saber más herramientas</li>
-                </ul>
-                <p class="card-description">
-                    Mucho contenido, poco criterio. La mentoría va de pensar mejor: priorizar, comunicar riesgo, entender negocio, y evitar el culto a la herramienta.
-                </p>
-                <h3 style="font-size: 20px; margin: 24px 0 16px;">Mentoría (1:1 o grupos reducidos)</h3>
-                <ul class="card-features">
-                    <li>Mentalidad advisor: decisiones y trade-offs</li>
-                    <li>Comunicación: técnico → impacto y riesgo</li>
-                    <li>Plan de crecimiento: skills, proyectos y narrativa profesional</li>
-                    <li>Sesiones prácticas, enfoque realista</li>
-                </ul>
-                <a href="mailto:yo@nachogarciaegea.com?subject=Mentoría" class="btn btn-primary">Solicitar plaza</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="sobre" class="section">
-        <div class="container-narrow">
-            <div class="section-header">
-                <div class="section-tag">Sobre mí</div>
-                <h2>Pensamiento lateral apoyando decisiones estratégicas tanto técnicas como de negocio</h2>
-            </div>
-            <div style="font-size: 17px; color: var(--text-secondary); line-height: 1.8;">
-                <p style="margin-bottom: 20px;">
-                    Soy Nacho García Egea, CYBERSECURITY ADVISOR & MENTOR con más de <strong>20 años de experiencia</strong> trabajando con entornos complejos, riesgo real y decisiones que impactan directamente en negocio.
-                </p>
-                <p style="margin-bottom: 20px;">
-                    He trabajado la seguridad desde múltiples ángulos —operación, gobierno, cumplimiento y acompañamiento a equipos técnicos y directivos— lo que me ha dado una visión poco común: entender la ciberseguridad no como un problema técnico, sino como un problema de <strong>decisión</strong>.
-                </p>
-                <p style="margin-bottom: 20px;">
-                    Hoy ayudo a <strong>startups y scale-ups</strong> a ganar claridad sobre su postura de seguridad, priorizar correctamente y evitar inversiones innecesarias en herramientas, proveedores o controles mal enfocados. Mi trabajo no va de implantar "más seguridad", sino de decidir mejor <em>cuándo, cómo y por qué</em>.
-                </p>
-                <p style="margin-bottom: 20px;">
-                    En paralelo, acompaño a perfiles técnicos que quieren construir una carrera sólida en ciberseguridad: entender fundamentos, desarrollar criterio y aprender a explicar riesgo y valor en contextos reales de negocio.
-                </p>
-                <p style="margin-bottom: 20px;">
-                    No vendo humo, certificaciones milagro ni frameworks de moda. Trabajo con criterio, contexto y decisiones.
-                </p>
-                <p>
-                    Si esto encaja con el momento en el que estás, podemos hablar.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section class="cta-section">
-        <div class="container-narrow">
-            <h2>Suscríbete a lo que cuento</h2>
-            <p>Criterio y decisión. Sin humo ni frameworks de moda.</p>
-            <p style="font-size: 15px; color: var(--text-muted); margin-bottom: 32px;">1 email al mes. Sin spam. Puedes darte de baja cuando quieras.</p>
-            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; max-width: 500px; margin: 0 auto;">
-                <input type="email" placeholder="tu@email.com" style="flex: 1; min-width: 250px; padding: 14px 20px; background: var(--bg-dark); border: 1px solid var(--border); color: var(--text-primary); font-size: 16px;">
-                <a href="#" class="btn btn-primary">Suscribirme</a>
-            </div>
-        </div>
-    </section>
-
-    <footer id="contacto">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-about">
-                    <div class="footer-logo">Nacho García Egea</div>
-                    <p class="footer-description">
-                        CYBERSECURITY ADVISOR & MENTOR con +20 años de experiencia. 
-                        Claridad y decisiones para startups que venden a enterprise.
-                    </p>
-                    <div class="footer-social">
-                        <a href="https://linkedin.com/in/nachogarciaegea" class="social-link" target="_blank" rel="noopener">
-                            <svg class="social-icon" viewBox="0 0 24 24">
-                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                                <rect x="2" y="9" width="4" height="12"></rect>
-                                <circle cx="4" cy="4" r="2"></circle>
-                            </svg>
-                        </a>
-                        <a href="https://twitter.com/nachogarciaegea" class="social-link" target="_blank" rel="noopener">
-                            <svg class="social-icon" viewBox="0 0 24 24">
-                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
-                            </svg>
-                        </a>
-                        <a href="https://github.com/nachogarciaegea" class="social-link" target="_blank" rel="noopener">
-                            <svg class="social-icon" viewBox="0 0 24 24">
-                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                            </svg>
-                        </a>
-                        <a href="mailto:yo@nachogarciaegea.com" class="social-link">
-                            <svg class="social-icon" viewBox="0 0 24 24">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="footer-column">
-                    <h4>Servicios</h4>
-                    <ul class="footer-links">
-                        <li><a href="#servicios">Diagnóstico de postura</a></li>
-                        <li><a href="#servicios">Advisory</a></li>
-                        <li><a href="#servicios">Mentoría</a></li>
-                        <li><a href="#proceso">Proceso</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Empresa</h4>
-                    <ul class="footer-links">
-                        <li><a href="#sobre-mi">Sobre mí</a></li>
-                        <li><a href="#proceso">Cómo trabajo</a></li>
-                        <li><a href="javascript:void(0)" onclick="openContactModal()">Contacto</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Contacto</h4>
-                    <ul class="footer-links">
-                        <li><a href="mailto:yo@nachogarciaegea.com">yo@nachogarciaegea.com</a></li>
-                        <li><a href="javascript:void(0)" onclick="openContactModal()">Solicitar consulta</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2026 Nacho García Egea · Ciberseguridad en mi ADN</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-
-            // Active link based on scroll position
-            const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('.nav-links a');
-            
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (window.pageYOffset >= sectionTop - 150) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + current) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // Menu toggle
-        function toggleMenu() {
-            const menu = document.getElementById('mobileMenu');
-            const btn = document.querySelector('.mobile-menu-btn');
-            menu.classList.toggle('active');
-            btn.classList.toggle('active');
-        }
-
-        // Cerrar el menú cuando se hace clic fuera de él
-        document.addEventListener('click', function(event) {
-            const menu = document.getElementById('mobileMenu');
-            const menuBtn = document.querySelector('.mobile-menu-btn');
-            
-            if (menu.classList.contains('active') && !menu.contains(event.target) && !menuBtn.contains(event.target)) {
-                menu.classList.remove('active');
-                menuBtn.classList.remove('active');
-            }
-        });
-
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observar todas las tarjetas y elementos
-        document.addEventListener('DOMContentLoaded', function() {
-            const cards = document.querySelectorAll('.card, .process-step, .value-prop');
-            cards.forEach(card => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(30px)';
-                card.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-                observer.observe(card);
-            });
-        });
-
-        // Efecto de ripple en botones
-        document.querySelectorAll('.btn').forEach(button => {
-            button.addEventListener('click', function(e) {
-                const rect = button.getBoundingClientRect();
-                const ripple = document.createElement('span');
-                const size = Math.max(rect.width, rect.height);
-                const x = e.clientX - rect.left - size / 2;
-                const y = e.clientY - rect.top - size / 2;
-                
-                ripple.style.width = ripple.style.height = size + 'px';
-                ripple.style.left = x + 'px';
-                ripple.style.top = y + 'px';
-                ripple.classList.add('ripple');
-                
-                button.appendChild(ripple);
-                
-                setTimeout(() => ripple.remove(), 600);
-            });
-        });
-
-        // Funciones del modal de contacto
-function openContactModal() {
-    const modal = document.getElementById('contactModal');
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-}
-
-function closeContactModal() {
-    const modal = document.getElementById('contactModal');
-    modal.classList.remove('active');
-    document.body.style.overflow = '';
-}
-
-// Cerrar modal al hacer clic fuera del contenido
-document.getElementById('contactModal').addEventListener('click', function(e) {
-    if (e.target === this) {
-        closeContactModal();
-    }
-});
-
-// Cerrar modal con tecla ESC
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-        closeContactModal();
-    }
-});
-
-// Manejo del formulario
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    // Formspree manejará el envío
-    // Después del envío, cerrar el modal
-    setTimeout(() => {
-        closeContactModal();
-    }, 1000);
-});
-
-
-        // Parallax suave en el hero
-        window.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.hero');
-            if (hero && scrolled < 600) {
-                hero.style.transform = `translateY(${scrolled * 0.3}px)`;
-                hero.style.opacity = 1 - (scrolled / 600);
-            }
-        });
-    </script>
-
-    <!-- Modal de Contacto -->
-<div id="contactModal" class="modal">
-    <div class="modal-content">
-        <span class="modal-close" onclick="closeContactModal()">&times;</span>
-        <h2>Solicitar Consulta</h2>
-        <p style="color: var(--text-secondary); margin-bottom: 24px;">Cuéntame cómo puedo ayudarte</p>
-        
-        <form id="contactForm" action="https://formspree.io/f/maqnvvdn" method="POST">            <div class="form-group">
-                <label for="name">Nombre</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="message">Consulta</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-            </div>
-            
-            <button type="submit" class="btn btn-primary">Enviar consulta</button>
-        </form>
-    </div>
-</div>
-
-    //script videos
-<script>
-    const videoFiles = [
-        'assets/video1.mp4',
-        'assets/video2.mp4'
-    ];
-
-    const bgVideo = document.getElementById('bgVideo');
-    let currentVideoIndex = 0;
-
-    function playCurrentVideo() {
-        bgVideo.src = videoFiles[currentVideoIndex];
-        bgVideo.load();
-        bgVideo.play().catch(() => {});
-    }
-
-    bgVideo.addEventListener('ended', () => {
-        currentVideoIndex++;
-        if (currentVideoIndex >= videoFiles.length) {
-            currentVideoIndex = 0;
-        }
-        playCurrentVideo();
-    });
-
-    document.addEventListener('DOMContentLoaded', playCurrentVideo);
-</script>
 </body>
-
-     
+</html>
