@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Mentoría en Ciberseguridad para nuevos talentos | Nacho García Egea</title>
+  <meta name="description" content="Mentoría en ciberseguridad para nuevos talentos: criterio, comunicación y toma de decisiones. Descarga el Starter Kit gratis y solicita plaza." />
+  <link rel="canonical" href="https://nachogarciaegea.com/mentoria-ciberseguridad/" />
+
+  <!-- ✅ 1) PEGA AQUÍ los mismos CSS del index (mismo orden) -->
+  <!-- Ejemplo (NO lo invento): copia desde tu home:
+  <link rel="stylesheet" href="/assets/....css">
+  -->
+
+  <!-- OpenGraph básico -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Mentoría en Ciberseguridad para nuevos talentos" />
+  <meta property="og:description" content="Criterio, comunicación y toma de decisiones. Starter Kit gratis + solicitud de plaza." />
+  <meta property="og:url" content="https://nachogarciaegea.com/mentoria-ciberseguridad/" />
+
+  <!-- (Opcional) Schema.org simple para SEO -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebPage",
+    "name":"Mentoría en Ciberseguridad para nuevos talentos",
+    "url":"https://nachogarciaegea.com/mentoria-ciberseguridad/",
+    "about":[{"@type":"Thing","name":"Mentoría en ciberseguridad"},{"@type":"Thing","name":"Ciberseguridad"}],
+    "isPartOf":{"@type":"WebSite","name":"Nacho García Egea","url":"https://nachogarciaegea.com/"}
+  }
+  </script>
+</head>
+
+<body>
+  <!-- ✅ 2) PEGA AQUÍ el mismo header/nav del site (para mantener estética) -->
+  <!-- Si tu web usa un layout/partials, aquí iría el include -->
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="section hero">
+      <div class="container">
+        <p class="eyebrow">MENTORÍA</p>
+        <h1>Mentoría en ciberseguridad para nuevos talentos</h1>
+        <p class="lead">
+          Mucho contenido, poco criterio. La mentoría va de pensar mejor:
+          <strong>priorizar</strong>, <strong>comunicar riesgo</strong>, <strong>entender negocio</strong>
+          y evitar el culto a la herramienta.
+        </p>
+
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#solicitud">Solicitar plaza</a>
+          <a class="btn btn-secondary" href="#starter-kit">Descargar Starter Kit (gratis)</a>
+        </div>
+
+        <ul class="stats">
+          <li><strong>+20 años</strong><span>en ciberseguridad</span></li>
+          <li><strong>Técnico → Riesgo</strong><span>traducción a negocio</span></li>
+          <li><strong>Sin burocracia</strong><span>contexto real</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ✅ CONTENIDO: “todo lo de la sección mentoría” (tal cual tu web) -->
+    <section class="section">
+      <div class="container">
+        <h2>¿Qué trabajamos en la mentoría?</h2>
+        <p>Para perfiles técnicos que quieren:</p>
+        <ul class="list">
+          <li>Dejar de acumular cursos sin criterio</li>
+          <li>Aprender a priorizar y explicar riesgo</li>
+          <li>Entender negocio sin dejar de ser técnicos</li>
+          <li>Construir una narrativa profesional creíble</li>
+          <li>Tomar mejores decisiones, no saber más herramientas</li>
+        </ul>
+
+        <h3>Mentoría (1:1 o grupos reducidos)</h3>
+        <ul class="list">
+          <li>Mentalidad advisor: decisiones y trade-offs</li>
+          <li>Comunicación: técnico → impacto y riesgo</li>
+          <li>Plan de crecimiento: skills, proyectos y narrativa profesional</li>
+          <li>Sesiones prácticas, enfoque realista</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- STARTER KIT -->
+    <section id="starter-kit" class="section highlight">
+      <div class="container">
+        <h2>Starter Kit gratuito · Mentoría en ciberseguridad</h2>
+        <p class="lead">
+          Una guía para empezar con cabeza: qué aprender primero, cómo elegir camino,
+          y cómo diferenciar aprendizaje real de marketing.
+        </p>
+
+        <div class="card">
+          <h3>Incluye</h3>
+          <ul class="list">
+            <li>Cómo empezar sin perderte</li>
+            <li>Errores comunes al iniciar una carrera en seguridad</li>
+            <li>Qué estudiar primero y qué ignorar de momento</li>
+            <li>Cómo construir una narrativa profesional creíble</li>
+          </ul>
+
+          <!-- ✅ Cambia la URL al asset real -->
+          <a class="btn btn-primary" href="/descargas/starter-kit-mentoria-ciberseguridad.pdf" download>
+            Descargar Starter Kit (PDF)
+          </a>
+          <p class="microcopy">Descarga directa. Sin ruido. Sin promesas imposibles.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMULARIO SOLICITUD -->
+    <section id="solicitud" class="section">
+      <div class="container">
+        <h2>Solicitud de plaza</h2>
+        <p class="lead">
+          Esto no es un “formulario para quedar bien”. Es un filtro para asegurar encaje y compromiso.
+        </p>
+
+        <!-- ✅ 3) Usa el mismo sistema de formularios que ya tengas en la web -->
+        <!-- OPCIÓN A: si tu web ya tiene un modal/form (como “Solicitar Consulta”), puedes reutilizar clases/JS -->
+        <!-- OPCIÓN B: post a tu endpoint (Formspree, Netlify, backend propio, etc.) -->
+        <form class="form" method="post" action="/api/solicitud-mentoria">
+          <div class="form-grid">
+            <label>
+              Nombre y apellidos
+              <input name="nombre" type="text" required autocomplete="name" />
+            </label>
+
+            <label>
+              Email
+              <input name="email" type="email" required autocomplete="email" />
+            </label>
+
+            <label>
+              Situación actual
+              <input name="situacion" type="text" placeholder="Estudios / trabajo / transición…" required />
+            </label>
+
+            <label>
+              Nivel aproximado
+              <select name="nivel" required>
+                <option value="" selected disabled>Selecciona…</option>
+                <option>Principiante</option>
+                <option>Intermedio</option>
+              </select>
+            </label>
+
+            <label class="full">
+              ¿Qué te ha llevado a interesarte por la ciberseguridad?
+              <textarea name="motivacion" rows="4" required></textarea>
+            </label>
+
+            <label class="full">
+              ¿Qué esperas conseguir con la mentoría?
+              <textarea name="objetivo" rows="4" required></textarea>
+            </label>
+          </div>
+
+          <!-- honeypot anti-spam (sin meter JS nuevo) -->
+          <div class="hp" aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
+            <label>Deja este campo vacío <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+          </div>
+
+          <button class="btn btn-primary" type="submit">Enviar solicitud</button>
+          <p class="microcopy">
+            Al enviar aceptas que te contacte para responderte. Nada de listas raras ni spam.
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ✅ 4) PEGA AQUÍ el mismo footer del site -->
+
+  <!-- ✅ 5) PEGA AQUÍ los mismos JS del index (mismo orden) -->
+  <!-- (Importante: si tu web inicializa animaciones/scroll/nav aquí, esta landing heredará el comportamiento) -->
+</body>
+</html>
