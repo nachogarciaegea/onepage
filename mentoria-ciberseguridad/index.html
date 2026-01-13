@@ -832,18 +832,38 @@ footer {
 </head>
 <body>
 <header>
-    <nav class="container">
-        <a href="../index.html#top" class="logo">
-            <div class="logo-icon">NGE</div>
-            <div class="logo-separator"></div>
-                                                    <li><a href="../index.html">Volver a la principal</a></li>
-        <button class="mobile-menu-btn" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </nav>
+  <nav class="container">
+    <a href="../index.html#top" class="logo">
+      <div class="logo-icon">NGE</div>
+      <div class="logo-separator"></div>
+    </a>
+
+    <ul class="menu">
+      <li>
+        <a href="../index.html" class="btn btn-secondary">
+          Volver a la principal
+        </a>
+      </li>
+    </ul>
+
+    <button class="mobile-menu-btn" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
 </header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li>
+      <a href="../index.html" class="btn btn-secondary">
+        Volver a la principal
+      </a>
+    </li>
+  </ul>
+</div>
+
 
 <div class="mobile-menu" id="mobileMenu">
     <ul>
