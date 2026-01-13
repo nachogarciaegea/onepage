@@ -716,6 +716,118 @@ footer {
     text-align: center;
   }
 }
+
+    /* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(2, 6, 23, 0.95);
+  backdrop-filter: blur(8px);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.modal-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: slideUp 0.3s ease;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-header {
+  padding: 32px 40px 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.modal-header p {
+  margin: 12px 0 0;
+  color: var(--text-secondary);
+  font-size: 16px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: 2px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  line-height: 1;
+}
+
+.modal-close:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+  transform: rotate(90deg);
+}
+
+.modal-body {
+  padding: 32px 40px 40px;
+}
+
+.modal-body form {
+  padding: 0;
+}
+
+@media (max-width: 640px) {
+  .modal-content {
+    max-width: 100%;
+    margin: 0;
+    max-height: 100vh;
+  }
+  
+  .modal-header,
+  .modal-body {
+    padding: 24px;
+  }
+}
 </style>
 </head>
 <body>
@@ -838,6 +950,7 @@ footer {
     </div>
 </section>
 
+<!-- FORMULARIO MOVIDO A MODAL
 <section id="solicitud" class="section section-alt">
     <div class="814">
         <div class="section-header">
@@ -902,6 +1015,7 @@ footer {
         </form>
     </div>
 </section>
+-->
 
 <footer>
     <div class="container">
@@ -970,9 +1084,86 @@ footer {
     </div>
 </footer>
 
+<!-- Modal para solicitud de plaza -->
+<div id="solicitudModal" class="modal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+    
+    <div class="modal-header">
+      <h2>📩 Solicitud de plaza</h2>
+      <p>Esto no es un "formulario para quedar bien". Es un filtro para asegurar encaje y compromiso.</p>
+    </div>
+    
+    <div class="modal-body">
+      <form method="POST" action="https://formsubmit.co/yo@nachogarciaegea.com">
+        <input type="hidden" name="_subject" value="Nueva solicitud de mentoría">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://nachogarciaegea.com/mentoria-ciberseguridad/gracias.html">
+        
+        <div style="display: grid; gap: 20px;">
+          <label style="display: block;">
+            Nombre y apellidos
+            <input name="nombre" type="text" required autocomplete="name" 
+              style="width: 100%; padding: 12px; margin-top: 8px; background: var(--bg-dark); border: 1px solid var(--border); color: var(--text-primary); font-size: 16px;" />
+          </label>
+          
+          <label style="display: block;">
+            Email
+            <input name="email" type="email" required autocomplete="email" 
+              style="width: 100%; padding: 12px; margin-top: 8px; background: var(--bg-dark); border: 1px solid var(--border); color: var(--text-primary); font-size: 16px;" />
+          </label>
+          
+          <label style="display: block;">
+            Situación actual
+            <input name="situacion" type="text" placeholder="Estudios / trabajo / transición…" required 
+              style="width: 100%; padding: 12px; margin-top: 8px; background: var(--bg-dark); border: 1px solid var(--border); color: var(--text-primary); font-size: 16px;" />
+          </label>
+          
+          <label style="display: block;">
+            Nivel aproximado
+            <select name="nivel" required 
+              style="width: 100%; padding: 12px; margin-top: 8px; background: var(--bg-dark); border: 1px solid var(--border); color: var(--text-primary); font-size: 16px;">
+              <option value="" selected disabled>Selecciona…</option>
+              <option>Principiante</option>
+              <option>Intermedio</option>
+              <option>Avanzado</option>
+            </select>
+          </label>
+          
+          <label style="display: block;">
+            ¿Qué te ha llevado a interesarte por la ciberseguridad?
+            <textarea name="motivacion" rows="4" required 
+              style="width: 100%; padding: 12px; margin-top: 8px; background: var(--bg-dark); border: 1px solid var(--border); color: var(--text-primary); font-size: 16px; font-family: inherit;"></textarea>
+          </label>
+          
+          <label style="display: block;">
+            ¿Qué esperas conseguir con la mentoría?
+            <textarea name="expectativas" rows="4" required 
+              style="width: 100%; padding: 12px; margin-top: 8px; background: var(--bg-dark); border: 1px solid var(--border); color: var(--text-primary); font-size: 16px; font-family: inherit;"></textarea>
+          </label>
+          
+          <!-- Honeypot anti-spam -->
+          <input type="text" name="_honeypot" tabindex="-1" autocomplete="off" 
+            style="position: absolute; left: -9999px;">
+          
+          <button type="submit" class="btn btn-primary" style="width: 100%;">
+            Enviar solicitud
+          </button>
+          
+          <p style="color: var(--text-muted); font-size: 14px; text-align: center; margin-top: 8px;">
+            Al enviar aceptas que te contacte para responderte. Nada de listas raras ni spam.
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
 <script>
 // Header scroll effect
 window.addEventListener('scroll', function() {
+
+    
     const header = document.querySelector('header');
     if (window.scrollY > 50) {
         header.classList.add('scrolled');
@@ -1047,5 +1238,34 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+
+
+// Modal functions
+function openModal(event) {
+  if (event) event.preventDefault();
+  const modal = document.getElementById('solicitudModal');
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  const modal = document.getElementById('solicitudModal');
+  modal.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// Cerrar modal al hacer clic fuera
+document.getElementById('solicitudModal').addEventListener('click', function(event) {
+  if (event.target === this) {
+    closeModal();
+  }
+});
+
+// Cerrar modal con tecla Escape
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    closeModal();
+  }
+});
 </body>
 </html>
